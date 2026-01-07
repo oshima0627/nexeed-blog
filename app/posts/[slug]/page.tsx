@@ -82,7 +82,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
         {/* 記事本文 */}
         <div
-          className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-primary prose-code:text-primary prose-pre:bg-gray-50 prose-headings:scroll-mt-20"
+          className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
           dangerouslySetInnerHTML={{ __html: post.content || "" }}
         />
 
