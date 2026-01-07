@@ -13,30 +13,33 @@ export default async function Image() {
     (
       <div
         style={{
-          background: "linear-gradient(to bottom right, #1E40AF, #1E3A8A)",
+          background: "white",
           width: "100%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          color: "white",
           fontFamily: "sans-serif",
         }}
       >
         <div
           style={{
-            fontSize: 72,
+            fontSize: 96,
             fontWeight: "bold",
-            marginBottom: 20,
+            display: "flex",
+            marginBottom: 30,
           }}
         >
-          NEXEED BLOG
+          <span style={{ background: "linear-gradient(135deg, #7C3AED, #A78BFA)", backgroundClip: "text", color: "transparent" }}>N</span>
+          <span style={{ color: "#000000" }}>exeed</span>
+          <span style={{ background: "linear-gradient(135deg, #60A5FA, #3B82F6)", backgroundClip: "text", color: "transparent" }}>B</span>
+          <span style={{ background: "linear-gradient(135deg, #A78BFA, #7C3AED)", backgroundClip: "text", color: "transparent" }}>log</span>
         </div>
         <div
           style={{
-            fontSize: 32,
-            color: "#E5E7EB",
+            fontSize: 28,
+            color: "#6B7280",
             textAlign: "center",
             maxWidth: "80%",
           }}
