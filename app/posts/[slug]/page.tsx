@@ -4,6 +4,7 @@ import { ja } from "date-fns/locale";
 import ArticleCard from "@/components/ArticleCard";
 import TableOfContents from "@/components/TableOfContents";
 import { extractTocFromHtml } from "@/lib/toc";
+import { BlogPostJsonLd } from "@/components/JsonLd";
 import Link from "next/link";
 
 export async function generateStaticParams() {
@@ -47,9 +48,18 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const tocItems = extractTocFromHtml(post.content || "");
 
   return (
-    <div className="container-custom py-12">
-      {/* パンくずリスト */}
-      <nav className="text-sm text-gray-500 mb-8">
+    <>
+      <BlogPostJsonLd
+        title={post.title}
+        description={post.excerpt}
+        datePublished={post.date}
+        dateModified={post.updated}
+        url={`https://nexeed-blog.vercel.app/posts/${slug}`}
+        category={post.category}
+      />
+      <div className="container-custom py-12">
+        {/* パンくずリスト */}
+        <nav className="text-sm text-gray-500 mb-8">
         <Link href="/" className="hover:text-primary">Home</Link>
         <span className="mx-2">/</span>
         <span className={`px-2 py-1 rounded ${categoryColors[post.category] || "bg-gray-100 text-gray-800"}`}>
@@ -135,6 +145,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }
