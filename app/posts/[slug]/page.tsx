@@ -2,6 +2,8 @@ import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { format } from "date-fns";
 import { ja } from "date-fns/locale";
 import ArticleCard from "@/components/ArticleCard";
+import TableOfContents from "@/components/TableOfContents";
+import { extractTocFromHtml } from "@/lib/toc";
 import Link from "next/link";
 
 export async function generateStaticParams() {
@@ -41,6 +43,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   const formattedDate = format(new Date(post.date), "yyyy年M月d日", { locale: ja });
 
+  // 目次を抽出
+  const tocItems = extractTocFromHtml(post.content || "");
+
   return (
     <div className="container-custom py-12">
       {/* パンくずリスト */}
@@ -68,9 +73,16 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           </div>
         </header>
 
+        {/* 目次 */}
+        {tocItems.length > 0 && (
+          <div className="mb-8">
+            <TableOfContents items={tocItems} />
+          </div>
+        )}
+
         {/* 記事本文 */}
         <div
-          className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-primary prose-code:text-primary prose-pre:bg-gray-50"
+          className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-primary prose-code:text-primary prose-pre:bg-gray-50 prose-headings:scroll-mt-20"
           dangerouslySetInnerHTML={{ __html: post.content || "" }}
         />
 

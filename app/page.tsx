@@ -1,8 +1,12 @@
 import { getAllPosts } from "@/lib/posts";
 import ArticleCard from "@/components/ArticleCard";
+import Pagination from "@/components/Pagination";
+import { getPaginatedPosts, getTotalPages, POSTS_PER_PAGE } from "@/lib/pagination";
 
 export default function Home() {
-  const posts = getAllPosts();
+  const allPosts = getAllPosts();
+  const totalPages = getTotalPages(allPosts.length, POSTS_PER_PAGE);
+  const posts = getPaginatedPosts(allPosts, 1, POSTS_PER_PAGE);
 
   return (
     <div className="container-custom py-12">
@@ -12,6 +16,8 @@ export default function Home() {
           <ArticleCard key={post.slug} post={post} />
         ))}
       </div>
+
+      <Pagination currentPage={1} totalPages={totalPages} basePath="/page" />
     </div>
   );
 }

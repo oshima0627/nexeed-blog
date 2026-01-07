@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 import remarkGfm from "remark-gfm";
+import { generateTocIds } from "./toc";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -64,7 +65,10 @@ export async function getPostBySlug(slug: string): Promise<PostData> {
     .use(remarkGfm)
     .use(html, { sanitize: false })
     .process(content);
-  const contentHtml = processedContent.toString();
+  let contentHtml = processedContent.toString();
+
+  // 見出しにIDを追加
+  contentHtml = generateTocIds(contentHtml);
 
   return {
     slug,
