@@ -4,11 +4,8 @@
 
 個人ブログサイト。投資、子育て、ITエンジニア、副業の4つのテーマを扱う。非技術者も記事を投稿できるMarkdownベースのブログシステム。
 
-### サイト名候補
-- **NEXEED BLOG** (推奨: Next + Succeed = 次に成功する)
-- GROWTH NOTE (成長の記録)
-- LIFE ENGINEER (人生をエンジニアリングする)
-- Tech & Life Journal
+### サイト名
+**NEXEED BLOG** (Next + Succeed = 次に成功する)
 
 ### カテゴリー
 - 投資
@@ -212,7 +209,7 @@ coverImage: "/images/posts/cover.png"  # 任意
 ## 要件確定サマリー
 
 ### ✅ 確定事項
-- **サイト名**: NEXEED BLOG（推奨）
+- **サイト名**: NEXEED BLOG
 - **カテゴリー**: 投資、子育て、ITエンジニア、副業
 - **レイアウト**: 1カラム、サイドバーなし
 - **記事一覧**: カード型デザイン
