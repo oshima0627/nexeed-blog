@@ -365,6 +365,28 @@ export const a8Links: A8Link[] = [
     height: 250,
     description: "法人口座開設。振込手数料が安く、ネットで完結。事業資金管理に最適",
   },
+  {
+    id: "fpo-fx-guide-300x250",
+    name: "FX投資マスターガイド",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+A94RUA+ONS+69HA9",
+    imgSrc: "https://www21.a8.net/svt/bgt?aid=260108517620&wid=001&eno=01&mid=s00000003196001052000&mc=1",
+    trackingSrc: "https://www13.a8.net/0.gif?a8mat=4AV10L+A94RUA+ONS+69HA9",
+    width: 300,
+    height: 250,
+    description: "FXの無料電子書籍。図解オールカラー128ページでFX投資を学べる",
+  },
+  {
+    id: "fpo-fx-guide-468x60",
+    name: "FX投資マスターガイド",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+A94RUA+ONS+5YJRL",
+    imgSrc: "https://www23.a8.net/svt/bgt?aid=260108517620&wid=001&eno=01&mid=s00000003196001001000&mc=1",
+    trackingSrc: "https://www10.a8.net/0.gif?a8mat=4AV10L+A94RUA+ONS+5YJRL",
+    width: 468,
+    height: 60,
+    description: "FXの無料電子書籍。図解オールカラー128ページでFX投資を学べる",
+  },
 ];
 
 // カテゴリー別にリンクを取得
