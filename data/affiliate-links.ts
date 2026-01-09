@@ -57,6 +57,28 @@ export const a8Links: A8Link[] = [
     height: 90,
     description: "サービスの説明をここに記載",
   },
+  {
+    id: "lolipop-300x300",
+    name: "ロリポップ！レンタルサーバー",
+    category: ["ITエンジニア"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AUYOM+C9681E+348+6M4J5",
+    imgSrc: "https://www25.a8.net/svt/bgt?aid=260105494741&wid=001&eno=01&mid=s00000000404001111000&mc=1",
+    trackingSrc: "https://www16.a8.net/0.gif?a8mat=4AUYOM+C9681E+348+6M4J5",
+    width: 300,
+    height: 300,
+    description: "GMOペパボのレンタルサーバーサービス。Webサイト運営に最適",
+  },
+  {
+    id: "lolipop-336x280",
+    name: "ロリポップ！レンタルサーバー",
+    category: ["ITエンジニア"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AUYOM+C9681E+348+6EMGX",
+    imgSrc: "https://www21.a8.net/svt/bgt?aid=260105494741&wid=001&eno=01&mid=s00000000404001076000&mc=1",
+    trackingSrc: "https://www11.a8.net/0.gif?a8mat=4AUYOM+C9681E+348+6EMGX",
+    width: 336,
+    height: 280,
+    description: "GMOペパボのレンタルサーバーサービス。Webサイト運営に最適",
+  },
 ];
 
 // カテゴリー別にリンクを取得
