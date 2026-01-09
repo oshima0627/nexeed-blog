@@ -211,6 +211,28 @@ export const a8Links: A8Link[] = [
     height: 250,
     description: "マンション投資・不動産投資の個別面談。資産運用のプロフェッショナル",
   },
+  {
+    id: "ohya-468x60",
+    name: "Oh!Ya（オーヤ）",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+BKRG8I+53AC+HWI5T",
+    imgSrc: "https://www22.a8.net/svt/bgt?aid=260108517700&wid=001&eno=01&mid=s00000023754003007000&mc=1",
+    trackingSrc: "https://www10.a8.net/0.gif?a8mat=4AV10L+BKRG8I+53AC+HWI5T",
+    width: 468,
+    height: 60,
+    description: "マンション投資の一括資料請求。複数の不動産投資会社を比較検討",
+  },
+  {
+    id: "ohya-300x250",
+    name: "Oh!Ya（オーヤ）",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+BKRG8I+53AC+HXKQP",
+    imgSrc: "https://www21.a8.net/svt/bgt?aid=260108517700&wid=001&eno=01&mid=s00000023754003012000&mc=1",
+    trackingSrc: "https://www10.a8.net/0.gif?a8mat=4AV10L+BKRG8I+53AC+HXKQP",
+    width: 300,
+    height: 250,
+    description: "マンション投資の一括資料請求。複数の不動産投資会社を比較検討",
+  },
 ];
 
 // カテゴリー別にリンクを取得
