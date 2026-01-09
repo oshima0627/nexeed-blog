@@ -167,6 +167,28 @@ export const a8Links: A8Link[] = [
     height: 60,
     description: "FX取引口座開設。豊富な通貨ペアと高度な取引ツールを提供",
   },
+  {
+    id: "fpo-stocks-468x60",
+    name: "旬の厳選10銘柄",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+AAX2NM+ONS+TSQTT",
+    imgSrc: "https://www26.a8.net/svt/bgt?aid=260108517623&wid=001&eno=01&mid=s00000003196005005000&mc=1",
+    trackingSrc: "https://www16.a8.net/0.gif?a8mat=4AV10L+AAX2NM+ONS+TSQTT",
+    width: 468,
+    height: 60,
+    description: "株歴50年超のプロによる推奨銘柄。高騰期待銘柄を厳選",
+  },
+  {
+    id: "fpo-stocks-336x280",
+    name: "旬の厳選10銘柄",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+AAX2NM+ONS+TVJ4X",
+    imgSrc: "https://www28.a8.net/svt/bgt?aid=260108517623&wid=001&eno=01&mid=s00000003196005018000&mc=1",
+    trackingSrc: "https://www15.a8.net/0.gif?a8mat=4AV10L+AAX2NM+ONS+TVJ4X",
+    width: 336,
+    height: 280,
+    description: "株歴50年超のプロによる推奨銘柄。高騰期待銘柄を厳選",
+  },
 ];
 
 // カテゴリー別にリンクを取得
