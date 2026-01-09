@@ -277,6 +277,28 @@ export const a8Links: A8Link[] = [
     height: 280,
     description: "火災保険の無料診断サービス。最適な火災保険を比較検討",
   },
+  {
+    id: "sms-loan-468x60-1",
+    name: "総合マネージメントサービス",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+BWO4C2+1DEC+626XT",
+    imgSrc: "https://www26.a8.net/svt/bgt?aid=260108517720&wid=001&eno=01&mid=s00000006402001018000&mc=1",
+    trackingSrc: "https://www11.a8.net/0.gif?a8mat=4AV10L+BWO4C2+1DEC+626XT",
+    width: 468,
+    height: 60,
+    description: "不動産担保ローンの無料審査申込。事業資金やリフォーム資金に",
+  },
+  {
+    id: "sms-loan-468x60-2",
+    name: "総合マネージメントサービス",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+BWO4C2+1DEC+5YJRL",
+    imgSrc: "https://www20.a8.net/svt/bgt?aid=260108517720&wid=001&eno=01&mid=s00000006402001001000&mc=1",
+    trackingSrc: "https://www16.a8.net/0.gif?a8mat=4AV10L+BWO4C2+1DEC+5YJRL",
+    width: 468,
+    height: 60,
+    description: "不動産担保ローンの無料審査申込。事業資金やリフォーム資金に",
+  },
 ];
 
 // カテゴリー別にリンクを取得
