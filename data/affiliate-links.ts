@@ -101,6 +101,28 @@ export const a8Links: A8Link[] = [
     height: 250,
     description: "ファイナンシャルアカデミーのお金の勉強講座。貯蓄・運用を学べる",
   },
+  {
+    id: "at-seminar-468x60",
+    name: "女性のためのマネーセミナー【アットセミナー】",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AUYOM+C8KSFM+3JHQ+HWPVL",
+    imgSrc: "https://www23.a8.net/svt/bgt?aid=260105494740&wid=001&eno=01&mid=s00000016523003008000&mc=1",
+    trackingSrc: "https://www19.a8.net/0.gif?a8mat=4AUYOM+C8KSFM+3JHQ+HWPVL",
+    width: 468,
+    height: 60,
+    description: "女性向けの無料マネーセミナー。お金の増やし方や資産形成について学べる",
+  },
+  {
+    id: "at-seminar-300x250",
+    name: "女性のためのマネーセミナー【アットセミナー】",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AUYOM+C8KSFM+3JHQ+HWI5T",
+    imgSrc: "https://www29.a8.net/svt/bgt?aid=260105494740&wid=001&eno=01&mid=s00000016523003007000&mc=1",
+    trackingSrc: "https://www14.a8.net/0.gif?a8mat=4AUYOM+C8KSFM+3JHQ+HWI5T",
+    width: 300,
+    height: 250,
+    description: "女性向けの無料マネーセミナー。お金の増やし方や資産形成について学べる",
+  },
 ];
 
 // カテゴリー別にリンクを取得
