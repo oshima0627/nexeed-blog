@@ -189,6 +189,28 @@ export const a8Links: A8Link[] = [
     height: 280,
     description: "株歴50年超のプロによる推奨銘柄。高騰期待銘柄を厳選",
   },
+  {
+    id: "jp-returns-468x60",
+    name: "JPリターンズ",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+AG9Z3M+40OC+C3J0H",
+    imgSrc: "https://www22.a8.net/svt/bgt?aid=260108517632&wid=001&eno=01&mid=s00000018750002032000&mc=1",
+    trackingSrc: "https://www13.a8.net/0.gif?a8mat=4AV10L+AG9Z3M+40OC+C3J0H",
+    width: 468,
+    height: 60,
+    description: "マンション投資・不動産投資の個別面談。資産運用のプロフェッショナル",
+  },
+  {
+    id: "jp-returns-300x250",
+    name: "JPリターンズ",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+AG9Z3M+40OC+BYDTT",
+    imgSrc: "https://www20.a8.net/svt/bgt?aid=260108517632&wid=001&eno=01&mid=s00000018750002008000&mc=1",
+    trackingSrc: "https://www12.a8.net/0.gif?a8mat=4AV10L+AG9Z3M+40OC+BYDTT",
+    width: 300,
+    height: 250,
+    description: "マンション投資・不動産投資の個別面談。資産運用のプロフェッショナル",
+  },
 ];
 
 // カテゴリー別にリンクを取得
