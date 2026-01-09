@@ -387,6 +387,28 @@ export const a8Links: A8Link[] = [
     height: 60,
     description: "FXの無料電子書籍。図解オールカラー128ページでFX投資を学べる",
   },
+  {
+    id: "hoken-mammoth-300x250",
+    name: "保険マンモス",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+57JKC2+5SIO+5YZ75",
+    imgSrc: "https://www28.a8.net/svt/bgt?aid=260108517315&wid=001&eno=01&mid=s00000027024001003000&mc=1",
+    trackingSrc: "https://www15.a8.net/0.gif?a8mat=4AV10L+57JKC2+5SIO+5YZ75",
+    width: 300,
+    height: 250,
+    description: "FP無料保険相談。顧客満足度95%、ライフプランに最適な保険提案",
+  },
+  {
+    id: "hoken-mammoth-120x60",
+    name: "保険マンモス",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+57JKC2+5SIO+5Z6WX",
+    imgSrc: "https://www25.a8.net/svt/bgt?aid=260108517315&wid=001&eno=01&mid=s00000027024001004000&mc=1",
+    trackingSrc: "https://www11.a8.net/0.gif?a8mat=4AV10L+57JKC2+5SIO+5Z6WX",
+    width: 120,
+    height: 60,
+    description: "FP無料保険相談。顧客満足度95%、ライフプランに最適な保険提案",
+  },
 ];
 
 // カテゴリー別にリンクを取得
