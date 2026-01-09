@@ -79,6 +79,28 @@ export const a8Links: A8Link[] = [
     height: 280,
     description: "GMOペパボのレンタルサーバーサービス。Webサイト運営に最適",
   },
+  {
+    id: "financial-academy-336x280",
+    name: "お金の教養講座",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AUXWS+FT6F3M+1IRY+1TK1F5",
+    imgSrc: "https://www29.a8.net/svt/bgt?aid=260104492956&wid=001&eno=01&mid=s00000007099011011000&mc=1",
+    trackingSrc: "https://www19.a8.net/0.gif?a8mat=4AUXWS+FT6F3M+1IRY+1TK1F5",
+    width: 336,
+    height: 280,
+    description: "ファイナンシャルアカデミーのお金の勉強講座。貯蓄・運用を学べる",
+  },
+  {
+    id: "financial-academy-300x250",
+    name: "お金の教養講座",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AUXWS+FT6F3M+1IRY+1TMM0H",
+    imgSrc: "https://www24.a8.net/svt/bgt?aid=260104492956&wid=001&eno=01&mid=s00000007099011023000&mc=1",
+    trackingSrc: "https://www18.a8.net/0.gif?a8mat=4AUXWS+FT6F3M+1IRY+1TMM0H",
+    width: 300,
+    height: 250,
+    description: "ファイナンシャルアカデミーのお金の勉強講座。貯蓄・運用を学べる",
+  },
 ];
 
 // カテゴリー別にリンクを取得
