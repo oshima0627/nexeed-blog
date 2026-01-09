@@ -123,6 +123,28 @@ export const a8Links: A8Link[] = [
     height: 250,
     description: "女性向けの無料マネーセミナー。お金の増やし方や資産形成について学べる",
   },
+  {
+    id: "baby-planet-468x60",
+    name: "ベビープラネット",
+    category: ["子育て"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+50ED2Q+503M+5Z6WX",
+    imgSrc: "https://www29.a8.net/svt/bgt?aid=260108517303&wid=001&eno=01&mid=s00000023341001004000&mc=1",
+    trackingSrc: "https://www15.a8.net/0.gif?a8mat=4AV10L+50ED2Q+503M+5Z6WX",
+    width: 468,
+    height: 60,
+    description: "妊娠・出産・子育て中のママのための保険無料相談サービス",
+  },
+  {
+    id: "baby-planet-300x250",
+    name: "ベビープラネット",
+    category: ["子育て"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+50ED2Q+503M+5ZU29",
+    imgSrc: "https://www20.a8.net/svt/bgt?aid=260108517303&wid=001&eno=01&mid=s00000023341001007000&mc=1",
+    trackingSrc: "https://www17.a8.net/0.gif?a8mat=4AV10L+50ED2Q+503M+5ZU29",
+    width: 300,
+    height: 250,
+    description: "妊娠・出産・子育て中のママのための保険無料相談サービス",
+  },
 ];
 
 // カテゴリー別にリンクを取得
