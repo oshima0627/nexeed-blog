@@ -321,6 +321,28 @@ export const a8Links: A8Link[] = [
     height: 60,
     description: "スワイプするだけの簡単確定申告アプリ。知識不要で頑張らなくていい",
   },
+  {
+    id: "pbr-lending-300x250",
+    name: "PBRレンディング",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+B89CJ6+5JI8+5Z6WX",
+    imgSrc: "https://www28.a8.net/svt/bgt?aid=260108517679&wid=001&eno=01&mid=s00000025856001004000&mc=1",
+    trackingSrc: "https://www13.a8.net/0.gif?a8mat=4AV10L+B89CJ6+5JI8+5Z6WX",
+    width: 300,
+    height: 250,
+    description: "暗号資産レンディング。業界最高利率で仮想通貨を運用して利息を獲得",
+  },
+  {
+    id: "pbr-lending-120x60",
+    name: "PBRレンディング",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+B89CJ6+5JI8+5ZU29",
+    imgSrc: "https://www24.a8.net/svt/bgt?aid=260108517679&wid=001&eno=01&mid=s00000025856001007000&mc=1",
+    trackingSrc: "https://www19.a8.net/0.gif?a8mat=4AV10L+B89CJ6+5JI8+5ZU29",
+    width: 120,
+    height: 60,
+    description: "暗号資産レンディング。業界最高利率で仮想通貨を運用して利息を獲得",
+  },
 ];
 
 // カテゴリー別にリンクを取得
