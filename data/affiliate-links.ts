@@ -453,6 +453,28 @@ export const a8Links: A8Link[] = [
     height: 60,
     description: "債務整理の無料相談。借金問題を法的に解決、財務再建をサポート",
   },
+  {
+    id: "manematch-300x250",
+    name: "マネマッチ",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+5K1O1E+5U5A+5Z6WX",
+    imgSrc: "https://www24.a8.net/svt/bgt?aid=260108517336&wid=001&eno=01&mid=s00000027235001004000&mc=1",
+    trackingSrc: "https://www10.a8.net/0.gif?a8mat=4AV10L+5K1O1E+5U5A+5Z6WX",
+    width: 300,
+    height: 250,
+    description: "FP紹介サービス。貯蓄や保険についてオンラインで気軽に相談",
+  },
+  {
+    id: "manematch-100x60",
+    name: "マネマッチ",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+5K1O1E+5U5A+5YZ75",
+    imgSrc: "https://www24.a8.net/svt/bgt?aid=260108517336&wid=001&eno=01&mid=s00000027235001003000&mc=1",
+    trackingSrc: "https://www16.a8.net/0.gif?a8mat=4AV10L+5K1O1E+5U5A+5YZ75",
+    width: 100,
+    height: 60,
+    description: "FP紹介サービス。貯蓄や保険についてオンラインで気軽に相談",
+  },
 ];
 
 // カテゴリー別にリンクを取得
