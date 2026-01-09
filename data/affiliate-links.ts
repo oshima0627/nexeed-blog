@@ -145,6 +145,28 @@ export const a8Links: A8Link[] = [
     height: 250,
     description: "妊娠・出産・子育て中のママのための保険無料相談サービス",
   },
+  {
+    id: "saxo-bank-300x250",
+    name: "サクソバンク証券",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+AJUKQA+5PC8+BXB8X",
+    imgSrc: "https://www20.a8.net/svt/bgt?aid=260108517638&wid=001&eno=01&mid=s00000026612002003000&mc=1",
+    trackingSrc: "https://www11.a8.net/0.gif?a8mat=4AV10L+AJUKQA+5PC8+BXB8X",
+    width: 300,
+    height: 250,
+    description: "FX取引口座開設。豊富な通貨ペアと高度な取引ツールを提供",
+  },
+  {
+    id: "saxo-bank-100x60",
+    name: "サクソバンク証券",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+AJUKQA+5PC8+BXIYP",
+    imgSrc: "https://www20.a8.net/svt/bgt?aid=260108517638&wid=001&eno=01&mid=s00000026612002004000&mc=1",
+    trackingSrc: "https://www15.a8.net/0.gif?a8mat=4AV10L+AJUKQA+5PC8+BXIYP",
+    width: 100,
+    height: 60,
+    description: "FX取引口座開設。豊富な通貨ペアと高度な取引ツールを提供",
+  },
 ];
 
 // カテゴリー別にリンクを取得
