@@ -255,6 +255,28 @@ export const a8Links: A8Link[] = [
     height: 250,
     description: "FXスクール説明会。金融庁登録の投資助言・代理業による安心のFX教育",
   },
+  {
+    id: "insurance-square-300x250",
+    name: "保険スクエアbang！火災保険",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+BE7OKY+3RU+6S6Q1T",
+    imgSrc: "https://www23.a8.net/svt/bgt?aid=260108517689&wid=001&eno=01&mid=s00000000489041014000&mc=1",
+    trackingSrc: "https://www10.a8.net/0.gif?a8mat=4AV10L+BE7OKY+3RU+6S6Q1T",
+    width: 300,
+    height: 250,
+    description: "火災保険の無料診断サービス。最適な火災保険を比較検討",
+  },
+  {
+    id: "insurance-square-336x280",
+    name: "保険スクエアbang！火災保険",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+BE7OKY+3RU+6S7D75",
+    imgSrc: "https://www27.a8.net/svt/bgt?aid=260108517689&wid=001&eno=01&mid=s00000000489041017000&mc=1",
+    trackingSrc: "https://www15.a8.net/0.gif?a8mat=4AV10L+BE7OKY+3RU+6S7D75",
+    width: 336,
+    height: 280,
+    description: "火災保険の無料診断サービス。最適な火災保険を比較検討",
+  },
 ];
 
 // カテゴリー別にリンクを取得
