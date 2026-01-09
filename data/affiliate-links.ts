@@ -431,6 +431,28 @@ export const a8Links: A8Link[] = [
     height: 60,
     description: "iDeCo口座開設。運営管理手数料0円、老後資金の運用に最適",
   },
+  {
+    id: "sakura-law-300x250",
+    name: "さくら中央法律事務所",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+CHIAIA+5T5G+5YZ75",
+    imgSrc: "https://www20.a8.net/svt/bgt?aid=260108517755&wid=001&eno=01&mid=s00000027106001003000&mc=1",
+    trackingSrc: "https://www15.a8.net/0.gif?a8mat=4AV10L+CHIAIA+5T5G+5YZ75",
+    width: 300,
+    height: 250,
+    description: "債務整理の無料相談。借金問題を法的に解決、財務再建をサポート",
+  },
+  {
+    id: "sakura-law-120x60",
+    name: "さくら中央法律事務所",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+CHIAIA+5T5G+5ZEMP",
+    imgSrc: "https://www25.a8.net/svt/bgt?aid=260108517755&wid=001&eno=01&mid=s00000027106001005000&mc=1",
+    trackingSrc: "https://www14.a8.net/0.gif?a8mat=4AV10L+CHIAIA+5T5G+5ZEMP",
+    width: 120,
+    height: 60,
+    description: "債務整理の無料相談。借金問題を法的に解決、財務再建をサポート",
+  },
 ];
 
 // カテゴリー別にリンクを取得
