@@ -409,6 +409,28 @@ export const a8Links: A8Link[] = [
     height: 60,
     description: "FP無料保険相談。顧客満足度95%、ライフプランに最適な保険提案",
   },
+  {
+    id: "matsui-ideco-300x250",
+    name: "松井証券 iDeCo",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+ANF6CY+3XCC+BYT9D",
+    imgSrc: "https://www26.a8.net/svt/bgt?aid=260108517644&wid=001&eno=01&mid=s00000018318002010000&mc=1",
+    trackingSrc: "https://www10.a8.net/0.gif?a8mat=4AV10L+ANF6CY+3XCC+BYT9D",
+    width: 300,
+    height: 250,
+    description: "iDeCo口座開設。運営管理手数料0円、老後資金の運用に最適",
+  },
+  {
+    id: "matsui-ideco-468x60",
+    name: "松井証券 iDeCo",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+ANF6CY+3XCC+BY641",
+    imgSrc: "https://www25.a8.net/svt/bgt?aid=260108517644&wid=001&eno=01&mid=s00000018318002007000&mc=1",
+    trackingSrc: "https://www15.a8.net/0.gif?a8mat=4AV10L+ANF6CY+3XCC+BY641",
+    width: 468,
+    height: 60,
+    description: "iDeCo口座開設。運営管理手数料0円、老後資金の運用に最適",
+  },
 ];
 
 // カテゴリー別にリンクを取得
