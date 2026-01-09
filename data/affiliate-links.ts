@@ -233,6 +233,28 @@ export const a8Links: A8Link[] = [
     height: 250,
     description: "マンション投資の一括資料請求。複数の不動産投資会社を比較検討",
   },
+  {
+    id: "japan-fx-education-300x250-1",
+    name: "日本FX教育機構",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+BH6ULU+5J1A+5ZMCH",
+    imgSrc: "https://www24.a8.net/svt/bgt?aid=260108517694&wid=001&eno=01&mid=s00000025795001006000&mc=1",
+    trackingSrc: "https://www10.a8.net/0.gif?a8mat=4AV10L+BH6ULU+5J1A+5ZMCH",
+    width: 300,
+    height: 250,
+    description: "FXスクール説明会。金融庁登録の投資助言・代理業による安心のFX教育",
+  },
+  {
+    id: "japan-fx-education-300x250-2",
+    name: "日本FX教育機構",
+    category: ["投資"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+BH6ULU+5J1A+5ZEMP",
+    imgSrc: "https://www28.a8.net/svt/bgt?aid=260108517694&wid=001&eno=01&mid=s00000025795001005000&mc=1",
+    trackingSrc: "https://www10.a8.net/0.gif?a8mat=4AV10L+BH6ULU+5J1A+5ZEMP",
+    width: 300,
+    height: 250,
+    description: "FXスクール説明会。金融庁登録の投資助言・代理業による安心のFX教育",
+  },
 ];
 
 // カテゴリー別にリンクを取得
