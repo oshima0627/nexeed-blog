@@ -343,6 +343,28 @@ export const a8Links: A8Link[] = [
     height: 60,
     description: "暗号資産レンディング。業界最高利率で仮想通貨を運用して利息を獲得",
   },
+  {
+    id: "gmo-aozora-468x60",
+    name: "GMOあおぞらネット銀行",
+    category: ["副業"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+AXJJN6+44H0+NV9N5",
+    imgSrc: "https://www25.a8.net/svt/bgt?aid=260108517661&wid=001&eno=01&mid=s00000019242004009000&mc=1",
+    trackingSrc: "https://www10.a8.net/0.gif?a8mat=4AV10L+AXJJN6+44H0+NV9N5",
+    width: 468,
+    height: 60,
+    description: "法人口座開設。振込手数料が安く、ネットで完結。事業資金管理に最適",
+  },
+  {
+    id: "gmo-aozora-300x250",
+    name: "GMOあおぞらネット銀行",
+    category: ["副業"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+AXJJN6+44H0+NW4I9",
+    imgSrc: "https://www24.a8.net/svt/bgt?aid=260108517661&wid=001&eno=01&mid=s00000019242004013000&mc=1",
+    trackingSrc: "https://www17.a8.net/0.gif?a8mat=4AV10L+AXJJN6+44H0+NW4I9",
+    width: 300,
+    height: 250,
+    description: "法人口座開設。振込手数料が安く、ネットで完結。事業資金管理に最適",
+  },
 ];
 
 // カテゴリー別にリンクを取得
