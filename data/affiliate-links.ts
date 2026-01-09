@@ -299,6 +299,28 @@ export const a8Links: A8Link[] = [
     height: 60,
     description: "不動産担保ローンの無料審査申込。事業資金やリフォーム資金に",
   },
+  {
+    id: "taxsnap-300x250",
+    name: "タックスナップ",
+    category: ["副業"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+AYQEUQ+5T8S+5YZ75",
+    imgSrc: "https://www20.a8.net/svt/bgt?aid=260108517663&wid=001&eno=01&mid=s00000027118001003000&mc=1",
+    trackingSrc: "https://www12.a8.net/0.gif?a8mat=4AV10L+AYQEUQ+5T8S+5YZ75",
+    width: 300,
+    height: 250,
+    description: "スワイプするだけの簡単確定申告アプリ。知識不要で頑張らなくていい",
+  },
+  {
+    id: "taxsnap-120x60",
+    name: "タックスナップ",
+    category: ["副業"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV10L+AYQEUQ+5T8S+5Z6WX",
+    imgSrc: "https://www28.a8.net/svt/bgt?aid=260108517663&wid=001&eno=01&mid=s00000027118001004000&mc=1",
+    trackingSrc: "https://www15.a8.net/0.gif?a8mat=4AV10L+AYQEUQ+5T8S+5Z6WX",
+    width: 120,
+    height: 60,
+    description: "スワイプするだけの簡単確定申告アプリ。知識不要で頑張らなくていい",
+  },
 ];
 
 // カテゴリー別にリンクを取得
