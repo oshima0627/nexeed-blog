@@ -70,6 +70,9 @@ export async function getPostBySlug(slug: string): Promise<PostData> {
   // 見出しにIDを追加
   contentHtml = generateTocIds(contentHtml);
 
+  // 記事の中間地点にバナー挿入位置のマーカーを追加
+  contentHtml = insertBannerMarker(contentHtml);
+
   return {
     slug,
     title: data.title,
@@ -80,6 +83,32 @@ export async function getPostBySlug(slug: string): Promise<PostData> {
     updated: data.updated,
     content: contentHtml,
   };
+}
+
+// 記事の中間地点にバナー挿入用のマーカーを追加
+function insertBannerMarker(html: string): string {
+  // h2タグを検索
+  const h2Matches = html.match(/<h2[^>]*>.*?<\/h2>/g);
+
+  if (!h2Matches || h2Matches.length < 3) {
+    // h2が3つ未満の場合は挿入しない
+    return html;
+  }
+
+  // 中間地点のh2を特定（全体の50%程度の位置）
+  const middleIndex = Math.floor(h2Matches.length / 2);
+  const middleH2 = h2Matches[middleIndex];
+
+  // 中間地点のh2の直後にマーカーを挿入
+  const markerHtml = '<div class="affiliate-banner-middle-marker"></div>';
+  const firstOccurrence = html.indexOf(middleH2);
+
+  if (firstOccurrence !== -1) {
+    const insertPosition = firstOccurrence + middleH2.length;
+    html = html.slice(0, insertPosition) + markerHtml + html.slice(insertPosition);
+  }
+
+  return html;
 }
 
 export function getPostsByCategory(category: string): PostData[] {

@@ -95,34 +95,111 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           </div>
         )}
 
-        {/* 記事本文 */}
-        <div
-          className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
-          dangerouslySetInnerHTML={{ __html: post.content || "" }}
-        />
+        {/* 記事本文（バナーを中間に挿入） */}
+        {(() => {
+          const content = post.content || "";
+          const markerClass = 'class="affiliate-banner-middle-marker"';
+          const markerIndex = content.indexOf(markerClass);
 
-        {/* アフィリエイトバナー（PC/モバイル対応） */}
-        {bannerPair && (
-          <div className="my-12">
-            <A8Banner
-              desktop={{
-                href: bannerPair.desktop.href,
-                imgSrc: bannerPair.desktop.imgSrc,
-                trackingSrc: bannerPair.desktop.trackingSrc,
-                width: bannerPair.desktop.width,
-                height: bannerPair.desktop.height,
-              }}
-              mobile={{
-                href: bannerPair.mobile.href,
-                imgSrc: bannerPair.mobile.imgSrc,
-                trackingSrc: bannerPair.mobile.trackingSrc,
-                width: bannerPair.mobile.width,
-                height: bannerPair.mobile.height,
-              }}
-              alt={bannerPair.desktop.name}
-            />
-          </div>
-        )}
+          if (markerIndex === -1 || !bannerPair) {
+            // マーカーがない場合、または バナーがない場合は通常表示
+            return (
+              <>
+                <div
+                  className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
+                  dangerouslySetInnerHTML={{ __html: content }}
+                />
+                {bannerPair && (
+                  <div className="my-12">
+                    <A8Banner
+                      desktop={{
+                        href: bannerPair.desktop.href,
+                        imgSrc: bannerPair.desktop.imgSrc,
+                        trackingSrc: bannerPair.desktop.trackingSrc,
+                        width: bannerPair.desktop.width,
+                        height: bannerPair.desktop.height,
+                      }}
+                      mobile={{
+                        href: bannerPair.mobile.href,
+                        imgSrc: bannerPair.mobile.imgSrc,
+                        trackingSrc: bannerPair.mobile.trackingSrc,
+                        width: bannerPair.mobile.width,
+                        height: bannerPair.mobile.height,
+                      }}
+                      alt={bannerPair.desktop.name}
+                    />
+                  </div>
+                )}
+              </>
+            );
+          }
+
+          // マーカーの開始位置を見つける
+          const markerStart = content.lastIndexOf('<div', markerIndex);
+          const markerEnd = content.indexOf('</div>', markerIndex) + 6;
+
+          // 記事を前半と後半に分割
+          const contentBefore = content.slice(0, markerStart);
+          const contentAfter = content.slice(markerEnd);
+
+          return (
+            <>
+              {/* 記事前半 */}
+              <div
+                className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
+                dangerouslySetInnerHTML={{ __html: contentBefore }}
+              />
+
+              {/* 中間バナー */}
+              <div className="my-12">
+                <A8Banner
+                  desktop={{
+                    href: bannerPair.desktop.href,
+                    imgSrc: bannerPair.desktop.imgSrc,
+                    trackingSrc: bannerPair.desktop.trackingSrc,
+                    width: bannerPair.desktop.width,
+                    height: bannerPair.desktop.height,
+                  }}
+                  mobile={{
+                    href: bannerPair.mobile.href,
+                    imgSrc: bannerPair.mobile.imgSrc,
+                    trackingSrc: bannerPair.mobile.trackingSrc,
+                    width: bannerPair.mobile.width,
+                    height: bannerPair.mobile.height,
+                  }}
+                  alt={bannerPair.desktop.name}
+                />
+              </div>
+
+              {/* 記事後半 */}
+              <div
+                className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
+                dangerouslySetInnerHTML={{ __html: contentAfter }}
+              />
+
+              {/* 記事最後のバナー */}
+              <div className="my-12">
+                <A8Banner
+                  desktop={{
+                    href: bannerPair.desktop.href,
+                    imgSrc: bannerPair.desktop.imgSrc,
+                    trackingSrc: bannerPair.desktop.trackingSrc,
+                    width: bannerPair.desktop.width,
+                    height: bannerPair.desktop.height,
+                  }}
+                  mobile={{
+                    href: bannerPair.mobile.href,
+                    imgSrc: bannerPair.mobile.imgSrc,
+                    trackingSrc: bannerPair.mobile.trackingSrc,
+                    width: bannerPair.mobile.width,
+                    height: bannerPair.mobile.height,
+                  }}
+                  alt={bannerPair.desktop.name}
+                />
+              </div>
+            </>
+          );
+        })()}
 
         {/* SNSシェアボタン */}
         <div className="mt-12 pt-8 border-t border-gray-200">
