@@ -85,28 +85,43 @@ export async function getPostBySlug(slug: string): Promise<PostData> {
   };
 }
 
-// 記事の中間地点にバナー挿入用のマーカーを追加
+// 記事の複数箇所にバナー挿入用のマーカーを追加
 function insertBannerMarker(html: string): string {
   // h2タグを検索
   const h2Matches = html.match(/<h2[^>]*>.*?<\/h2>/g);
 
-  if (!h2Matches || h2Matches.length < 3) {
-    // h2が3つ未満の場合は挿入しない
+  if (!h2Matches || h2Matches.length < 4) {
+    // h2が4つ未満の場合は、中間地点のみに挿入
+    if (h2Matches && h2Matches.length >= 3) {
+      const middleIndex = Math.floor(h2Matches.length / 2);
+      const middleH2 = h2Matches[middleIndex];
+      const markerHtml = '<div class="affiliate-banner-marker" data-position="middle"></div>';
+      const position = html.indexOf(middleH2);
+      if (position !== -1) {
+        html = html.slice(0, position) + markerHtml + html.slice(position);
+      }
+    }
     return html;
   }
 
-  // 中間地点のh2を特定（全体の50%程度の位置）
-  const middleIndex = Math.floor(h2Matches.length / 2);
-  const middleH2 = h2Matches[middleIndex];
+  // h2が4つ以上ある場合は、25%、50%、75%の位置に挿入
+  const positions = [
+    { ratio: 0.25, label: "quarter" },
+    { ratio: 0.5, label: "middle" },
+    { ratio: 0.75, label: "three-quarter" },
+  ];
 
-  // 中間地点のh2の直前にマーカーを挿入
-  const markerHtml = '<div class="affiliate-banner-middle-marker"></div>';
-  const firstOccurrence = html.indexOf(middleH2);
+  // 後ろから挿入していく（インデックスのずれを防ぐため）
+  positions.reverse().forEach(({ ratio, label }) => {
+    const index = Math.floor(h2Matches.length * ratio);
+    const targetH2 = h2Matches[index];
+    const markerHtml = `<div class="affiliate-banner-marker" data-position="${label}"></div>`;
+    const position = html.indexOf(targetH2);
 
-  if (firstOccurrence !== -1) {
-    // h2の直前に挿入（見出しの前に表示）
-    html = html.slice(0, firstOccurrence) + markerHtml + html.slice(firstOccurrence);
-  }
+    if (position !== -1) {
+      html = html.slice(0, position) + markerHtml + html.slice(position);
+    }
+  });
 
   return html;
 }

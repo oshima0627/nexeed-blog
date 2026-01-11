@@ -49,8 +49,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   // 目次を抽出
   const tocItems = extractTocFromHtml(post.content || "");
 
-  // カテゴリーに応じたアフィリエイトバナー（PC/モバイル対応）を取得
-  const bannerPair = getResponsiveBanners(post.category);
+  // カテゴリーとslugに応じたアフィリエイトバナー（PC/モバイル対応）を取得
+  // slugベースで決定的にバナーを選択するため、同じ記事では常に同じバナーが表示される
+  const bannerPair = getResponsiveBanners(post.category, slug);
 
   return (
     <>
@@ -95,63 +96,83 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           </div>
         )}
 
-        {/* 記事本文（バナーを中間に挿入） */}
+        {/* 記事本文（バナーを複数箇所に挿入） */}
         {(() => {
           const content = post.content || "";
-          const markerClass = 'class="affiliate-banner-middle-marker"';
-          const markerIndex = content.indexOf(markerClass);
 
-          if (markerIndex === -1 || !bannerPair) {
-            // マーカーがない場合、または バナーがない場合は通常表示
+          if (!bannerPair) {
+            // バナーがない場合は通常表示
             return (
               <>
                 <div
                   className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
                   dangerouslySetInnerHTML={{ __html: content }}
                 />
-                {bannerPair && (
-                  <div className="my-12">
-                    <A8Banner
-                      desktop={{
-                        href: bannerPair.desktop.href,
-                        imgSrc: bannerPair.desktop.imgSrc,
-                        trackingSrc: bannerPair.desktop.trackingSrc,
-                        width: bannerPair.desktop.width,
-                        height: bannerPair.desktop.height,
-                      }}
-                      mobile={{
-                        href: bannerPair.mobile.href,
-                        imgSrc: bannerPair.mobile.imgSrc,
-                        trackingSrc: bannerPair.mobile.trackingSrc,
-                        width: bannerPair.mobile.width,
-                        height: bannerPair.mobile.height,
-                      }}
-                      alt={bannerPair.desktop.name}
-                    />
-                  </div>
-                )}
               </>
             );
           }
 
-          // マーカーの開始位置を見つける
-          const markerStart = content.lastIndexOf('<div', markerIndex);
-          const markerEnd = content.indexOf('</div>', markerIndex) + 6;
+          // すべてのマーカーを検索
+          const markerRegex = /<div class="affiliate-banner-marker"[^>]*><\/div>/g;
+          const markers: Array<{ index: number; html: string }> = [];
+          let match;
 
-          // 記事を前半と後半に分割
-          const contentBefore = content.slice(0, markerStart);
-          const contentAfter = content.slice(markerEnd);
+          while ((match = markerRegex.exec(content)) !== null) {
+            markers.push({
+              index: match.index,
+              html: match[0],
+            });
+          }
 
-          return (
-            <>
-              {/* 記事前半 */}
+          if (markers.length === 0) {
+            // マーカーがない場合は、記事最後のみにバナーを表示
+            return (
+              <>
+                <div
+                  className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
+                  dangerouslySetInnerHTML={{ __html: content }}
+                />
+                <div className="my-12">
+                  <A8Banner
+                    desktop={{
+                      href: bannerPair.desktop.href,
+                      imgSrc: bannerPair.desktop.imgSrc,
+                      trackingSrc: bannerPair.desktop.trackingSrc,
+                      width: bannerPair.desktop.width,
+                      height: bannerPair.desktop.height,
+                    }}
+                    mobile={{
+                      href: bannerPair.mobile.href,
+                      imgSrc: bannerPair.mobile.imgSrc,
+                      trackingSrc: bannerPair.mobile.trackingSrc,
+                      width: bannerPair.mobile.width,
+                      height: bannerPair.mobile.height,
+                    }}
+                    alt={bannerPair.desktop.name}
+                  />
+                </div>
+              </>
+            );
+          }
+
+          // コンテンツを分割してバナーを挿入
+          const segments: React.ReactNode[] = [];
+          let lastIndex = 0;
+
+          markers.forEach((marker, i) => {
+            // マーカーまでのコンテンツ
+            const segmentContent = content.slice(lastIndex, marker.index);
+            segments.push(
               <div
+                key={`content-${i}`}
                 className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
-                dangerouslySetInnerHTML={{ __html: contentBefore }}
+                dangerouslySetInnerHTML={{ __html: segmentContent }}
               />
+            );
 
-              {/* 中間バナー */}
-              <div className="my-12">
+            // バナーを挿入
+            segments.push(
+              <div key={`banner-${i}`} className="my-12">
                 <A8Banner
                   desktop={{
                     href: bannerPair.desktop.href,
@@ -170,35 +191,45 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   alt={bannerPair.desktop.name}
                 />
               </div>
+            );
 
-              {/* 記事後半 */}
-              <div
-                className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
-                dangerouslySetInnerHTML={{ __html: contentAfter }}
-              />
+            lastIndex = marker.index + marker.html.length;
+          });
 
-              {/* 記事最後のバナー */}
-              <div className="my-12">
-                <A8Banner
-                  desktop={{
-                    href: bannerPair.desktop.href,
-                    imgSrc: bannerPair.desktop.imgSrc,
-                    trackingSrc: bannerPair.desktop.trackingSrc,
-                    width: bannerPair.desktop.width,
-                    height: bannerPair.desktop.height,
-                  }}
-                  mobile={{
-                    href: bannerPair.mobile.href,
-                    imgSrc: bannerPair.mobile.imgSrc,
-                    trackingSrc: bannerPair.mobile.trackingSrc,
-                    width: bannerPair.mobile.width,
-                    height: bannerPair.mobile.height,
-                  }}
-                  alt={bannerPair.desktop.name}
-                />
-              </div>
-            </>
+          // 最後のセグメント
+          const lastSegment = content.slice(lastIndex);
+          segments.push(
+            <div
+              key={`content-last`}
+              className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
+              dangerouslySetInnerHTML={{ __html: lastSegment }}
+            />
           );
+
+          // 記事最後のバナー
+          segments.push(
+            <div key="banner-last" className="my-12">
+              <A8Banner
+                desktop={{
+                  href: bannerPair.desktop.href,
+                  imgSrc: bannerPair.desktop.imgSrc,
+                  trackingSrc: bannerPair.desktop.trackingSrc,
+                  width: bannerPair.desktop.width,
+                  height: bannerPair.desktop.height,
+                }}
+                mobile={{
+                  href: bannerPair.mobile.href,
+                  imgSrc: bannerPair.mobile.imgSrc,
+                  trackingSrc: bannerPair.mobile.trackingSrc,
+                  width: bannerPair.mobile.width,
+                  height: bannerPair.mobile.height,
+                }}
+                alt={bannerPair.desktop.name}
+              />
+            </div>
+          );
+
+          return <>{segments}</>;
         })()}
 
         {/* SNSシェアボタン */}

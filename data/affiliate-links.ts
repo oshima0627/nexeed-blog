@@ -527,7 +527,20 @@ export interface BannerPair {
   mobile: A8Link;
 }
 
-export function getResponsiveBanners(category: string): BannerPair | undefined {
+// 文字列から簡易的なハッシュ値を生成
+function simpleHash(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  return Math.abs(hash);
+}
+
+// カテゴリとslugに応じてPC/モバイル用のバナーペアを取得
+// slugベースで決定的にバナーを選択するため、同じ記事では常に同じバナーが表示される
+export function getResponsiveBanners(category: string, slug?: string): BannerPair | undefined {
   const links = getLinksByCategory(category);
   if (links.length === 0) return undefined;
 
@@ -540,34 +553,48 @@ export function getResponsiveBanners(category: string): BannerPair | undefined {
     serviceGroups.get(link.name)!.push(link);
   });
 
-  // 各サービスグループから、PC用とモバイル用のバナーを探す
+  // PC/モバイル両方のバナーを持つサービスをリストアップ
+  const validServices: Array<{ desktop: A8Link; mobile: A8Link }> = [];
+
   for (const [_serviceName, banners] of serviceGroups) {
     const desktopBanner = banners.find((b) => isDesktopSize(b.width, b.height));
     const mobileBanner = banners.find((b) => isMobileSize(b.width, b.height));
 
     if (desktopBanner && mobileBanner) {
-      return {
+      validServices.push({
         desktop: desktopBanner,
         mobile: mobileBanner,
-      };
+      });
     }
   }
 
-  // 適切なペアが見つからない場合は、最初の2つを使用
-  if (links.length >= 2) {
-    return {
-      desktop: links[0],
-      mobile: links[1],
-    };
+  if (validServices.length === 0) {
+    // 適切なペアが見つからない場合は、最初の2つを使用
+    if (links.length >= 2) {
+      return {
+        desktop: links[0],
+        mobile: links[1],
+      };
+    }
+
+    // 1つしかない場合は、同じバナーを両方に使用
+    if (links.length === 1) {
+      return {
+        desktop: links[0],
+        mobile: links[0],
+      };
+    }
+
+    return undefined;
   }
 
-  // 1つしかない場合は、同じバナーを両方に使用
-  if (links.length === 1) {
-    return {
-      desktop: links[0],
-      mobile: links[0],
-    };
+  // slugが提供されている場合は、slugベースでサービスを選択
+  // これにより、同じ記事では常に同じバナーが表示される
+  if (slug) {
+    const index = simpleHash(slug) % validServices.length;
+    return validServices[index];
   }
 
-  return undefined;
+  // slugがない場合は最初のサービスを返す
+  return validServices[0];
 }
