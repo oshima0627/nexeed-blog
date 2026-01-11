@@ -99,13 +99,13 @@ function insertBannerMarker(html: string): string {
   const middleIndex = Math.floor(h2Matches.length / 2);
   const middleH2 = h2Matches[middleIndex];
 
-  // 中間地点のh2の直後にマーカーを挿入
+  // 中間地点のh2の直前にマーカーを挿入
   const markerHtml = '<div class="affiliate-banner-middle-marker"></div>';
   const firstOccurrence = html.indexOf(middleH2);
 
   if (firstOccurrence !== -1) {
-    const insertPosition = firstOccurrence + middleH2.length;
-    html = html.slice(0, insertPosition) + markerHtml + html.slice(insertPosition);
+    // h2の直前に挿入（見出しの前に表示）
+    html = html.slice(0, firstOccurrence) + markerHtml + html.slice(firstOccurrence);
   }
 
   return html;
