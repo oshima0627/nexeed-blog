@@ -493,3 +493,81 @@ export function getRandomLink(category?: string): A8Link | undefined {
   if (links.length === 0) return undefined;
   return links[Math.floor(Math.random() * links.length)];
 }
+
+// PC用バナーとして適切なサイズかチェック
+function isDesktopSize(width: number, height: number): boolean {
+  // PC向けの大きめのバナーサイズ
+  return (
+    (width === 468 && height === 60) ||
+    (width === 336 && height === 280) ||
+    (width === 728 && height === 90) ||
+    (width === 300 && height === 300) ||
+    (width === 468 && height === 120) ||
+    (width === 234 && height === 60) ||
+    (width === 200 && height === 200)
+  );
+}
+
+// モバイル用バナーとして適切なサイズかチェック
+function isMobileSize(width: number, height: number): boolean {
+  // モバイル向けのコンパクトなバナーサイズ
+  return (
+    (width === 300 && height === 250) ||
+    (width === 320 && height === 250) ||
+    (width === 320 && height === 50) ||
+    (width === 120 && height === 60) ||
+    (width === 100 && height === 60) ||
+    (width === 100 && height === 100)
+  );
+}
+
+// カテゴリに応じてPC/モバイル用のバナーペアを取得
+export interface BannerPair {
+  desktop: A8Link;
+  mobile: A8Link;
+}
+
+export function getResponsiveBanners(category: string): BannerPair | undefined {
+  const links = getLinksByCategory(category);
+  if (links.length === 0) return undefined;
+
+  // 同じサービス（同じname）のバナーをグループ化
+  const serviceGroups = new Map<string, A8Link[]>();
+  links.forEach((link) => {
+    if (!serviceGroups.has(link.name)) {
+      serviceGroups.set(link.name, []);
+    }
+    serviceGroups.get(link.name)!.push(link);
+  });
+
+  // 各サービスグループから、PC用とモバイル用のバナーを探す
+  for (const [_serviceName, banners] of serviceGroups) {
+    const desktopBanner = banners.find((b) => isDesktopSize(b.width, b.height));
+    const mobileBanner = banners.find((b) => isMobileSize(b.width, b.height));
+
+    if (desktopBanner && mobileBanner) {
+      return {
+        desktop: desktopBanner,
+        mobile: mobileBanner,
+      };
+    }
+  }
+
+  // 適切なペアが見つからない場合は、最初の2つを使用
+  if (links.length >= 2) {
+    return {
+      desktop: links[0],
+      mobile: links[1],
+    };
+  }
+
+  // 1つしかない場合は、同じバナーを両方に使用
+  if (links.length === 1) {
+    return {
+      desktop: links[0],
+      mobile: links[0],
+    };
+  }
+
+  return undefined;
+}

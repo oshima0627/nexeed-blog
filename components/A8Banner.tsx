@@ -1,19 +1,23 @@
-interface A8BannerProps {
+interface BannerData {
   href: string;
   imgSrc: string;
   trackingSrc: string;
   width: number;
   height: number;
+}
+
+interface A8BannerProps {
+  // PC用バナー（768px以上）
+  desktop: BannerData;
+  // モバイル用バナー（768px未満）
+  mobile: BannerData;
   alt?: string;
   title?: string;
 }
 
 export default function A8Banner({
-  href,
-  imgSrc,
-  trackingSrc,
-  width,
-  height,
+  desktop,
+  mobile,
   alt = "",
   title,
 }: A8BannerProps) {
@@ -29,30 +33,57 @@ export default function A8Banner({
         <h4 className="text-sm font-medium text-gray-700 mb-3">{title}</h4>
       )}
 
-      {/* バナー */}
+      {/* PC用バナー（md:以上で表示） */}
       <a
-        href={href}
+        href={desktop.href}
         target="_blank"
         rel="noopener noreferrer sponsored"
-        className="block w-fit hover:opacity-80 transition-opacity"
+        className="hidden md:block w-fit hover:opacity-80 transition-opacity"
       >
         <img
-          src={imgSrc}
+          src={desktop.imgSrc}
           alt={alt}
-          width={width}
-          height={height}
+          width={desktop.width}
+          height={desktop.height}
           className="border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow"
           loading="lazy"
         />
       </a>
 
-      {/* トラッキングピクセル */}
+      {/* モバイル用バナー（md:未満で表示） */}
+      <a
+        href={mobile.href}
+        target="_blank"
+        rel="noopener noreferrer sponsored"
+        className="block md:hidden w-fit hover:opacity-80 transition-opacity"
+      >
+        <img
+          src={mobile.imgSrc}
+          alt={alt}
+          width={mobile.width}
+          height={mobile.height}
+          className="border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+          loading="lazy"
+        />
+      </a>
+
+      {/* トラッキングピクセル（PC） */}
       <img
-        src={trackingSrc}
+        src={desktop.trackingSrc}
         alt=""
         width={1}
         height={1}
-        className="hidden"
+        className="hidden md:inline"
+        aria-hidden="true"
+      />
+
+      {/* トラッキングピクセル（モバイル） */}
+      <img
+        src={mobile.trackingSrc}
+        alt=""
+        width={1}
+        height={1}
+        className="inline md:hidden"
         aria-hidden="true"
       />
     </div>

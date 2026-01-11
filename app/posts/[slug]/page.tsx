@@ -7,7 +7,7 @@ import { extractTocFromHtml } from "@/lib/toc";
 import { BlogPostJsonLd } from "@/components/JsonLd";
 import Link from "next/link";
 import A8Banner from "@/components/A8Banner";
-import { getLinksByCategory } from "@/data/affiliate-links";
+import { getResponsiveBanners } from "@/data/affiliate-links";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -49,9 +49,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   // 目次を抽出
   const tocItems = extractTocFromHtml(post.content || "");
 
-  // カテゴリーに応じたアフィリエイトリンクを取得
-  const affiliateLinks = getLinksByCategory(post.category);
-  const affiliateLink = affiliateLinks.length > 0 ? affiliateLinks[0] : null;
+  // カテゴリーに応じたアフィリエイトバナー（PC/モバイル対応）を取得
+  const bannerPair = getResponsiveBanners(post.category);
 
   return (
     <>
@@ -102,16 +101,25 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           dangerouslySetInnerHTML={{ __html: post.content || "" }}
         />
 
-        {/* アフィリエイトバナー */}
-        {affiliateLink && (
+        {/* アフィリエイトバナー（PC/モバイル対応） */}
+        {bannerPair && (
           <div className="my-12">
             <A8Banner
-              href={affiliateLink.href}
-              imgSrc={affiliateLink.imgSrc}
-              trackingSrc={affiliateLink.trackingSrc}
-              width={affiliateLink.width}
-              height={affiliateLink.height}
-              alt={affiliateLink.name}
+              desktop={{
+                href: bannerPair.desktop.href,
+                imgSrc: bannerPair.desktop.imgSrc,
+                trackingSrc: bannerPair.desktop.trackingSrc,
+                width: bannerPair.desktop.width,
+                height: bannerPair.desktop.height,
+              }}
+              mobile={{
+                href: bannerPair.mobile.href,
+                imgSrc: bannerPair.mobile.imgSrc,
+                trackingSrc: bannerPair.mobile.trackingSrc,
+                width: bannerPair.mobile.width,
+                height: bannerPair.mobile.height,
+              }}
+              alt={bannerPair.desktop.name}
             />
           </div>
         )}
