@@ -546,15 +546,15 @@ function isDesktopSize(width: number, height: number): boolean {
 
 // モバイル用バナーとして適切なサイズかチェック
 function isMobileSize(width: number, height: number): boolean {
-  // モバイル向けのコンパクトなバナーサイズ
+  // モバイル向けの視認性の高いバナーサイズ（小さすぎるバナーは除外）
   return (
     (width === 300 && height === 250) ||
     (width === 320 && height === 250) ||
-    (width === 320 && height === 50) ||
-    (width === 120 && height === 60) ||
-    (width === 100 && height === 60) ||
-    (width === 100 && height === 100) ||
-    (width === 88 && height === 31)
+    (width === 250 && height === 250) ||
+    (width === 300 && height === 300) ||
+    (width === 320 && height === 100) ||
+    (width === 240 && height === 120) ||
+    (width === 200 && height === 200)
   );
 }
 
