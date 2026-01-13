@@ -1,6 +1,18 @@
-// A8.netアフィリエイトリンク管理ファイル
+// アフィリエイトリンク管理ファイル（A8.net & もしもアフィリエイト）
 
 export interface A8Link {
+  id: string;
+  name: string;
+  category: string[];
+  href: string;
+  imgSrc: string;
+  trackingSrc: string;
+  width: number;
+  height: number;
+  description?: string;
+}
+
+export interface MoshimoLink {
   id: string;
   name: string;
   category: string[];
@@ -615,6 +627,602 @@ export function getResponsiveBanners(category: string, slug?: string): BannerPai
 
   // slugが提供されている場合は、slugベースでサービスを選択
   // これにより、同じ記事では常に同じバナーが表示される
+  if (slug) {
+    const index = simpleHash(slug) % validServices.length;
+    return validServices[index];
+  }
+
+  // slugがない場合は最初のサービスを返す
+  return validServices[0];
+}
+
+// もしもアフィリエイトのリンク
+export const moshimoLinks: MoshimoLink[] = [
+  // キッズロボ - プログラミング講座（子育て）
+  {
+    id: "kidsrobo-300x250",
+    name: "キッズロボ",
+    category: ["子育て"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336422&p_id=7271&pc_id=20851&pl_id=91623",
+    imgSrc: "https://image.moshimo.com/af-img/7062/000000091623.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336422&p_id=7271&pc_id=20851&pl_id=91623",
+    width: 300,
+    height: 250,
+    description: "教育訓練プログラミング講座の子育て世代応援体験学習と講座申込",
+  },
+  {
+    id: "kidsrobo-250x250",
+    name: "キッズロボ",
+    category: ["子育て"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336422&p_id=7271&pc_id=20851&pl_id=91624",
+    imgSrc: "https://image.moshimo.com/af-img/7062/000000091624.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336422&p_id=7271&pc_id=20851&pl_id=91624",
+    width: 250,
+    height: 250,
+    description: "教育訓練プログラミング講座の子育て世代応援体験学習と講座申込",
+  },
+  {
+    id: "kidsrobo-300x300",
+    name: "キッズロボ",
+    category: ["子育て"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336422&p_id=7271&pc_id=20851&pl_id=91625",
+    imgSrc: "https://image.moshimo.com/af-img/7062/000000091625.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336422&p_id=7271&pc_id=20851&pl_id=91625",
+    width: 300,
+    height: 300,
+    description: "教育訓練プログラミング講座の子育て世代応援体験学習と講座申込",
+  },
+  // techmeets - プログラミングスクール（ITエンジニア）
+  {
+    id: "techmeets-120x60",
+    name: "techmeets",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91440",
+    imgSrc: "https://image.moshimo.com/af-img/6961/000000091440.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91440",
+    width: 120,
+    height: 60,
+    description: "プログラミングスクールの無料カウンセリング",
+  },
+  {
+    id: "techmeets-250x250",
+    name: "techmeets",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91441",
+    imgSrc: "https://image.moshimo.com/af-img/6961/000000091441.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91441",
+    width: 250,
+    height: 250,
+    description: "プログラミングスクールの無料カウンセリング",
+  },
+  {
+    id: "techmeets-300x250",
+    name: "techmeets",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91442",
+    imgSrc: "https://image.moshimo.com/af-img/6961/000000091442.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91442",
+    width: 300,
+    height: 250,
+    description: "プログラミングスクールの無料カウンセリング",
+  },
+  {
+    id: "techmeets-300x300",
+    name: "techmeets",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91443",
+    imgSrc: "https://image.moshimo.com/af-img/6961/000000091443.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91443",
+    width: 300,
+    height: 300,
+    description: "プログラミングスクールの無料カウンセリング",
+  },
+  {
+    id: "techmeets-320x100",
+    name: "techmeets",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91444",
+    imgSrc: "https://image.moshimo.com/af-img/6961/000000091444.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91444",
+    width: 320,
+    height: 100,
+    description: "プログラミングスクールの無料カウンセリング",
+  },
+  {
+    id: "techmeets-336x280",
+    name: "techmeets",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91445",
+    imgSrc: "https://image.moshimo.com/af-img/6961/000000091445.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91445",
+    width: 336,
+    height: 280,
+    description: "プログラミングスクールの無料カウンセリング",
+  },
+  {
+    id: "techmeets-728x90",
+    name: "techmeets",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91446",
+    imgSrc: "https://image.moshimo.com/af-img/6961/000000091446.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91446",
+    width: 728,
+    height: 90,
+    description: "プログラミングスクールの無料カウンセリング",
+  },
+  {
+    id: "techmeets-468x60",
+    name: "techmeets",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91447",
+    imgSrc: "https://image.moshimo.com/af-img/6961/000000091447.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91447",
+    width: 468,
+    height: 60,
+    description: "プログラミングスクールの無料カウンセリング",
+  },
+  {
+    id: "techmeets-120x600",
+    name: "techmeets",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91448",
+    imgSrc: "https://image.moshimo.com/af-img/6961/000000091448.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91448",
+    width: 120,
+    height: 600,
+    description: "プログラミングスクールの無料カウンセリング",
+  },
+  {
+    id: "techmeets-300x600",
+    name: "techmeets",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91449",
+    imgSrc: "https://image.moshimo.com/af-img/6961/000000091449.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91449",
+    width: 300,
+    height: 600,
+    description: "プログラミングスクールの無料カウンセリング",
+  },
+  // リバイブ - 就労支援B型事業所（副業・ITエンジニア）
+  {
+    id: "revive-336x280",
+    name: "リバイブ",
+    category: ["副業", "ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88361",
+    imgSrc: "https://image.moshimo.com/af-img/6587/000000088361.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88361",
+    width: 336,
+    height: 280,
+    description: "動画編集・eスポーツが学べる就労支援B型事業所の見学",
+  },
+  {
+    id: "revive-120x60-1",
+    name: "リバイブ",
+    category: ["副業", "ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88359",
+    imgSrc: "https://image.moshimo.com/af-img/6587/000000088359.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88359",
+    width: 120,
+    height: 60,
+    description: "動画編集・eスポーツが学べる就労支援B型事業所の見学",
+  },
+  {
+    id: "revive-120x60-2",
+    name: "リバイブ",
+    category: ["副業", "ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88360",
+    imgSrc: "https://image.moshimo.com/af-img/6587/000000088360.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88360",
+    width: 120,
+    height: 60,
+    description: "動画編集・eスポーツが学べる就労支援B型事業所の見学",
+  },
+  {
+    id: "revive-300x300",
+    name: "リバイブ",
+    category: ["副業", "ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88326",
+    imgSrc: "https://image.moshimo.com/af-img/6587/000000088326.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88326",
+    width: 300,
+    height: 300,
+    description: "動画編集・eスポーツが学べる就労支援B型事業所の見学",
+  },
+  {
+    id: "revive-300x250",
+    name: "リバイブ",
+    category: ["副業", "ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88327",
+    imgSrc: "https://image.moshimo.com/af-img/6587/000000088327.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88327",
+    width: 300,
+    height: 250,
+    description: "動画編集・eスポーツが学べる就労支援B型事業所の見学",
+  },
+  {
+    id: "revive-250x250",
+    name: "リバイブ",
+    category: ["副業", "ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88328",
+    imgSrc: "https://image.moshimo.com/af-img/6587/000000088328.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88328",
+    width: 250,
+    height: 250,
+    description: "動画編集・eスポーツが学べる就労支援B型事業所の見学",
+  },
+  {
+    id: "revive-728x90-1",
+    name: "リバイブ",
+    category: ["副業", "ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88329",
+    imgSrc: "https://image.moshimo.com/af-img/6587/000000088329.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88329",
+    width: 728,
+    height: 90,
+    description: "動画編集・eスポーツが学べる就労支援B型事業所の見学",
+  },
+  {
+    id: "revive-728x90-2",
+    name: "リバイブ",
+    category: ["副業", "ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88330",
+    imgSrc: "https://image.moshimo.com/af-img/6587/000000088330.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88330",
+    width: 728,
+    height: 90,
+    description: "動画編集・eスポーツが学べる就労支援B型事業所の見学",
+  },
+  {
+    id: "revive-320x100",
+    name: "リバイブ",
+    category: ["副業", "ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88331",
+    imgSrc: "https://image.moshimo.com/af-img/6587/000000088331.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336504&p_id=6841&pc_id=19582&pl_id=88331",
+    width: 320,
+    height: 100,
+    description: "動画編集・eスポーツが学べる就労支援B型事業所の見学",
+  },
+  // デジタネ - プログラミングオンラインスクール（子育て）
+  {
+    id: "digitane-120x60",
+    name: "デジタネ",
+    category: ["子育て"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336700&p_id=4975&pc_id=13311&pl_id=65548",
+    imgSrc: "https://image.moshimo.com/af-img/3980/000000065548.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336700&p_id=4975&pc_id=13311&pl_id=65548",
+    width: 120,
+    height: 60,
+    description: "小中学生向けプログラミングオンラインスクール",
+  },
+  {
+    id: "digitane-468x60",
+    name: "デジタネ",
+    category: ["子育て"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336700&p_id=4975&pc_id=13311&pl_id=65549",
+    imgSrc: "https://image.moshimo.com/af-img/3980/000000065549.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336700&p_id=4975&pc_id=13311&pl_id=65549",
+    width: 468,
+    height: 60,
+    description: "小中学生向けプログラミングオンラインスクール",
+  },
+  {
+    id: "digitane-234x60",
+    name: "デジタネ",
+    category: ["子育て"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336700&p_id=4975&pc_id=13311&pl_id=65550",
+    imgSrc: "https://image.moshimo.com/af-img/3980/000000065550.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336700&p_id=4975&pc_id=13311&pl_id=65550",
+    width: 234,
+    height: 60,
+    description: "小中学生向けプログラミングオンラインスクール",
+  },
+  {
+    id: "digitane-100x60",
+    name: "デジタネ",
+    category: ["子育て"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336700&p_id=4975&pc_id=13311&pl_id=65551",
+    imgSrc: "https://image.moshimo.com/af-img/3980/000000065551.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336700&p_id=4975&pc_id=13311&pl_id=65551",
+    width: 100,
+    height: 60,
+    description: "小中学生向けプログラミングオンラインスクール",
+  },
+  // Rakurin - AIライティングツール（ITエンジニア・副業）
+  {
+    id: "rakurin-120x60",
+    name: "Rakurin（ラクリン）",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336244&p_id=5432&pc_id=14858&pl_id=70496",
+    imgSrc: "https://image.moshimo.com/af-img/2131/000000070496.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336244&p_id=5432&pc_id=14858&pl_id=70496",
+    width: 120,
+    height: 60,
+    description: "AIライティングツールの会員登録",
+  },
+  {
+    id: "rakurin-300x250",
+    name: "Rakurin（ラクリン）",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336244&p_id=5432&pc_id=14858&pl_id=70498",
+    imgSrc: "https://image.moshimo.com/af-img/2131/000000070498.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336244&p_id=5432&pc_id=14858&pl_id=70498",
+    width: 300,
+    height: 250,
+    description: "AIライティングツールの会員登録",
+  },
+  {
+    id: "rakurin-336x280",
+    name: "Rakurin（ラクリン）",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336244&p_id=5432&pc_id=14858&pl_id=70497",
+    imgSrc: "https://image.moshimo.com/af-img/2131/000000070497.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336244&p_id=5432&pc_id=14858&pl_id=70497",
+    width: 336,
+    height: 280,
+    description: "AIライティングツールの会員登録",
+  },
+  // Fullme - オンラインデザインスクール（ITエンジニア・副業）
+  {
+    id: "fullme-300x250",
+    name: "Fullme",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69632",
+    imgSrc: "https://image.moshimo.com/af-img/4976/000000069632.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69632",
+    width: 300,
+    height: 250,
+    description: "Webデザインセットコースの購入",
+  },
+  {
+    id: "fullme-250x250",
+    name: "Fullme",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69631",
+    imgSrc: "https://image.moshimo.com/af-img/4976/000000069631.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69631",
+    width: 250,
+    height: 250,
+    description: "Webデザインセットコースの購入",
+  },
+  {
+    id: "fullme-300x300",
+    name: "Fullme",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69633",
+    imgSrc: "https://image.moshimo.com/af-img/4976/000000069633.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69633",
+    width: 300,
+    height: 300,
+    description: "Webデザインセットコースの購入",
+  },
+  {
+    id: "fullme-468x60",
+    name: "Fullme",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69629",
+    imgSrc: "https://image.moshimo.com/af-img/4976/000000069629.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69629",
+    width: 468,
+    height: 60,
+    description: "Webデザインセットコースの購入",
+  },
+  {
+    id: "fullme-728x90",
+    name: "Fullme",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69636",
+    imgSrc: "https://image.moshimo.com/af-img/4976/000000069636.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69636",
+    width: 728,
+    height: 90,
+    description: "Webデザインセットコースの購入",
+  },
+  {
+    id: "fullme-120x60",
+    name: "Fullme",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69628",
+    imgSrc: "https://image.moshimo.com/af-img/4976/000000069628.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69628",
+    width: 120,
+    height: 60,
+    description: "Webデザインセットコースの購入",
+  },
+  {
+    id: "fullme-234x60",
+    name: "Fullme",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69630",
+    imgSrc: "https://image.moshimo.com/af-img/4976/000000069630.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69630",
+    width: 234,
+    height: 60,
+    description: "Webデザインセットコースの購入",
+  },
+  {
+    id: "fullme-320x100",
+    name: "Fullme",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69634",
+    imgSrc: "https://image.moshimo.com/af-img/4976/000000069634.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69634",
+    width: 320,
+    height: 100,
+    description: "Webデザインセットコースの購入",
+  },
+  {
+    id: "fullme-336x280",
+    name: "Fullme",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69635",
+    imgSrc: "https://image.moshimo.com/af-img/4976/000000069635.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69635",
+    width: 336,
+    height: 280,
+    description: "Webデザインセットコースの購入",
+  },
+  {
+    id: "fullme-125x125",
+    name: "Fullme",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69637",
+    imgSrc: "https://image.moshimo.com/af-img/4976/000000069637.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336786&p_id=5314&pc_id=14492&pl_id=69637",
+    width: 125,
+    height: 125,
+    description: "Webデザインセットコースの購入",
+  },
+  // データサイエンスブートキャンプ - データサイエンティスト向けスクール（ITエンジニア）
+  {
+    id: "datasciencebootcamp-468x60",
+    name: "データサイエンスブートキャンプ",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70389",
+    imgSrc: "https://image.moshimo.com/af-img/4919/000000070389.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70389",
+    width: 468,
+    height: 60,
+    description: "データサイエンティストになるためのオンラインスクール",
+  },
+  {
+    id: "datasciencebootcamp-728x90",
+    name: "データサイエンスブートキャンプ",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70390",
+    imgSrc: "https://image.moshimo.com/af-img/4919/000000070390.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70390",
+    width: 728,
+    height: 90,
+    description: "データサイエンティストになるためのオンラインスクール",
+  },
+  {
+    id: "datasciencebootcamp-160x600-1",
+    name: "データサイエンスブートキャンプ",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70391",
+    imgSrc: "https://image.moshimo.com/af-img/4919/000000070391.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70391",
+    width: 160,
+    height: 600,
+    description: "データサイエンティストになるためのオンラインスクール",
+  },
+  {
+    id: "datasciencebootcamp-160x600-2",
+    name: "データサイエンスブートキャンプ",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70392",
+    imgSrc: "https://image.moshimo.com/af-img/4919/000000070392.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70392",
+    width: 160,
+    height: 600,
+    description: "データサイエンティストになるためのオンラインスクール",
+  },
+  {
+    id: "datasciencebootcamp-336x280-1",
+    name: "データサイエンスブートキャンプ",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70164",
+    imgSrc: "https://image.moshimo.com/af-img/4919/000000070164.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70164",
+    width: 336,
+    height: 280,
+    description: "データサイエンティストになるためのオンラインスクール",
+  },
+  {
+    id: "datasciencebootcamp-336x280-2",
+    name: "データサイエンスブートキャンプ",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70165",
+    imgSrc: "https://image.moshimo.com/af-img/4919/000000070165.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70165",
+    width: 336,
+    height: 280,
+    description: "データサイエンティストになるためのオンラインスクール",
+  },
+  {
+    id: "datasciencebootcamp-300x300",
+    name: "データサイエンスブートキャンプ",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70012",
+    imgSrc: "https://image.moshimo.com/af-img/4919/000000070012.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336257&p_id=5289&pc_id=14386&pl_id=70012",
+    width: 300,
+    height: 300,
+    description: "データサイエンティストになるためのオンラインスクール",
+  },
+];
+
+// もしもアフィリエイト用のヘルパー関数
+export function getMoshimoLinksByCategory(category: string): MoshimoLink[] {
+  return moshimoLinks.filter((link) => link.category.includes(category));
+}
+
+export function getMoshimoLinkById(id: string): MoshimoLink | undefined {
+  return moshimoLinks.find((link) => link.id === id);
+}
+
+export function getRandomMoshimoLink(category?: string): MoshimoLink | undefined {
+  const links = category ? getMoshimoLinksByCategory(category) : moshimoLinks;
+  if (links.length === 0) return undefined;
+  return links[Math.floor(Math.random() * links.length)];
+}
+
+// もしもアフィリエイト用のレスポンシブバナーペアを取得
+export interface MoshimoBannerPair {
+  desktop: MoshimoLink;
+  mobile: MoshimoLink;
+}
+
+export function getResponsiveMoshimoBanners(category: string, slug?: string): MoshimoBannerPair | undefined {
+  const links = getMoshimoLinksByCategory(category);
+  if (links.length === 0) return undefined;
+
+  // 同じサービス（同じname）のバナーをグループ化
+  const serviceGroups = new Map<string, MoshimoLink[]>();
+  links.forEach((link) => {
+    if (!serviceGroups.has(link.name)) {
+      serviceGroups.set(link.name, []);
+    }
+    serviceGroups.get(link.name)!.push(link);
+  });
+
+  // PC/モバイル両方のバナーを持つサービスをリストアップ
+  const validServices: Array<{ desktop: MoshimoLink; mobile: MoshimoLink }> = [];
+
+  for (const [_serviceName, banners] of serviceGroups) {
+    const desktopBanner = banners.find((b) => isDesktopSize(b.width, b.height));
+    const mobileBanner = banners.find((b) => isMobileSize(b.width, b.height));
+
+    if (desktopBanner && mobileBanner) {
+      validServices.push({
+        desktop: desktopBanner,
+        mobile: mobileBanner,
+      });
+    }
+  }
+
+  if (validServices.length === 0) {
+    // 適切なペアが見つからない場合は、最初の2つを使用
+    if (links.length >= 2) {
+      return {
+        desktop: links[0],
+        mobile: links[1],
+      };
+    }
+
+    // 1つしかない場合は、同じバナーを両方に使用
+    if (links.length === 1) {
+      return {
+        desktop: links[0],
+        mobile: links[0],
+      };
+    }
+
+    return undefined;
+  }
+
+  // slugが提供されている場合は、slugベースでサービスを選択
   if (slug) {
     const index = simpleHash(slug) % validServices.length;
     return validServices[index];
