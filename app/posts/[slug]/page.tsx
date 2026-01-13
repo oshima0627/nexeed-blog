@@ -76,7 +76,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       {/* 記事ヘッダー */}
       <article className="max-w-3xl mx-auto">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-4 leading-tight">{post.title}</h1>
+          <h1 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">{post.title}</h1>
 
           <div className="flex items-center gap-4 text-sm text-gray-600">
             <time>{formattedDate}</time>
