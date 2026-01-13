@@ -18,14 +18,44 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
+  // カテゴリー別のキーワード生成
+  const categoryKeywords: Record<string, string[]> = {
+    "投資": ["インデックス投資", "NISA", "資産運用", "投資信託", "長期投資", "オルカン", "S&P500"],
+    "子育て": ["育児", "保育園", "待機児童", "子育て支援", "男性育休", "児童手当", "ワークライフバランス"],
+    "ITエンジニア": ["プログラミング", "AI", "機械学習", "開発ツール", "コーディング", "エンジニア", "技術"],
+    "副業": ["副収入", "フリーランス", "クラウドソーシング", "確定申告", "在宅ワーク", "複業"],
+  };
+
+  const keywords = [
+    post.title,
+    post.category,
+    ...(categoryKeywords[post.category] || []),
+  ];
+
   return {
     title: `${post.title} | NEXEED BLOG`,
     description: post.excerpt,
+    keywords: keywords,
+    authors: [{ name: "大島直孝" }],
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
+      modifiedTime: post.updated || post.date,
+      authors: ["大島直孝"],
+      section: post.category,
+      tags: keywords,
+      locale: "ja_JP",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      creator: "@nexeed_blog",
+    },
+    alternates: {
+      canonical: `https://nexeed-blog.vercel.app/posts/${slug}`,
     },
   };
 }

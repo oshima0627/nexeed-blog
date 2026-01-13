@@ -17,12 +17,25 @@ export function WebsiteJsonLd() {
     "@type": "WebSite",
     name: "NEXEED BLOG",
     url: "https://nexeed-blog.vercel.app",
-    description: "投資、子育て、ITエンジニア、副業をテーマにした個人ブログ",
+    description: "投資、子育て、ITエンジニア、副業をテーマにした個人ブログ。実体験と統計データに基づいた信頼性の高い情報を提供します。",
     author: {
       "@type": "Person",
       name: "大島直孝",
+      url: "https://nexeed-blog.vercel.app/about",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "NEXEED BLOG",
     },
     inLanguage: "ja",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://nexeed-blog.vercel.app/search?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return <JsonLd data={data} />;
@@ -53,14 +66,29 @@ export function BlogPostJsonLd({
     author: {
       "@type": "Person",
       name: "大島直孝",
+      url: "https://nexeed-blog.vercel.app/about",
     },
     publisher: {
-      "@type": "Person",
-      name: "大島直孝",
+      "@type": "Organization",
+      name: "NEXEED BLOG",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://nexeed-blog.vercel.app/logo.png",
+      },
     },
     url: url,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
     inLanguage: "ja",
     articleSection: category,
+    isAccessibleForFree: true,
+    isPartOf: {
+      "@type": "Blog",
+      name: "NEXEED BLOG",
+      url: "https://nexeed-blog.vercel.app",
+    },
   };
 
   return <JsonLd data={data} />;
