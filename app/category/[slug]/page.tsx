@@ -21,9 +21,38 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const categoryName = categories[slug];
 
+  const categoryDescriptions: Record<string, string> = {
+    "investment": "インデックス投資、NISA、資産運用など、長期的な資産形成に関する実践的な情報を提供します。オルカン（全世界株式）やS&P500への投資戦略を解説。",
+    "parenting": "保育園、待機児童、男性育休、児童手当など、子育てに関する統計データと実体験に基づいた情報をお届けします。",
+    "engineering": "AI、プログラミング、最新の開発ツールなど、ITエンジニア向けの技術情報とトレンドを詳しく解説します。Vibe Coding、Dify、Claude Codeなど最新ツールも紹介。",
+    "side-business": "副収入、フリーランス、クラウドソーシング、確定申告など、副業に関する実践的なガイドと統計データを提供します。",
+  };
+
+  const categoryKeywords: Record<string, string[]> = {
+    "investment": ["投資", "インデックス投資", "NISA", "資産運用", "投資信託", "長期投資", "オルカン", "S&P500", "つみたてNISA"],
+    "parenting": ["子育て", "育児", "保育園", "待機児童", "子育て支援", "男性育休", "児童手当", "ワークライフバランス", "育休"],
+    "engineering": ["ITエンジニア", "プログラミング", "AI", "機械学習", "開発ツール", "コーディング", "技術", "Vibe Coding", "Dify", "Claude Code", "ソフトウェア開発"],
+    "side-business": ["副業", "副収入", "フリーランス", "クラウドソーシング", "確定申告", "在宅ワーク", "複業", "個人事業主"],
+  };
+
   return {
     title: `${categoryName}の記事一覧 | NEXEED BLOG`,
-    description: `${categoryName}に関する記事の一覧ページです。`,
+    description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページです。`,
+    keywords: categoryKeywords[slug] || [categoryName],
+    openGraph: {
+      title: `${categoryName}の記事一覧`,
+      description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページです。`,
+      type: "website",
+      locale: "ja_JP",
+    },
+    twitter: {
+      card: "summary",
+      title: `${categoryName}の記事一覧`,
+      description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページです。`,
+    },
+    alternates: {
+      canonical: `https://nexeed-blog.vercel.app/category/${slug}`,
+    },
   };
 }
 
