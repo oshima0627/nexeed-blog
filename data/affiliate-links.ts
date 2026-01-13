@@ -475,6 +475,28 @@ export const a8Links: A8Link[] = [
     height: 60,
     description: "FP紹介サービス。貯蓄や保険についてオンラインで気軽に相談",
   },
+  {
+    id: "muumuu-domain-224x33",
+    name: "ムームードメイン",
+    category: ["ITエンジニア"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AUYOM+EFRFW2+348+1BW3WH",
+    imgSrc: "https://www24.a8.net/svt/bgt?aid=260105494873&wid=001&eno=01&mid=s00000000404008044000&mc=1",
+    trackingSrc: "https://www13.a8.net/0.gif?a8mat=4AUYOM+EFRFW2+348+1BW3WH",
+    width: 224,
+    height: 33,
+    description: "GMOペパボのドメイン取得サービス。豊富なドメイン種類と簡単設定",
+  },
+  {
+    id: "muumuu-domain-88x31",
+    name: "ムームードメイン",
+    category: ["ITエンジニア"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AUYOM+EFRFW2+348+1BPGPD",
+    imgSrc: "https://www25.a8.net/svt/bgt?aid=260105494873&wid=001&eno=01&mid=s00000000404008013000&mc=1",
+    trackingSrc: "https://www13.a8.net/0.gif?a8mat=4AUYOM+EFRFW2+348+1BPGPD",
+    width: 88,
+    height: 31,
+    description: "GMOペパボのドメイン取得サービス。豊富なドメイン種類と簡単設定",
+  },
 ];
 
 // カテゴリー別にリンクを取得
@@ -504,7 +526,9 @@ function isDesktopSize(width: number, height: number): boolean {
     (width === 300 && height === 300) ||
     (width === 468 && height === 120) ||
     (width === 234 && height === 60) ||
-    (width === 200 && height === 200)
+    (width === 224 && height === 33) ||
+    (width === 200 && height === 200) ||
+    (width === 320 && height === 180)
   );
 }
 
@@ -517,7 +541,8 @@ function isMobileSize(width: number, height: number): boolean {
     (width === 320 && height === 50) ||
     (width === 120 && height === 60) ||
     (width === 100 && height === 60) ||
-    (width === 100 && height === 100)
+    (width === 100 && height === 100) ||
+    (width === 88 && height === 31)
   );
 }
 
