@@ -133,7 +133,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           </div>
         )}
 
-        {/* 記事本文（バナーを複数箇所に挿入） */}
+        {/* 記事本文（バナーを複数箇所に自動挿入） */}
         {(() => {
           const content = post.content || "";
 
@@ -149,58 +149,36 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             );
           }
 
-          // すべてのマーカーを検索
-          const markerRegex = /<div class="affiliate-banner-marker"[^>]*><\/div>/g;
-          const markers: Array<{ index: number; html: string }> = [];
-          let match;
+          const BannerComponent = bannerType === 'moshimo' ? MoshimoBanner : A8Banner;
 
-          while ((match = markerRegex.exec(content)) !== null) {
-            markers.push({
-              index: match.index,
-              html: match[0],
-            });
+          // H2見出しの位置を検索して自動的にバナー挿入位置を決定
+          const h2Regex = /<h2[^>]*>/g;
+          const insertPositions: number[] = [];
+          let match;
+          let lastBannerPos = 0;
+          const MIN_DISTANCE = 800; // 最低800文字離す
+
+          while ((match = h2Regex.exec(content)) !== null) {
+            const position = match.index;
+            // 前のバナー位置から十分離れている場合のみ挿入
+            if (position - lastBannerPos >= MIN_DISTANCE) {
+              insertPositions.push(position);
+              lastBannerPos = position;
+            }
           }
 
-          if (markers.length === 0) {
-            // マーカーがない場合は、記事最後のみにバナーを表示
-            const BannerComponent = bannerType === 'moshimo' ? MoshimoBanner : A8Banner;
-            return (
-              <>
-                <div
-                  className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
-                  dangerouslySetInnerHTML={{ __html: content }}
-                />
-                <div className="my-12">
-                  <BannerComponent
-                    desktop={{
-                      href: bannerPair.desktop.href,
-                      imgSrc: bannerPair.desktop.imgSrc,
-                      trackingSrc: bannerPair.desktop.trackingSrc,
-                      width: bannerPair.desktop.width,
-                      height: bannerPair.desktop.height,
-                    }}
-                    mobile={{
-                      href: bannerPair.mobile.href,
-                      imgSrc: bannerPair.mobile.imgSrc,
-                      trackingSrc: bannerPair.mobile.trackingSrc,
-                      width: bannerPair.mobile.width,
-                      height: bannerPair.mobile.height,
-                    }}
-                    alt={bannerPair.desktop.name}
-                  />
-                </div>
-              </>
-            );
+          // バナー挿入位置がない場合、記事の中間に1つ挿入
+          if (insertPositions.length === 0 && content.length > MIN_DISTANCE * 2) {
+            insertPositions.push(Math.floor(content.length / 2));
           }
 
           // コンテンツを分割してバナーを挿入
-          const BannerComponent = bannerType === 'moshimo' ? MoshimoBanner : A8Banner;
           const segments: React.ReactNode[] = [];
           let lastIndex = 0;
 
-          markers.forEach((marker, i) => {
-            // マーカーまでのコンテンツ
-            const segmentContent = content.slice(lastIndex, marker.index);
+          insertPositions.forEach((position, i) => {
+            // 挿入位置までのコンテンツ
+            const segmentContent = content.slice(lastIndex, position);
             segments.push(
               <div
                 key={`content-${i}`}
@@ -232,7 +210,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               </div>
             );
 
-            lastIndex = marker.index + marker.html.length;
+            lastIndex = position;
           });
 
           // 最後のセグメント
@@ -245,7 +223,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             />
           );
 
-          // 記事最後のバナー
+          // 記事最後のバナー（常に表示）
           segments.push(
             <div key="banner-last" className="my-12">
               <BannerComponent
