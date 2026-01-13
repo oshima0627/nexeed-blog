@@ -7,7 +7,8 @@ import { extractTocFromHtml } from "@/lib/toc";
 import { BlogPostJsonLd } from "@/components/JsonLd";
 import Link from "next/link";
 import A8Banner from "@/components/A8Banner";
-import { getResponsiveBanners } from "@/data/affiliate-links";
+import MoshimoBanner from "@/components/MoshimoBanner";
+import { getResponsiveBanners, getResponsiveMoshimoBanners } from "@/data/affiliate-links";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -81,7 +82,13 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   // カテゴリーとslugに応じたアフィリエイトバナー（PC/モバイル対応）を取得
   // slugベースで決定的にバナーを選択するため、同じ記事では常に同じバナーが表示される
-  const bannerPair = getResponsiveBanners(post.category, slug);
+  // もしもアフィリエイトを優先的に使用し、なければA8.netを使用
+  const moshimoBannerPair = getResponsiveMoshimoBanners(post.category, slug);
+  const a8BannerPair = getResponsiveBanners(post.category, slug);
+
+  // バナーの種類を判定
+  const bannerType = moshimoBannerPair ? 'moshimo' : 'a8';
+  const bannerPair = moshimoBannerPair || a8BannerPair;
 
   return (
     <>
@@ -156,6 +163,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
           if (markers.length === 0) {
             // マーカーがない場合は、記事最後のみにバナーを表示
+            const BannerComponent = bannerType === 'moshimo' ? MoshimoBanner : A8Banner;
             return (
               <>
                 <div
@@ -163,7 +171,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   dangerouslySetInnerHTML={{ __html: content }}
                 />
                 <div className="my-12">
-                  <A8Banner
+                  <BannerComponent
                     desktop={{
                       href: bannerPair.desktop.href,
                       imgSrc: bannerPair.desktop.imgSrc,
@@ -186,6 +194,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           }
 
           // コンテンツを分割してバナーを挿入
+          const BannerComponent = bannerType === 'moshimo' ? MoshimoBanner : A8Banner;
           const segments: React.ReactNode[] = [];
           let lastIndex = 0;
 
@@ -203,7 +212,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             // バナーを挿入
             segments.push(
               <div key={`banner-${i}`} className="my-12">
-                <A8Banner
+                <BannerComponent
                   desktop={{
                     href: bannerPair.desktop.href,
                     imgSrc: bannerPair.desktop.imgSrc,
@@ -239,7 +248,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           // 記事最後のバナー
           segments.push(
             <div key="banner-last" className="my-12">
-              <A8Banner
+              <BannerComponent
                 desktop={{
                   href: bannerPair.desktop.href,
                   imgSrc: bannerPair.desktop.imgSrc,
