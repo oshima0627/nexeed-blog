@@ -21,23 +21,23 @@ export default function Home() {
       {/* カテゴリーボタン */}
       <div className="mb-12">
         <h2 className="text-2xl font-bold mb-6 text-center">カテゴリーから探す</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3 md:gap-4">
           {categories.map((category) => (
             <Link
               key={category.slug}
               href={`/category/${category.slug}`}
-              className="group block p-6 bg-white border-2 border-gray-200 rounded-lg hover:border-primary hover:shadow-lg transition-all duration-200"
+              className="group block p-3 md:p-6 bg-white border-2 border-gray-200 rounded-lg hover:border-primary hover:shadow-lg transition-all duration-200"
             >
-              <div className="flex items-center gap-4">
-                <span className="text-4xl">{category.icon}</span>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">
+              <div className="flex items-center gap-2 md:gap-4">
+                <span className="text-2xl md:text-4xl">{category.icon}</span>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm md:text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">
                     {category.name}
                   </h3>
-                  <p className="text-sm text-gray-600 mt-1">{category.description}</p>
+                  <p className="text-xs md:text-sm text-gray-600 mt-0.5 md:mt-1 truncate">{category.description}</p>
                 </div>
                 <svg
-                  className="w-6 h-6 text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all"
+                  className="w-4 h-4 md:w-6 md:h-6 text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
