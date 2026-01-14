@@ -29,6 +29,14 @@ const config: Config = {
           css: {
             maxWidth: 'none',
             color: '#374151',
+            h1: {
+              fontSize: '1.5rem',
+              lineHeight: '2rem',
+            },
+            h2: {
+              fontSize: '1.25rem',
+              lineHeight: '1.75rem',
+            },
             a: {
               color: '#1E40AF',
               '&:hover': {
@@ -59,6 +67,18 @@ const config: Config = {
               backgroundColor: 'transparent',
               padding: '0',
               color: 'inherit',
+            },
+          },
+        },
+        lg: {
+          css: {
+            h1: {
+              fontSize: '1.75rem',
+              lineHeight: '2.25rem',
+            },
+            h2: {
+              fontSize: '1.5rem',
+              lineHeight: '2rem',
             },
           },
         },
