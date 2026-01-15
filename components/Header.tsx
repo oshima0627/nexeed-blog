@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import SearchBox from "./SearchBox";
 import { useState } from "react";
 
@@ -17,8 +18,15 @@ export default function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl md:text-2xl font-bold text-gray-900 hover:text-primary">
-            NEXEED BLOG
+          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+            <Image
+              src="/8B126C29-1D4C-433F-955C-207F639A33F1.jpeg"
+              alt="NEXEED BLOG"
+              width={180}
+              height={50}
+              className="h-8 md:h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
