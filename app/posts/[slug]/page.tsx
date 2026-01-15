@@ -8,7 +8,7 @@ import { BlogPostJsonLd } from "@/components/JsonLd";
 import Link from "next/link";
 import A8Banner from "@/components/A8Banner";
 import MoshimoBanner from "@/components/MoshimoBanner";
-import { getResponsiveBanners, getResponsiveMoshimoBanners } from "@/data/affiliate-links";
+import { getResponsiveBanners, getResponsiveMoshimoBanners, getBannerPairById } from "@/data/affiliate-links";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -81,14 +81,28 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const tocItems = extractTocFromHtml(post.content || "");
 
   // カテゴリーとslugに応じたアフィリエイトバナー（PC/モバイル対応）を取得
-  // slugベースで決定的にバナーを選択するため、同じ記事では常に同じバナーが表示される
-  // もしもアフィリエイトを優先的に使用し、なければA8.netを使用
-  const moshimoBannerPair = getResponsiveMoshimoBanners(post.category, slug);
-  const a8BannerPair = getResponsiveBanners(post.category, slug);
+  // affiliateBannerIdが指定されている場合は、それを優先的に使用
+  // それ以外の場合は、カテゴリーとslugベースで決定的にバナーを選択
+  let bannerPair;
+  let bannerType: 'moshimo' | 'a8' = 'a8';
 
-  // バナーの種類を判定
-  const bannerType = moshimoBannerPair ? 'moshimo' : 'a8';
-  const bannerPair = moshimoBannerPair || a8BannerPair;
+  if (post.affiliateBannerId) {
+    // 特定のバナーが指定されている場合
+    const customBanner = getBannerPairById(post.affiliateBannerId);
+    if (customBanner) {
+      bannerPair = customBanner;
+      // バナーの種類を判定（trackingSrcの有無で判断）
+      bannerType = 'trackingSrc' in customBanner.desktop ? 'moshimo' : 'a8';
+    }
+  }
+
+  // カスタムバナーが見つからない場合は、カテゴリーベースで選択
+  if (!bannerPair) {
+    const moshimoBannerPair = getResponsiveMoshimoBanners(post.category, slug);
+    const a8BannerPair = getResponsiveBanners(post.category, slug);
+    bannerType = moshimoBannerPair ? 'moshimo' : 'a8';
+    bannerPair = moshimoBannerPair || a8BannerPair;
+  }
 
   return (
     <>
