@@ -1791,3 +1791,52 @@ export function getResponsiveMoshimoBanners(category: string, slug?: string): Mo
   // slugがない場合は最初のサービスを返す
   return validServices[0];
 }
+
+// バナーIDで特定のバナーペアを取得
+export function getBannerPairById(bannerId: string): BannerPair | MoshimoBannerPair | undefined {
+  // A8リンクから検索
+  const a8Link = a8Links.find(link => link.id === bannerId);
+  if (a8Link) {
+    // 同じnameを持つバナーを探す
+    const sameNameBanners = a8Links.filter(link => link.name === a8Link.name);
+    const desktopBanner = sameNameBanners.find(b => isDesktopSize(b.width, b.height));
+    const mobileBanner = sameNameBanners.find(b => isMobileSize(b.width, b.height));
+    
+    if (desktopBanner && mobileBanner) {
+      return {
+        desktop: desktopBanner,
+        mobile: mobileBanner,
+      };
+    }
+    
+    // ペアが見つからない場合は同じバナーを返す
+    return {
+      desktop: a8Link,
+      mobile: a8Link,
+    };
+  }
+  
+  // もしもアフィリエイトリンクから検索
+  const moshimoLink = moshimoLinks.find(link => link.id === bannerId);
+  if (moshimoLink) {
+    // 同じnameを持つバナーを探す
+    const sameNameBanners = moshimoLinks.filter(link => link.name === moshimoLink.name);
+    const desktopBanner = sameNameBanners.find(b => isDesktopSize(b.width, b.height));
+    const mobileBanner = sameNameBanners.find(b => isMobileSize(b.width, b.height));
+    
+    if (desktopBanner && mobileBanner) {
+      return {
+        desktop: desktopBanner,
+        mobile: mobileBanner,
+      };
+    }
+    
+    // ペアが見つからない場合は同じバナーを返す
+    return {
+      desktop: moshimoLink,
+      mobile: moshimoLink,
+    };
+  }
+  
+  return undefined;
+}

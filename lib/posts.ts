@@ -17,6 +17,7 @@ export interface PostData {
   coverImage?: string;
   updated?: string;
   content?: string;
+  affiliateBannerId?: string; // 特定のアフィリエイトバナーを指定
 }
 
 export function getAllPosts(): PostData[] {
@@ -42,6 +43,7 @@ export function getAllPosts(): PostData[] {
         excerpt: data.excerpt,
         coverImage: data.coverImage,
         updated: data.updated,
+        affiliateBannerId: data.affiliateBannerId,
       } as PostData;
     });
 
@@ -82,6 +84,7 @@ export async function getPostBySlug(slug: string): Promise<PostData> {
     coverImage: data.coverImage,
     updated: data.updated,
     content: contentHtml,
+    affiliateBannerId: data.affiliateBannerId,
   };
 }
 

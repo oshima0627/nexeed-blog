@@ -381,3 +381,93 @@ const sideBusinessLinks = [
 
 **作成日**: 2026-01-08
 **最終更新**: 2026-01-08
+
+## 🎯 特定の記事に特定のバナーを挿入する方法
+
+記事のfrontmatterに`affiliateBannerId`を追加することで、その記事専用のアフィリエイトバナーを指定できます。
+
+### 使い方
+
+記事のMarkdownファイルのfrontmatterに`affiliateBannerId`を追加します：
+
+```markdown
+---
+title: "記事タイトル"
+date: "2026-01-13"
+category: "ITエンジニア"
+excerpt: "記事の説明"
+affiliateBannerId: "techmeets-programming"
+---
+```
+
+### 利用可能なバナーID（カテゴリー別）
+
+#### ITエンジニア向け
+
+**プログラミングスクール**:
+- `techmeets-programming` - テックミーツ（プログラミング講座）
+- `dmmwebcamp-career-*` - DMM WEBCAMP（転職コース）
+- `dmmwebcamp-skills-*` - DMM WEBCAMP（学習コース）
+- `datasciencebootcamp-*` - データサイエンスブートキャンプ
+- `digitalholywood-*` - デジタルハリウッド
+
+**サーバー・ホスティング**:
+- `lolipop-rental-server-*` - ロリポップ！レンタルサーバー
+- `xserver-rental-*` - エックスサーバー
+
+**就労支援**:
+- `revive-*` - リバイブ（就労支援B型）
+
+#### 副業向け
+
+**クラウドソーシング**:
+- `lancers-*` - ランサーズ
+- `crowdworks-*` - クラウドワークス
+- `coconala-*` - ココナラ
+
+**スキルマーケット**:
+- `skillots-*` - スキロッツ
+
+#### 子育て向け
+
+**プログラミング教育**:
+- `kidsrobo-*` - キッズロボ（子ども向けプログラミング）
+
+**育児サポート**:
+- `baby-planet-*` - ベビープラネット
+
+**教育サービス**:
+- `at-seminar-*` - ATセミナー
+
+#### 投資向け
+
+**証券会社**:
+- `fpo-stocks-*` - FPO証券（株式）
+- `fpo-fx-guide-*` - FPO（FX）
+
+**投資セミナー**:
+- `financial-academy-*` - ファイナンシャルアカデミー
+
+### 注意事項
+
+1. **バナーIDはペアで機能**: 同じサービス名（例: `techmeets`）でPC用とモバイル用のバナーが自動的にペアリングされます
+2. **存在しないIDを指定した場合**: カテゴリーベースの自動選択にフォールバックします
+3. **カテゴリーとの整合性**: バナーIDを指定しても、記事のカテゴリーは正しく設定してください
+
+### 使用例
+
+```markdown
+---
+title: "Dify：ノーコードでAIアプリケーションを構築"
+date: "2026-01-13"
+category: "ITエンジニア"
+excerpt: "Difyの詳しい解説"
+affiliateBannerId: "dmmwebcamp-skills-300x250-1"
+---
+```
+
+この設定により、Dify記事にはDMM WEBCAMPのバナーが優先的に表示されます。
+
+---
+
+**最終更新**: 2026-01-15
