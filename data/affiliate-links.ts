@@ -1711,6 +1711,40 @@ export const moshimoLinks: MoshimoLink[] = [
     height: 120,
     description: "即戦力のスキルを身につけるプログラミングスクール",
   },
+  // スキルハックス - 買い切り型プログラミング講座（ITエンジニア・副業）
+  {
+    id: "skillhacks-300x250",
+    name: "スキルハックス",
+    category: ["ITエンジニア", "副業"],
+    href: "https://skill-hacks.co.jp/",
+    imgSrc: "https://placehold.co/300x250/1E40AF/FFFFFF/png?text=Skill+Hacks",
+    trackingSrc: "https://skill-hacks.co.jp/",
+    width: 300,
+    height: 250,
+    description: "買い切り型のオンラインプログラミング講座。無制限の質問サポート付き",
+  },
+  {
+    id: "skillhacks-336x280",
+    name: "スキルハックス",
+    category: ["ITエンジニア", "副業"],
+    href: "https://skill-hacks.co.jp/",
+    imgSrc: "https://placehold.co/336x280/1E40AF/FFFFFF/png?text=Skill+Hacks",
+    trackingSrc: "https://skill-hacks.co.jp/",
+    width: 336,
+    height: 280,
+    description: "買い切り型のオンラインプログラミング講座。無制限の質問サポート付き",
+  },
+  {
+    id: "skillhacks-120x60",
+    name: "スキルハックス",
+    category: ["ITエンジニア", "副業"],
+    href: "https://skill-hacks.co.jp/",
+    imgSrc: "https://placehold.co/120x60/1E40AF/FFFFFF/png?text=SkillHacks",
+    trackingSrc: "https://skill-hacks.co.jp/",
+    width: 120,
+    height: 60,
+    description: "買い切り型のオンラインプログラミング講座。無制限の質問サポート付き",
+  },
 ];
 
 // もしもアフィリエイト用のヘルパー関数
