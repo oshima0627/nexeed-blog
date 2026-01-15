@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページです。`,
     },
     alternates: {
-      canonical: `https://nexeed-blog.vercel.app/category/${slug}`,
+      canonical: `https://blog.nexeed-web.com/category/${slug}`,
     },
   };
 }

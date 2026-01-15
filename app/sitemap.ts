@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://nexeed-blog.vercel.app";
+  const baseUrl = "https://blog.nexeed-web.com";
   const posts = getAllPosts();
 
   // 記事ページのURL

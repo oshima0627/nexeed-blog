@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       creator: "@nexeed_blog",
     },
     alternates: {
-      canonical: `https://nexeed-blog.vercel.app/posts/${slug}`,
+      canonical: `https://blog.nexeed-web.com/posts/${slug}`,
     },
   };
 }
@@ -97,7 +97,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         description={post.excerpt}
         datePublished={post.date}
         dateModified={post.updated}
-        url={`https://nexeed-blog.vercel.app/posts/${slug}`}
+        url={`https://blog.nexeed-web.com/posts/${slug}`}
         category={post.category}
       />
       <div className="container-custom py-12">
@@ -254,7 +254,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <h3 className="text-lg font-bold mb-4">この記事をシェア</h3>
           <div className="flex gap-4">
             <a
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://nexeed-blog.com/posts/${slug}`)}`}
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://blog.nexeed-web.com/posts/${slug}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors"
@@ -265,7 +265,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               X
             </a>
             <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://nexeed-blog.com/posts/${slug}`)}`}
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://blog.nexeed-web.com/posts/${slug}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
@@ -276,7 +276,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               Facebook
             </a>
             <a
-              href={`https://b.hatena.ne.jp/entry/${encodeURIComponent(`https://nexeed-blog.com/posts/${slug}`)}`}
+              href={`https://b.hatena.ne.jp/entry/${encodeURIComponent(`https://blog.nexeed-web.com/posts/${slug}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600 transition-colors"
