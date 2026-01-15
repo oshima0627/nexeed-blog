@@ -15,6 +15,9 @@ export default function Footer() {
             <Link href="/about" className="text-gray-600 hover:text-primary text-sm">
               About
             </Link>
+            <Link href="/privacy" className="text-gray-600 hover:text-primary text-sm">
+              Privacy
+            </Link>
             <a
               href="https://twitter.com"
               target="_blank"
