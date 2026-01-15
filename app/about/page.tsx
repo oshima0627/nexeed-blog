@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About | NEXEED BLOG",
@@ -12,12 +13,16 @@ export default function AboutPage() {
         <h1 className="text-4xl font-bold mb-8">About</h1>
 
         <div className="bg-white rounded-lg shadow-sm p-8">
-          {/* プロフィール画像（イニシャルアイコン） */}
+          {/* プロフィール画像 */}
           <div className="flex flex-col md:flex-row gap-8 mb-8">
             <div className="flex-shrink-0">
-              <div className="w-32 h-32 rounded-full bg-primary text-white flex items-center justify-center text-4xl font-bold">
-                ON
-              </div>
+              <Image
+                src="/2E725D0E-E0E7-49D1-AF18-87FC132B7612.jpeg"
+                alt="大島直孝のプロフィール写真"
+                width={128}
+                height={128}
+                className="rounded-full object-cover"
+              />
             </div>
 
             <div className="flex-1">
