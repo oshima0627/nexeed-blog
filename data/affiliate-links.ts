@@ -1826,8 +1826,14 @@ export function getResponsiveMoshimoBanners(category: string, slug?: string): Mo
   return validServices[0];
 }
 
-// バナーIDで特定のバナーペアを取得
-export function getBannerPairById(bannerId: string): BannerPair | MoshimoBannerPair | undefined {
+// バナーペアとタイプを返す型
+export type BannerPairWithType = {
+  bannerPair: BannerPair | MoshimoBannerPair;
+  bannerType: 'a8' | 'moshimo';
+};
+
+// バナーIDで特定のバナーペアを取得（タイプも返す）
+export function getBannerPairById(bannerId: string): BannerPairWithType | undefined {
   // A8リンクから検索
   const a8Link = a8Links.find(link => link.id === bannerId);
   if (a8Link) {
@@ -1835,21 +1841,27 @@ export function getBannerPairById(bannerId: string): BannerPair | MoshimoBannerP
     const sameNameBanners = a8Links.filter(link => link.name === a8Link.name);
     const desktopBanner = sameNameBanners.find(b => isDesktopSize(b.width, b.height));
     const mobileBanner = sameNameBanners.find(b => isMobileSize(b.width, b.height));
-    
+
     if (desktopBanner && mobileBanner) {
       return {
-        desktop: desktopBanner,
-        mobile: mobileBanner,
+        bannerPair: {
+          desktop: desktopBanner,
+          mobile: mobileBanner,
+        },
+        bannerType: 'a8',
       };
     }
-    
+
     // ペアが見つからない場合は同じバナーを返す
     return {
-      desktop: a8Link,
-      mobile: a8Link,
+      bannerPair: {
+        desktop: a8Link,
+        mobile: a8Link,
+      },
+      bannerType: 'a8',
     };
   }
-  
+
   // もしもアフィリエイトリンクから検索
   const moshimoLink = moshimoLinks.find(link => link.id === bannerId);
   if (moshimoLink) {
@@ -1857,20 +1869,26 @@ export function getBannerPairById(bannerId: string): BannerPair | MoshimoBannerP
     const sameNameBanners = moshimoLinks.filter(link => link.name === moshimoLink.name);
     const desktopBanner = sameNameBanners.find(b => isDesktopSize(b.width, b.height));
     const mobileBanner = sameNameBanners.find(b => isMobileSize(b.width, b.height));
-    
+
     if (desktopBanner && mobileBanner) {
       return {
-        desktop: desktopBanner,
-        mobile: mobileBanner,
+        bannerPair: {
+          desktop: desktopBanner,
+          mobile: mobileBanner,
+        },
+        bannerType: 'moshimo',
       };
     }
-    
+
     // ペアが見つからない場合は同じバナーを返す
     return {
-      desktop: moshimoLink,
-      mobile: moshimoLink,
+      bannerPair: {
+        desktop: moshimoLink,
+        mobile: moshimoLink,
+      },
+      bannerType: 'moshimo',
     };
   }
-  
+
   return undefined;
 }
