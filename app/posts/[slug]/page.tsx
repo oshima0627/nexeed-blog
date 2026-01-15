@@ -90,9 +90,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     // 特定のバナーが指定されている場合
     const customBanner = getBannerPairById(post.affiliateBannerId);
     if (customBanner) {
-      bannerPair = customBanner;
-      // バナーの種類を判定（trackingSrcの有無で判断）
-      bannerType = 'trackingSrc' in customBanner.desktop ? 'moshimo' : 'a8';
+      bannerPair = customBanner.bannerPair;
+      bannerType = customBanner.bannerType;
     }
   }
 
