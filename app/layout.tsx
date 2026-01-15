@@ -8,16 +8,23 @@ import { Analytics } from "@vercel/analytics/next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://nexeed-blog.vercel.app"),
   title: {
-    default: "NEXEED BLOG",
+    default: "NEXEED BLOG - 投資・子育て・ITエンジニア・副業の情報ブログ",
     template: "%s | NEXEED BLOG",
   },
-  description: "投資、子育て、ITエンジニア、副業をテーマにした個人ブログ。口コミや評判をベースに情報を発信しています。",
-  keywords: ["投資", "子育て", "ITエンジニア", "副業", "ブログ", "インデックス投資", "育児", "フリーランス"],
-  authors: [{ name: "大島直孝" }],
+  description: "投資（インデックス投資・NISA・オルカン・S&P500）、子育て（保育園・待機児童・男性育休・児童手当）、ITエンジニア（AI・プログラミング・Vibe Coding・Dify・Claude Code）、副業（フリーランス・クラウドソーシング・確定申告）をテーマにした実践的な情報ブログ。口コミや評判をベースに情報を発信しています。",
+  keywords: [
+    "投資", "インデックス投資", "NISA", "つみたてNISA", "資産運用", "オルカン", "S&P500",
+    "子育て", "育児", "保育園", "待機児童", "男性育休", "児童手当", "ワークライフバランス",
+    "ITエンジニア", "プログラミング", "AI", "機械学習", "Vibe Coding", "Dify", "Claude Code", "開発ツール",
+    "副業", "副収入", "フリーランス", "クラウドソーシング", "確定申告", "在宅ワーク", "複業",
+    "ブログ", "個人ブログ", "口コミ", "評判"
+  ],
+  authors: [{ name: "大島直孝", url: "https://nexeed-blog.vercel.app/about" }],
   creator: "大島直孝",
+  publisher: "NEXEED BLOG",
   openGraph: {
-    title: "NEXEED BLOG",
-    description: "投資、子育て、ITエンジニア、副業をテーマにした個人ブログ",
+    title: "NEXEED BLOG - 投資・子育て・ITエンジニア・副業の情報ブログ",
+    description: "投資、子育て、ITエンジニア、副業をテーマにした実践的な情報ブログ。口コミや評判をベースに情報を発信しています。",
     url: "https://nexeed-blog.vercel.app",
     siteName: "NEXEED BLOG",
     locale: "ja_JP",
@@ -25,11 +32,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NEXEED BLOG",
-    description: "投資、子育て、ITエンジニア、副業をテーマにした個人ブログ",
+    title: "NEXEED BLOG - 投資・子育て・ITエンジニア・副業の情報ブログ",
+    description: "投資、子育て、ITエンジニア、副業をテーマにした実践的な情報ブログ",
     creator: "@nexeed_blog",
   },
   alternates: {
+    canonical: "https://nexeed-blog.vercel.app",
     types: {
       "application/rss+xml": "https://nexeed-blog.vercel.app/feed.xml",
     },
@@ -44,6 +52,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  verification: {
+    google: "google-site-verification-code-here", // Google Search Consoleで取得したコードに置き換え
   },
 };
 
