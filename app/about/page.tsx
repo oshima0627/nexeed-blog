@@ -39,7 +39,7 @@ export default function AboutPage() {
             <ul className="space-y-3 text-gray-700">
               <li className="flex gap-3">
                 <span className="text-primary font-bold">•</span>
-                <span>ITエンジニアとして2年のキャリア</span>
+                <span>ITエンジニアとして2年以上のキャリア</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary font-bold">•</span>
