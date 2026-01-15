@@ -509,6 +509,18 @@ export const a8Links: A8Link[] = [
     height: 31,
     description: "GMOペパボのドメイン取得サービス。豊富なドメイン種類と簡単設定",
   },
+  // スキルハックス - 買い切り型プログラミング講座（ITエンジニア・副業）
+  {
+    id: "skillhacks-a8-300x250",
+    name: "スキルハックス",
+    category: ["ITエンジニア", "副業"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AV6GD+958QB6+4K3S+60WN5",
+    imgSrc: "https://www22.a8.net/svt/bgt?aid=260115565553&wid=001&eno=01&mid=s00000021268001012000&mc=1",
+    trackingSrc: "https://www11.a8.net/0.gif?a8mat=4AV6GD+958QB6+4K3S+60WN5",
+    width: 300,
+    height: 250,
+    description: "買い切り型のオンラインプログラミング講座。無制限の質問サポート付き",
+  },
 ];
 
 // カテゴリー別にリンクを取得
