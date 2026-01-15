@@ -28,7 +28,7 @@ export default function AboutPage() {
               </p>
               <p className="text-gray-700 leading-relaxed">
                 このブログでは、投資、子育て、エンジニアリング、副業の4つのテーマを中心に、
-                実体験に基づいた情報を発信しています。
+                Web上の口コミや評判をベースに情報を発信しています。
               </p>
             </div>
           </div>
@@ -39,11 +39,11 @@ export default function AboutPage() {
             <ul className="space-y-3 text-gray-700">
               <li className="flex gap-3">
                 <span className="text-primary font-bold">•</span>
-                <span>ITエンジニアとして10年以上のキャリア</span>
+                <span>ITエンジニアとして2年以上のキャリア</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary font-bold">•</span>
-                <span>Web開発、アプリ開発、インフラ構築など幅広く経験</span>
+                <span>Web開発、アプリ開発、保守運用など幅広く経験</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary font-bold">•</span>
