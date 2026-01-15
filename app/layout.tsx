@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: "NEXEED BLOG",
     template: "%s | NEXEED BLOG",
   },
-  description: "投資、子育て、ITエンジニア、副業をテーマにした個人ブログ。実体験に基づいた情報を発信しています。",
+  description: "投資、子育て、ITエンジニア、副業をテーマにした個人ブログ。口コミや評判をベースに情報を発信しています。",
   keywords: ["投資", "子育て", "ITエンジニア", "副業", "ブログ", "インデックス投資", "育児", "フリーランス"],
   authors: [{ name: "大島直孝" }],
   creator: "大島直孝",
