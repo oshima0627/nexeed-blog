@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { WebsiteJsonLd } from "@/components/JsonLd";
 import { Analytics } from "@vercel/analytics/next";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://blog.nexeed-web.com"),
@@ -66,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className="antialiased">
+        <GoogleAnalytics />
         <WebsiteJsonLd />
         <div className="flex flex-col min-h-screen">
           <Header />
