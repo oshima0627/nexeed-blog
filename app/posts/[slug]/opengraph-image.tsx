@@ -1,7 +1,8 @@
 import { ImageResponse } from 'next/og';
 import { getPostBySlug } from '@/lib/posts';
 
-export const runtime = 'edge';
+// Node.js Runtimeを使用（ファイルシステムアクセスのため）
+export const runtime = 'nodejs';
 export const alt = 'NEXEED BLOG 記事';
 export const size = {
   width: 1200,
