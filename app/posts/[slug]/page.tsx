@@ -223,7 +223,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           segments.push(
             <div
               key={`content-last`}
-              className={`prose prose-lg max-w-none prose-headings:scroll-mt-20 ${categoryClass}`}
+              className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
               dangerouslySetInnerHTML={{ __html: lastSegment }}
             />
           );
