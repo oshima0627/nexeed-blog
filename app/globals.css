@@ -33,6 +33,23 @@
     @apply bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors;
   }
 
+  /* カテゴリボタンのスタイル */
+  .category-btn-investment {
+    @apply border-blue-300 hover:border-blue-500 hover:bg-blue-50;
+  }
+
+  .category-btn-parenting {
+    @apply border-pink-300 hover:border-pink-500 hover:bg-pink-50;
+  }
+
+  .category-btn-engineering {
+    @apply border-green-300 hover:border-green-500 hover:bg-green-50;
+  }
+
+  .category-btn-side-business {
+    @apply border-purple-300 hover:border-purple-500 hover:bg-purple-50;
+  }
+
   /* カテゴリごとの見出しスタイル - 投資 */
   .post-category-investment .post-title {
     @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-4 shadow-md;

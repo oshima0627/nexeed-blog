@@ -5,10 +5,27 @@ import { TocItem } from "@/lib/toc";
 
 interface TableOfContentsProps {
   items: TocItem[];
+  category?: string;
 }
 
-export default function TableOfContents({ items }: TableOfContentsProps) {
+const categoryActiveColors: Record<string, string> = {
+  "投資": "text-blue-600 font-bold border-l-4 border-blue-600 pl-2 -ml-2",
+  "子育て": "text-pink-600 font-bold border-l-4 border-pink-600 pl-2 -ml-2",
+  "ITエンジニア": "text-green-600 font-bold border-l-4 border-green-600 pl-2 -ml-2",
+  "副業": "text-purple-600 font-bold border-l-4 border-purple-600 pl-2 -ml-2",
+};
+
+const categoryHoverColors: Record<string, string> = {
+  "投資": "hover:text-blue-600",
+  "子育て": "hover:text-pink-600",
+  "ITエンジニア": "hover:text-green-600",
+  "副業": "hover:text-purple-600",
+};
+
+export default function TableOfContents({ items, category }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
+  const activeColor = category ? categoryActiveColors[category] : "text-primary font-medium";
+  const hoverColor = category ? categoryHoverColors[category] : "hover:text-primary";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -61,8 +78,8 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
               onClick={(e) => handleClick(e, item.id)}
               className={`text-sm block py-1 transition-colors ${
                 activeId === item.id
-                  ? "text-primary font-medium"
-                  : "text-gray-600 hover:text-primary"
+                  ? activeColor
+                  : `text-gray-600 ${hoverColor}`
               }`}
             >
               {item.text}

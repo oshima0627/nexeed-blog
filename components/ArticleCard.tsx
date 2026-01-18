@@ -16,10 +16,10 @@ interface ArticleCardProps {
 }
 
 const categoryColors: Record<string, string> = {
-  "投資": "bg-blue-100 text-blue-800",
-  "子育て": "bg-pink-100 text-pink-800",
-  "ITエンジニア": "bg-green-100 text-green-800",
-  "副業": "bg-purple-100 text-purple-800",
+  "投資": "bg-blue-500 text-white border-blue-600",
+  "子育て": "bg-pink-500 text-white border-pink-600",
+  "ITエンジニア": "bg-green-500 text-white border-green-600",
+  "副業": "bg-purple-500 text-white border-purple-600",
 };
 
 export default function ArticleCard({ post }: ArticleCardProps) {
@@ -29,7 +29,7 @@ export default function ArticleCard({ post }: ArticleCardProps) {
     <Link href={`/posts/${post.slug}`}>
       <article className="card p-6 h-full flex flex-col">
         <div className="flex items-center gap-3 mb-3">
-          <span className={`px-3 py-1 rounded-full text-xs font-medium ${categoryColors[post.category] || "bg-gray-100 text-gray-800"}`}>
+          <span className={`px-4 py-1.5 rounded-md text-sm font-bold border-2 shadow-sm ${categoryColors[post.category] || "bg-gray-100 text-gray-800 border-gray-300"}`}>
             {post.category}
           </span>
           <time className="text-sm text-gray-500">{formattedDate}</time>

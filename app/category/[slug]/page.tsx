@@ -11,6 +11,20 @@ const categories: Record<string, string> = {
   "side-business": "副業",
 };
 
+const categoryColors: Record<string, string> = {
+  "investment": "bg-blue-500 text-white border-blue-600",
+  "parenting": "bg-pink-500 text-white border-pink-600",
+  "engineering": "bg-green-500 text-white border-green-600",
+  "side-business": "bg-purple-500 text-white border-purple-600",
+};
+
+const categoryHeaderColors: Record<string, string> = {
+  "investment": "bg-gradient-to-r from-blue-500 to-blue-600 text-white",
+  "parenting": "bg-gradient-to-r from-pink-500 to-pink-600 text-white",
+  "engineering": "bg-gradient-to-r from-green-500 to-green-600 text-white",
+  "side-business": "bg-gradient-to-r from-purple-500 to-purple-600 text-white",
+};
+
 export async function generateStaticParams() {
   return Object.keys(categories).map((slug) => ({
     slug,
@@ -63,6 +77,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   const totalPages = getTotalPages(allPosts.length, POSTS_PER_PAGE);
   const posts = getPaginatedPosts(allPosts, 1, POSTS_PER_PAGE);
 
+  const headerColor = categoryHeaderColors[slug] || "bg-gray-700 text-white";
+  const categoryColor = categoryColors[slug] || "bg-gray-100 text-gray-800 border-gray-300";
+
   return (
     <div className="container-custom py-12">
       {/* パンくずリスト */}
@@ -71,10 +88,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
         <span className="mx-2">/</span>
         <span>カテゴリー</span>
         <span className="mx-2">/</span>
-        <span className="text-gray-900 font-medium">{categoryName}</span>
+        <span className={`px-3 py-1 rounded-md font-bold border-2 shadow-sm ${categoryColor}`}>{categoryName}</span>
       </nav>
 
-      <h1 className="text-4xl font-bold mb-8">{categoryName}の記事</h1>
+      <h1 className={`text-2xl md:text-3xl font-bold mb-8 px-6 py-4 shadow-md ${headerColor}`}>{categoryName}の記事</h1>
 
       {posts.length > 0 ? (
         <>

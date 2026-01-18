@@ -134,7 +134,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       {/* 記事ヘッダー */}
       <article className={`max-w-3xl mx-auto ${categoryClass}`}>
         <header className="mb-8">
-          <h1 className="post-title text-xl md:text-2xl font-bold mb-4 leading-tight">{post.title}</h1>
+          <h1 className="post-title text-xl md:text-2xl font-bold mb-6 leading-relaxed">{post.title}</h1>
 
           <div className="flex items-center gap-4 text-sm text-gray-600">
             <time>{formattedDate}</time>
@@ -150,7 +150,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         {/* 目次 */}
         {tocItems.length > 0 && (
           <div className="post-toc mb-8 p-4">
-            <TableOfContents items={tocItems} />
+            <TableOfContents items={tocItems} category={post.category} />
           </div>
         )}
 
