@@ -3,18 +3,13 @@ import ArticleCard from "@/components/ArticleCard";
 import Pagination from "@/components/Pagination";
 import { getPaginatedPosts, getTotalPages, POSTS_PER_PAGE } from "@/lib/pagination";
 import Link from "next/link";
-
-const categories = [
-  { slug: "investment", name: "投資", icon: "💰", description: "資産形成・インデックス投資", className: "category-btn-investment" },
-  { slug: "engineering", name: "ITエンジニア", icon: "💻", description: "技術・プログラミング", className: "category-btn-engineering" },
-  { slug: "side-business", name: "副業", icon: "💼", description: "副収入・フリーランス", className: "category-btn-side-business" },
-  { slug: "parenting", name: "子育て", icon: "👶", description: "育児・ワークライフバランス", className: "category-btn-parenting" },
-];
+import { getAllCategories } from "@/lib/constants/categories";
 
 export default function Home() {
   const allPosts = getAllPosts();
   const totalPages = getTotalPages(allPosts.length, POSTS_PER_PAGE);
   const posts = getPaginatedPosts(allPosts, 1, POSTS_PER_PAGE);
+  const categories = getAllCategories();
 
   return (
     <div className="container-custom py-12">
@@ -26,7 +21,7 @@ export default function Home() {
             <Link
               key={category.slug}
               href={`/category/${category.slug}`}
-              className={`group block p-3 md:p-6 bg-white border-2 rounded-lg hover:shadow-lg transition-all duration-200 ${category.className}`}
+              className={`group block p-3 md:p-6 bg-white border-2 rounded-lg hover:shadow-lg transition-all duration-200 ${category.colors.button}`}
             >
               <div className="flex items-center gap-2 md:gap-4">
                 <span className="text-2xl md:text-4xl">{category.icon}</span>

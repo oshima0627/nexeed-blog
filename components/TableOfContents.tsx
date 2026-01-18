@@ -2,30 +2,18 @@
 
 import { useEffect, useState } from "react";
 import { TocItem } from "@/lib/toc";
+import { getCategoryByName } from "@/lib/constants/categories";
 
 interface TableOfContentsProps {
   items: TocItem[];
   category?: string;
 }
 
-const categoryActiveColors: Record<string, string> = {
-  "投資": "text-blue-600 font-bold border-l-4 border-blue-600 pl-2 -ml-2",
-  "子育て": "text-pink-600 font-bold border-l-4 border-pink-600 pl-2 -ml-2",
-  "ITエンジニア": "text-green-600 font-bold border-l-4 border-green-600 pl-2 -ml-2",
-  "副業": "text-purple-600 font-bold border-l-4 border-purple-600 pl-2 -ml-2",
-};
-
-const categoryHoverColors: Record<string, string> = {
-  "投資": "hover:text-blue-600",
-  "子育て": "hover:text-pink-600",
-  "ITエンジニア": "hover:text-green-600",
-  "副業": "hover:text-purple-600",
-};
-
 export default function TableOfContents({ items, category }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
-  const activeColor = category ? categoryActiveColors[category] : "text-primary font-medium";
-  const hoverColor = category ? categoryHoverColors[category] : "hover:text-primary";
+  const categoryData = category ? getCategoryByName(category) : undefined;
+  const activeColor = categoryData?.colors.tocActive || "text-primary font-medium";
+  const hoverColor = categoryData?.colors.tocHover || "hover:text-primary";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
