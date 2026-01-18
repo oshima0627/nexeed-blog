@@ -83,6 +83,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const relatedPosts = getRelatedPosts(slug, post.category, 3);
 
   const formattedDate = format(new Date(post.date), "yyyy年M月d日", { locale: ja });
+  const categoryClass = categoryClasses[post.category] || "";
 
   // 目次を抽出
   const tocItems = extractTocFromHtml(post.content || "");
@@ -131,9 +132,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       </nav>
 
       {/* 記事ヘッダー */}
-      <article className="max-w-3xl mx-auto">
+      <article className={`max-w-3xl mx-auto ${categoryClass}`}>
         <header className="mb-8">
-          <h1 className="text-xl md:text-2xl font-bold mb-4 leading-tight">{post.title}</h1>
+          <h1 className="post-title text-xl md:text-2xl font-bold mb-4 leading-tight">{post.title}</h1>
 
           <div className="flex items-center gap-4 text-sm text-gray-600">
             <time>{formattedDate}</time>
@@ -148,7 +149,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
         {/* 目次 */}
         {tocItems.length > 0 && (
-          <div className="mb-8">
+          <div className="post-toc mb-8 p-4">
             <TableOfContents items={tocItems} />
           </div>
         )}
@@ -156,7 +157,6 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         {/* 記事本文（バナーを複数箇所に自動挿入） */}
         {(() => {
           const content = post.content || "";
-          const categoryClass = categoryClasses[post.category] || "";
 
           if (!bannerPair) {
             // バナーがない場合は通常表示
