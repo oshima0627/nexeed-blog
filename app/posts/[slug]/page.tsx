@@ -147,7 +147,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             return (
               <>
                 <div
-                  className={`prose prose-lg max-w-none prose-headings:scroll-mt-20 ${categoryClass}`}
+                  className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
                   dangerouslySetInnerHTML={{ __html: content }}
                 />
               </>
@@ -187,7 +187,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             segments.push(
               <div
                 key={`content-${i}`}
-                className={`prose prose-lg max-w-none prose-headings:scroll-mt-20 ${categoryClass}`}
+                className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
                 dangerouslySetInnerHTML={{ __html: segmentContent }}
               />
             );
