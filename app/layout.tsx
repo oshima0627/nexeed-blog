@@ -55,9 +55,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // TODO: Google Search Consoleで取得した検証コードに置き換えてください
-    // 例: google: "abcdefghijklmnopqrstuvwxyz123456",
-    // google: "google-site-verification-code-here",
+    google: "google-site-verification-code-here", // Google Search Consoleで取得したコードに置き換え
   },
 };
 

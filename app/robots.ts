@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://blog.nexeed-web.com/sitemap.xml",
+    sitemap: "https://nexeed-blog.vercel.app/sitemap.xml",
   };
 }

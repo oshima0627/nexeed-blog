@@ -9,7 +9,6 @@ import Link from "next/link";
 import A8Banner from "@/components/A8Banner";
 import MoshimoBanner from "@/components/MoshimoBanner";
 import { getResponsiveBanners, getResponsiveMoshimoBanners, getBannerPairById } from "@/data/affiliate-links";
-import { getCategoryByName } from "@/lib/constants/categories";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -22,14 +21,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
-  // カテゴリー別のキーワード取得
-  const categoryData = getCategoryByName(post.category);
-  const categoryKeywords = categoryData?.metadata.keywords || [];
+  // カテゴリー別のキーワード生成
+  const categoryKeywords: Record<string, string[]> = {
+    "投資": ["インデックス投資", "NISA", "資産運用", "投資信託", "長期投資", "オルカン", "S&P500"],
+    "子育て": ["育児", "保育園", "待機児童", "子育て支援", "男性育休", "児童手当", "ワークライフバランス"],
+    "ITエンジニア": ["プログラミング", "AI", "機械学習", "開発ツール", "コーディング", "エンジニア", "技術"],
+    "副業": ["副収入", "フリーランス", "クラウドソーシング", "確定申告", "在宅ワーク", "複業"],
+  };
 
   const keywords = [
     post.title,
     post.category,
-    ...categoryKeywords,
+    ...(categoryKeywords[post.category] || []),
   ];
 
   return {
@@ -60,14 +63,27 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+const categoryColors: Record<string, string> = {
+  "投資": "bg-blue-100 text-blue-800",
+  "子育て": "bg-pink-100 text-pink-800",
+  "ITエンジニア": "bg-green-100 text-green-800",
+  "副業": "bg-purple-100 text-purple-800",
+};
+
+const categoryClasses: Record<string, string> = {
+  "投資": "post-category-investment",
+  "子育て": "post-category-parenting",
+  "ITエンジニア": "post-category-engineering",
+  "副業": "post-category-side-business",
+};
+
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   const relatedPosts = getRelatedPosts(slug, post.category, 3);
 
   const formattedDate = format(new Date(post.date), "yyyy年M月d日", { locale: ja });
-  const categoryData = getCategoryByName(post.category);
-  const categoryClass = categoryData?.cssClass || "";
+  const categoryClass = categoryClasses[post.category] || "";
 
   // 目次を抽出
   const tocItems = extractTocFromHtml(post.content || "");
@@ -110,7 +126,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         <nav className="text-sm text-gray-500 mb-8">
         <Link href="/" className="hover:text-primary">Home</Link>
         <span className="mx-2">/</span>
-        <span className={`px-3 py-1 rounded-md font-bold border-2 shadow-sm ${categoryData?.colors.tag || "bg-gray-100 text-gray-800 border-gray-300"}`}>
+        <span className={`px-2 py-1 rounded ${categoryColors[post.category] || "bg-gray-100 text-gray-800"}`}>
           {post.category}
         </span>
       </nav>
@@ -147,7 +163,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             return (
               <>
                 <div
-                  className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
+                  className={`prose prose-lg max-w-none prose-headings:scroll-mt-20 ${categoryClass}`}
                   dangerouslySetInnerHTML={{ __html: content }}
                 />
               </>
@@ -187,7 +203,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             segments.push(
               <div
                 key={`content-${i}`}
-                className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
+                className={`prose prose-lg max-w-none prose-headings:scroll-mt-20 ${categoryClass}`}
                 dangerouslySetInnerHTML={{ __html: segmentContent }}
               />
             );
@@ -223,7 +239,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           segments.push(
             <div
               key={`content-last`}
-              className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
+              className={`prose prose-lg max-w-none prose-headings:scroll-mt-20 ${categoryClass}`}
               dangerouslySetInnerHTML={{ __html: lastSegment }}
             />
           );

@@ -134,95 +134,9 @@ export function getPostsByCategory(category: string): PostData[] {
   return allPosts.filter((post) => post.category === category);
 }
 
-/**
- * テキストから重要なキーワードを抽出
- */
-function extractKeywords(text: string): string[] {
-  // ストップワード（助詞、接続詞など、意味の薄い語）
-  const stopWords = new Set([
-    'は', 'が', 'を', 'に', 'へ', 'と', 'で', 'の', 'や', 'から', 'まで', 'より',
-    'も', 'な', 'ない', 'です', 'ます', 'だ', 'である', 'する', 'した', 'します',
-    'れる', 'られる', 'いる', 'ある', 'この', 'その', 'あの', 'どの', 'これ',
-    'それ', 'あれ', 'どれ', 'こと', 'もの', 'ため', 'など', 'ため', 'よう',
-    'という', 'として', 'について', 'における', 'に関する', 'による',
-    'でも', 'けど', 'しかし', 'だが', 'しかし', 'なぜなら', 'ので',
-  ]);
-
-  // テキストを分割してキーワードを抽出
-  const words = text
-    .replace(/[、。！？「」『』（）\(\)]/g, ' ') // 句読点を空白に置換
-    .split(/\s+/) // 空白で分割
-    .filter(word => word.length >= 2) // 2文字以上
-    .filter(word => !stopWords.has(word)) // ストップワード除外
-    .map(word => word.toLowerCase()); // 小文字化
-
-  return [...new Set(words)]; // 重複除去
-}
-
-/**
- * 2つの記事のキーワード類似度を計算
- */
-function calculateSimilarity(post1: PostData, post2: PostData): number {
-  // タイトルと抜粋からキーワードを抽出
-  const keywords1 = new Set([
-    ...extractKeywords(post1.title),
-    ...extractKeywords(post1.excerpt),
-  ]);
-
-  const keywords2 = new Set([
-    ...extractKeywords(post2.title),
-    ...extractKeywords(post2.excerpt),
-  ]);
-
-  // 共通キーワード数を計算
-  const intersection = [...keywords1].filter(k => keywords2.has(k)).length;
-  const union = new Set([...keywords1, ...keywords2]).size;
-
-  if (union === 0) return 0;
-
-  // Jaccard係数（類似度）を計算
-  let similarity = intersection / union;
-
-  // 同じカテゴリなら類似度を少しブースト
-  if (post1.category === post2.category) {
-    similarity += 0.2;
-  }
-
-  // タイトルに共通の単語が多いほどブースト
-  const titleKeywords1 = new Set(extractKeywords(post1.title));
-  const titleKeywords2 = new Set(extractKeywords(post2.title));
-  const titleIntersection = [...titleKeywords1].filter(k => titleKeywords2.has(k)).length;
-
-  if (titleIntersection > 0) {
-    similarity += titleIntersection * 0.15;
-  }
-
-  return similarity;
-}
-
-/**
- * 関連記事を取得（キーワード類似度ベース）
- */
 export function getRelatedPosts(slug: string, category: string, limit = 4): PostData[] {
   const allPosts = getAllPosts();
-  const currentPost = allPosts.find(post => post.slug === slug);
-
-  if (!currentPost) {
-    // 現在の記事が見つからない場合は、同じカテゴリの記事を返す
-    return allPosts
-      .filter((post) => post.slug !== slug && post.category === category)
-      .slice(0, limit);
-  }
-
-  // 他の全ての記事との類似度を計算
-  const postsWithSimilarity = allPosts
-    .filter(post => post.slug !== slug) // 現在の記事を除外
-    .map(post => ({
-      post,
-      similarity: calculateSimilarity(currentPost, post),
-    }))
-    .sort((a, b) => b.similarity - a.similarity) // 類似度の高い順にソート
-    .slice(0, limit); // 上位N件を取得
-
-  return postsWithSimilarity.map(item => item.post);
+  return allPosts
+    .filter((post) => post.slug !== slug && post.category === category)
+    .slice(0, limit);
 }
