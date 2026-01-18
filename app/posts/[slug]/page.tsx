@@ -70,6 +70,13 @@ const categoryColors: Record<string, string> = {
   "副業": "bg-purple-100 text-purple-800",
 };
 
+const categoryClasses: Record<string, string> = {
+  "投資": "post-category-investment",
+  "子育て": "post-category-parenting",
+  "ITエンジニア": "post-category-engineering",
+  "副業": "post-category-side-business",
+};
+
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
@@ -149,13 +156,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         {/* 記事本文（バナーを複数箇所に自動挿入） */}
         {(() => {
           const content = post.content || "";
+          const categoryClass = categoryClasses[post.category] || "";
 
           if (!bannerPair) {
             // バナーがない場合は通常表示
             return (
               <>
                 <div
-                  className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
+                  className={`prose prose-lg max-w-none prose-headings:scroll-mt-20 ${categoryClass}`}
                   dangerouslySetInnerHTML={{ __html: content }}
                 />
               </>
@@ -195,7 +203,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             segments.push(
               <div
                 key={`content-${i}`}
-                className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
+                className={`prose prose-lg max-w-none prose-headings:scroll-mt-20 ${categoryClass}`}
                 dangerouslySetInnerHTML={{ __html: segmentContent }}
               />
             );
@@ -231,7 +239,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           segments.push(
             <div
               key={`content-last`}
-              className="prose prose-lg max-w-none prose-headings:scroll-mt-20"
+              className={`prose prose-lg max-w-none prose-headings:scroll-mt-20 ${categoryClass}`}
               dangerouslySetInnerHTML={{ __html: lastSegment }}
             />
           );

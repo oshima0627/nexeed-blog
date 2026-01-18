@@ -32,4 +32,56 @@
   .btn-primary {
     @apply bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors;
   }
+
+  /* カテゴリごとの見出しスタイル - 投資 */
+  .post-category-investment .prose h2 {
+    @apply bg-blue-50 border-l-4 border-blue-500 pl-4 py-3 rounded-r-md mb-6 mt-8;
+  }
+
+  .post-category-investment .prose h3 {
+    @apply bg-blue-50 border-l-4 border-blue-400 pl-4 py-2 rounded-r-md mb-4 mt-6;
+  }
+
+  .post-category-investment .prose h4 {
+    @apply bg-blue-50 border-l-4 border-blue-300 pl-4 py-2 rounded-r-md mb-3 mt-4;
+  }
+
+  /* カテゴリごとの見出しスタイル - 子育て */
+  .post-category-parenting .prose h2 {
+    @apply bg-pink-50 border-l-4 border-pink-500 pl-4 py-3 rounded-r-md mb-6 mt-8;
+  }
+
+  .post-category-parenting .prose h3 {
+    @apply bg-pink-50 border-l-4 border-pink-400 pl-4 py-2 rounded-r-md mb-4 mt-6;
+  }
+
+  .post-category-parenting .prose h4 {
+    @apply bg-pink-50 border-l-4 border-pink-300 pl-4 py-2 rounded-r-md mb-3 mt-4;
+  }
+
+  /* カテゴリごとの見出しスタイル - ITエンジニア */
+  .post-category-engineering .prose h2 {
+    @apply bg-green-50 border-l-4 border-green-500 pl-4 py-3 rounded-r-md mb-6 mt-8;
+  }
+
+  .post-category-engineering .prose h3 {
+    @apply bg-green-50 border-l-4 border-green-400 pl-4 py-2 rounded-r-md mb-4 mt-6;
+  }
+
+  .post-category-engineering .prose h4 {
+    @apply bg-green-50 border-l-4 border-green-300 pl-4 py-2 rounded-r-md mb-3 mt-4;
+  }
+
+  /* カテゴリごとの見出しスタイル - 副業 */
+  .post-category-side-business .prose h2 {
+    @apply bg-purple-50 border-l-4 border-purple-500 pl-4 py-3 rounded-r-md mb-6 mt-8;
+  }
+
+  .post-category-side-business .prose h3 {
+    @apply bg-purple-50 border-l-4 border-purple-400 pl-4 py-2 rounded-r-md mb-4 mt-6;
+  }
+
+  .post-category-side-business .prose h4 {
+    @apply bg-purple-50 border-l-4 border-purple-300 pl-4 py-2 rounded-r-md mb-3 mt-4;
+  }
 }
