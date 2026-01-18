@@ -59,11 +59,6 @@
     @apply bg-blue-50 border border-blue-200 shadow-sm;
   }
 
-  /* H1見出し（markdown内の記事タイトル）*/
-  .post-category-investment :is(.prose, .prose-lg) h1 {
-    @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-4 shadow-md mb-8 rounded !important;
-  }
-
   /* 大項目（H2）- 最も目立つデザイン */
   .post-category-investment :is(.prose, .prose-lg) h2 {
     @apply bg-blue-100 border-l-8 border-blue-600 pl-6 py-4 shadow-md mb-8 mt-10 text-xl font-bold text-blue-900 relative rounded-r !important;
@@ -91,11 +86,6 @@
 
   .post-category-parenting .post-toc {
     @apply bg-pink-50 border border-pink-200 shadow-sm;
-  }
-
-  /* H1見出し（markdown内の記事タイトル）*/
-  .post-category-parenting :is(.prose, .prose-lg) h1 {
-    @apply bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-4 shadow-md mb-8 rounded !important;
   }
 
   /* 大項目（H2）- 最も目立つデザイン */
@@ -127,11 +117,6 @@
     @apply bg-green-50 border border-green-200 shadow-sm;
   }
 
-  /* H1見出し（markdown内の記事タイトル）*/
-  .post-category-engineering :is(.prose, .prose-lg) h1 {
-    @apply bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-4 shadow-md mb-8 rounded !important;
-  }
-
   /* 大項目（H2）- 最も目立つデザイン */
   .post-category-engineering :is(.prose, .prose-lg) h2 {
     @apply bg-green-100 border-l-8 border-green-600 pl-6 py-4 shadow-md mb-8 mt-10 text-xl font-bold text-green-900 relative rounded-r !important;
@@ -159,11 +144,6 @@
 
   .post-category-side-business .post-toc {
     @apply bg-purple-50 border border-purple-200 shadow-sm;
-  }
-
-  /* H1見出し（markdown内の記事タイトル）*/
-  .post-category-side-business :is(.prose, .prose-lg) h1 {
-    @apply bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-4 shadow-md mb-8 rounded !important;
   }
 
   /* 大項目（H2）- 最も目立つデザイン */
