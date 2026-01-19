@@ -82,7 +82,7 @@ export default async function PagedHome({ params }: { params: Promise<{ page: st
         ))}
       </div>
 
-      <Pagination currentPage={pageNumber} totalPages={totalPages} basePath="/page" />
+      <Pagination currentPage={pageNumber} totalPages={totalPages} basePath="/page" firstPagePath="/" />
     </div>
   );
 }

@@ -57,7 +57,7 @@ export default function Home() {
         ))}
       </div>
 
-      <Pagination currentPage={1} totalPages={totalPages} basePath="/page" />
+      <Pagination currentPage={1} totalPages={totalPages} basePath="/page" firstPagePath="/" />
     </div>
   );
 }
