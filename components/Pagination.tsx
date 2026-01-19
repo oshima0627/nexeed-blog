@@ -4,10 +4,14 @@ interface PaginationProps {
   currentPage: number;
   totalPages: number;
   basePath: string;
+  firstPagePath?: string; // 1ページ目の専用パス（オプション）
 }
 
-export default function Pagination({ currentPage, totalPages, basePath }: PaginationProps) {
+export default function Pagination({ currentPage, totalPages, basePath, firstPagePath }: PaginationProps) {
   if (totalPages <= 1) return null;
+
+  // 1ページ目のパスを取得（指定がない場合はbasePathを使用）
+  const getFirstPagePath = () => firstPagePath || basePath;
 
   const pages: (number | string)[] = [];
 
@@ -41,7 +45,7 @@ export default function Pagination({ currentPage, totalPages, basePath }: Pagina
       {/* 前へボタン */}
       {currentPage > 1 ? (
         <Link
-          href={`${basePath}${currentPage - 1 === 1 ? "" : `/${currentPage - 1}`}`}
+          href={currentPage - 1 === 1 ? getFirstPagePath() : `${basePath}/${currentPage - 1}`}
           className="px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
         >
           前へ
@@ -57,7 +61,7 @@ export default function Pagination({ currentPage, totalPages, basePath }: Pagina
         typeof page === "number" ? (
           <Link
             key={index}
-            href={`${basePath}${page === 1 ? "" : `/${page}`}`}
+            href={page === 1 ? getFirstPagePath() : `${basePath}/${page}`}
             className={`px-4 py-2 rounded-md transition-colors ${
               currentPage === page
                 ? "bg-primary text-white"

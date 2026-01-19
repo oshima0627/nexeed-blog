@@ -2,6 +2,7 @@ import { getPostsByCategory } from "@/lib/posts";
 import ArticleCard from "@/components/ArticleCard";
 import Pagination from "@/components/Pagination";
 import { getPaginatedPosts, getTotalPages, POSTS_PER_PAGE } from "@/lib/pagination";
+import { Metadata } from "next";
 import Link from "next/link";
 
 const categories: Record<string, string> = {
@@ -26,13 +27,24 @@ const categoryHeaderColors: Record<string, string> = {
 };
 
 export async function generateStaticParams() {
-  return Object.keys(categories).map((slug) => ({
-    slug,
-  }));
+  const params = [];
+
+  for (const slug of Object.keys(categories)) {
+    const categoryName = categories[slug];
+    const allPosts = getPostsByCategory(categoryName);
+    const totalPages = getTotalPages(allPosts.length, POSTS_PER_PAGE);
+
+    // 2ページ目以降を生成
+    for (let i = 2; i <= totalPages; i++) {
+      params.push({ slug, page: i.toString() });
+    }
+  }
+
+  return params;
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; page: string }> }): Promise<Metadata> {
+  const { slug, page } = await params;
   const categoryName = categories[slug];
 
   const categoryDescriptions: Record<string, string> = {
@@ -50,32 +62,33 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 
   return {
-    title: `${categoryName}の記事一覧 | NEXEED BLOG`,
-    description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページです。`,
+    title: `${categoryName}の記事一覧 - ${page}ページ目 | NEXEED BLOG`,
+    description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページ${page}ページ目です。`,
     keywords: categoryKeywords[slug] || [categoryName],
     openGraph: {
-      title: `${categoryName}の記事一覧`,
+      title: `${categoryName}の記事一覧 - ${page}ページ目`,
       description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページです。`,
       type: "website",
       locale: "ja_JP",
     },
     twitter: {
       card: "summary",
-      title: `${categoryName}の記事一覧`,
+      title: `${categoryName}の記事一覧 - ${page}ページ目`,
       description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページです。`,
     },
     alternates: {
-      canonical: `https://blog.nexeed-web.com/category/${slug}`,
+      canonical: `https://blog.nexeed-web.com/category/${slug}/page/${page}`,
     },
   };
 }
 
-export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function CategoryPagedPage({ params }: { params: Promise<{ slug: string; page: string }> }) {
+  const { slug, page } = await params;
+  const pageNumber = parseInt(page);
   const categoryName = categories[slug];
   const allPosts = getPostsByCategory(categoryName);
   const totalPages = getTotalPages(allPosts.length, POSTS_PER_PAGE);
-  const posts = getPaginatedPosts(allPosts, 1, POSTS_PER_PAGE);
+  const posts = getPaginatedPosts(allPosts, pageNumber, POSTS_PER_PAGE);
 
   const headerColor = categoryHeaderColors[slug] || "bg-gray-700 text-white";
   const categoryColor = categoryColors[slug] || "bg-gray-100 text-gray-800 border-gray-300";
@@ -100,7 +113,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
               <ArticleCard key={post.slug} post={post} />
             ))}
           </div>
-          <Pagination currentPage={1} totalPages={totalPages} basePath={`/category/${slug}/page`} firstPagePath={`/category/${slug}`} />
+          <Pagination currentPage={pageNumber} totalPages={totalPages} basePath={`/category/${slug}/page`} firstPagePath={`/category/${slug}`} />
         </>
       ) : (
         <div className="text-center py-16 text-gray-500">
