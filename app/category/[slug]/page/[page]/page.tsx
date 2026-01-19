@@ -4,6 +4,7 @@ import Pagination from "@/components/Pagination";
 import { getPaginatedPosts, getTotalPages, POSTS_PER_PAGE } from "@/lib/pagination";
 import { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 const categories: Record<string, string> = {
   "investment": "投資",
@@ -93,8 +94,16 @@ export default async function CategoryPagedPage({ params }: { params: Promise<{ 
   const headerColor = categoryHeaderColors[slug] || "bg-gray-700 text-white";
   const categoryColor = categoryColors[slug] || "bg-gray-100 text-gray-800 border-gray-300";
 
+  // パンくずリストデータ
+  const breadcrumbItems = [
+    { name: "ホーム", url: "https://blog.nexeed-web.com" },
+    { name: categoryName, url: `https://blog.nexeed-web.com/category/${slug}` },
+  ];
+
   return (
-    <div className="container-custom py-12">
+    <>
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+      <div className="container-custom py-12">
       {/* パンくずリスト */}
       <nav className="text-sm text-gray-500 mb-8">
         <Link href="/" className="hover:text-primary">Home</Link>
@@ -120,6 +129,7 @@ export default async function CategoryPagedPage({ params }: { params: Promise<{ 
           <p>まだ記事がありません。</p>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

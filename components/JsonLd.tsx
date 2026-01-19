@@ -48,6 +48,7 @@ export function BlogPostJsonLd({
   dateModified,
   url,
   category,
+  imageUrl,
 }: {
   title: string;
   description: string;
@@ -55,12 +56,14 @@ export function BlogPostJsonLd({
   dateModified?: string;
   url: string;
   category: string;
+  imageUrl?: string;
 }) {
   const data = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: title,
     description: description,
+    image: imageUrl || `${url}/opengraph-image`,
     datePublished: datePublished,
     dateModified: dateModified || datePublished,
     author: {
@@ -89,6 +92,25 @@ export function BlogPostJsonLd({
       name: "NEXEED BLOG",
       url: "https://blog.nexeed-web.com",
     },
+  };
+
+  return <JsonLd data={data} />;
+}
+
+export function BreadcrumbJsonLd({
+  items,
+}: {
+  items: Array<{ name: string; url: string }>;
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
   };
 
   return <JsonLd data={data} />;
