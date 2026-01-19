@@ -4,7 +4,7 @@ import { ja } from "date-fns/locale";
 import ArticleCard from "@/components/ArticleCard";
 import TableOfContents from "@/components/TableOfContents";
 import { extractTocFromHtml } from "@/lib/toc";
-import { BlogPostJsonLd } from "@/components/JsonLd";
+import { BlogPostJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import Link from "next/link";
 import A8Banner from "@/components/A8Banner";
 import MoshimoBanner from "@/components/MoshimoBanner";
@@ -35,6 +35,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     ...(categoryKeywords[post.category] || []),
   ];
 
+  const ogImageUrl = `https://blog.nexeed-web.com/posts/${slug}/opengraph-image`;
+
   return {
     title: `${post.title} | NEXEED BLOG`,
     description: post.excerpt,
@@ -50,15 +52,27 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       section: post.category,
       tags: keywords,
       locale: "ja_JP",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
       creator: "@nexeed_blog",
+      images: [ogImageUrl],
     },
     alternates: {
       canonical: `https://blog.nexeed-web.com/posts/${slug}`,
+      languages: {
+        "ja-JP": `https://blog.nexeed-web.com/posts/${slug}`,
+      },
     },
   };
 }
@@ -111,6 +125,13 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     bannerPair = moshimoBannerPair || a8BannerPair;
   }
 
+  // パンくずリストデータ
+  const breadcrumbItems = [
+    { name: "ホーム", url: "https://blog.nexeed-web.com" },
+    { name: post.category, url: `https://blog.nexeed-web.com/category/${encodeURIComponent(post.category)}` },
+    { name: post.title, url: `https://blog.nexeed-web.com/posts/${slug}` },
+  ];
+
   return (
     <>
       <BlogPostJsonLd
@@ -120,7 +141,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         dateModified={post.updated}
         url={`https://blog.nexeed-web.com/posts/${slug}`}
         category={post.category}
+        imageUrl={`https://blog.nexeed-web.com/posts/${slug}/opengraph-image`}
       />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <div className="container-custom py-12">
         {/* パンくずリスト */}
         <nav className="text-sm text-gray-500 mb-8">
