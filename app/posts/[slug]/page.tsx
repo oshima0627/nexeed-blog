@@ -386,7 +386,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       {relatedPosts.length > 0 && (
         <div className="mt-16">
           <h2 className="text-2xl font-bold mb-6">関連記事</h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6">
             {relatedPosts.map((relatedPost) => (
               <ArticleCard key={relatedPost.slug} post={relatedPost} />
             ))}

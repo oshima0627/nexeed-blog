@@ -117,7 +117,7 @@ export default async function CategoryPagedPage({ params }: { params: Promise<{ 
 
       {posts.length > 0 ? (
         <>
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8">
             {posts.map((post) => (
               <ArticleCard key={post.slug} post={post} />
             ))}
