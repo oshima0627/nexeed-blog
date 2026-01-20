@@ -170,11 +170,30 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           </div>
 
           {/* リード文 */}
-          {post.excerpt && (
-            <p className="text-gray-700 leading-relaxed text-base mb-8 p-4 bg-gray-50 rounded-lg border-l-4 border-primary">
-              {post.excerpt}
-            </p>
-          )}
+          {(() => {
+            // 「この記事でわかること」セクションを抽出
+            const content = post.content || "";
+            const leadSectionMatch = content.match(
+              /<p><strong>この記事でわかること:?<\/strong><\/p>\s*<ul>[\s\S]*?<\/ul>/i
+            );
+            const leadSectionHtml = leadSectionMatch ? leadSectionMatch[0] : "";
+
+            return (
+              <div className="mb-8 p-6 bg-gray-50 rounded-lg border-l-4 border-primary">
+                {post.excerpt && (
+                  <p className="text-gray-700 leading-relaxed text-base mb-4">
+                    {post.excerpt}
+                  </p>
+                )}
+                {leadSectionHtml && (
+                  <div
+                    className="prose prose-base max-w-none [&_strong]:text-gray-900 [&_ul]:my-2 [&_li]:text-gray-700"
+                    dangerouslySetInnerHTML={{ __html: leadSectionHtml }}
+                  />
+                )}
+              </div>
+            );
+          })()}
         </header>
 
         {/* 目次 */}
@@ -190,6 +209,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           let content = post.content || "";
           // 最初のH1タグを削除（タイトルの重複を防ぐため）
           content = content.replace(/^<h1[^>]*>.*?<\/h1>\s*/i, "");
+          // 「この記事でわかること」セクションを削除（リード文エリアに表示済みのため）
+          content = content.replace(
+            /<p><strong>この記事でわかること:?<\/strong><\/p>\s*<ul>[\s\S]*?<\/ul>\s*/i,
+            ""
+          );
 
           if (!bannerPair) {
             // バナーがない場合は通常表示
