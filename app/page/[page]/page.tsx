@@ -76,7 +76,7 @@ export default async function PagedHome({ params }: { params: Promise<{ page: st
       </div>
 
       <h1 className="text-4xl font-bold mb-8 text-center">最新記事</h1>
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-8">
         {posts.map((post) => (
           <ArticleCard key={post.slug} post={post} />
         ))}

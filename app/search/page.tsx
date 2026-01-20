@@ -58,7 +58,7 @@ function SearchResults() {
           <p>検索キーワードを入力してください。</p>
         </div>
       ) : results.length > 0 ? (
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8">
           {results.map((post) => (
             <ArticleCard key={post.slug} post={post} />
           ))}
