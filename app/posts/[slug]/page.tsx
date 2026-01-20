@@ -169,7 +169,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             )}
           </div>
 
-          {/* リード文 */}
+          {/* 記事画像とリード文 */}
           {(() => {
             // H1タイトルの後から最初のH2見出しの前までをリード文として抽出
             const content = post.content || "";
@@ -178,17 +178,39 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             const leadContentMatch = content.match(
               /<h1[^>]*>.*?<\/h1>\s*([\s\S]*?)(?=<h2|$)/i
             );
-            const leadContentHtml = leadContentMatch ? leadContentMatch[1].trim() : "";
+            let leadContentHtml = leadContentMatch ? leadContentMatch[1].trim() : "";
+
+            // リード文から画像を抽出（最初の画像のみ）
+            const imageMatch = leadContentHtml.match(/<img[^>]+>/i);
+            const articleImage = imageMatch ? imageMatch[0] : null;
+
+            // リード文から画像を削除
+            if (articleImage) {
+              leadContentHtml = leadContentHtml.replace(/<p>\s*<img[^>]+>\s*<\/p>/i, "").trim();
+            }
 
             return (
-              <div className="mb-8 p-6 bg-gray-50 rounded-lg border-l-4 border-primary">
-                {leadContentHtml && (
-                  <div
-                    className="prose prose-base max-w-none [&_strong]:text-gray-900 [&_ul]:my-2 [&_li]:text-gray-700 [&_p]:mb-4 [&_p]:text-gray-700 [&_p]:leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: leadContentHtml }}
-                  />
+              <>
+                {/* 記事画像 */}
+                {articleImage && (
+                  <div className="mb-8">
+                    <div
+                      className="prose prose-lg max-w-none"
+                      dangerouslySetInnerHTML={{ __html: articleImage }}
+                    />
+                  </div>
                 )}
-              </div>
+
+                {/* リード文 */}
+                {leadContentHtml && (
+                  <div className="mb-8 p-6 bg-gray-50 rounded-lg border-l-4 border-primary">
+                    <div
+                      className="prose prose-base max-w-none [&_strong]:text-gray-900 [&_ul]:my-2 [&_li]:text-gray-700 [&_p]:mb-4 [&_p]:text-gray-700 [&_p]:leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: leadContentHtml }}
+                    />
+                  </div>
+                )}
+              </>
             );
           })()}
         </header>
