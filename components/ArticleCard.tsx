@@ -28,16 +28,16 @@ export default function ArticleCard({ post }: ArticleCardProps) {
 
   return (
     <Link href={`/posts/${post.slug}`}>
-      <article className="card h-full flex flex-col overflow-hidden">
+      <article className="card h-full flex flex-col md:flex-row overflow-hidden">
         {/* 記事画像 */}
         {post.coverImage && (
-          <div className="relative w-full h-48 bg-gray-100">
+          <div className="relative w-full md:w-64 h-48 md:h-auto flex-shrink-0 bg-gray-100">
             <Image
               src={post.coverImage}
               alt={post.title}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 768px) 100vw, 256px"
             />
           </div>
         )}
