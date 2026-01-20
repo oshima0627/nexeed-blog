@@ -159,7 +159,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         <header className="mb-8">
           <h1 className="post-title text-xl md:text-2xl font-bold mb-6 leading-relaxed">{post.title}</h1>
 
-          <div className="flex items-center gap-4 text-sm text-gray-600">
+          <div className="flex items-center gap-4 text-sm text-gray-600 mb-6">
             <time>{formattedDate}</time>
             {post.updated && (
               <>
@@ -168,6 +168,13 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               </>
             )}
           </div>
+
+          {/* リード文 */}
+          {post.excerpt && (
+            <p className="text-gray-700 leading-relaxed text-base mb-8 p-4 bg-gray-50 rounded-lg border-l-4 border-primary">
+              {post.excerpt}
+            </p>
+          )}
         </header>
 
         {/* 目次 */}
@@ -179,7 +186,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
         {/* 記事本文（バナーを複数箇所に自動挿入） */}
         {(() => {
-          const content = post.content || "";
+          // 記事本文から最初のH1タイトルを除外
+          let content = post.content || "";
+          // 最初のH1タグを削除（タイトルの重複を防ぐため）
+          content = content.replace(/^<h1[^>]*>.*?<\/h1>\s*/i, "");
 
           if (!bannerPair) {
             // バナーがない場合は通常表示
