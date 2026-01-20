@@ -171,24 +171,21 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
           {/* リード文 */}
           {(() => {
-            // 「この記事でわかること」セクションを抽出
+            // H1タイトルの後から最初のH2見出しの前までをリード文として抽出
             const content = post.content || "";
-            const leadSectionMatch = content.match(
-              /<p><strong>この記事でわかること:?<\/strong><\/p>\s*<ul>[\s\S]*?<\/ul>/i
+
+            // H1タイトルの後から最初のH2見出しの前までを抽出
+            const leadContentMatch = content.match(
+              /<h1[^>]*>.*?<\/h1>\s*([\s\S]*?)(?=<h2|$)/i
             );
-            const leadSectionHtml = leadSectionMatch ? leadSectionMatch[0] : "";
+            const leadContentHtml = leadContentMatch ? leadContentMatch[1].trim() : "";
 
             return (
               <div className="mb-8 p-6 bg-gray-50 rounded-lg border-l-4 border-primary">
-                {post.excerpt && (
-                  <p className="text-gray-700 leading-relaxed text-base mb-4">
-                    {post.excerpt}
-                  </p>
-                )}
-                {leadSectionHtml && (
+                {leadContentHtml && (
                   <div
-                    className="prose prose-base max-w-none [&_strong]:text-gray-900 [&_ul]:my-2 [&_li]:text-gray-700"
-                    dangerouslySetInnerHTML={{ __html: leadSectionHtml }}
+                    className="prose prose-base max-w-none [&_strong]:text-gray-900 [&_ul]:my-2 [&_li]:text-gray-700 [&_p]:mb-4 [&_p]:text-gray-700 [&_p]:leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: leadContentHtml }}
                   />
                 )}
               </div>
@@ -205,13 +202,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
         {/* 記事本文（バナーを複数箇所に自動挿入） */}
         {(() => {
-          // 記事本文から最初のH1タイトルを除外
+          // 記事本文からリード文セクション全体を除外
           let content = post.content || "";
-          // 最初のH1タグを削除（タイトルの重複を防ぐため）
-          content = content.replace(/^<h1[^>]*>.*?<\/h1>\s*/i, "");
-          // 「この記事でわかること」セクションを削除（リード文エリアに表示済みのため）
+          // H1タイトルの後から最初のH2見出しの前まで（リード文セクション）を削除
           content = content.replace(
-            /<p><strong>この記事でわかること:?<\/strong><\/p>\s*<ul>[\s\S]*?<\/ul>\s*/i,
+            /<h1[^>]*>.*?<\/h1>\s*([\s\S]*?)(?=<h2)/i,
             ""
           );
 
