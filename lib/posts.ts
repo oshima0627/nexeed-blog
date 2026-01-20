@@ -33,7 +33,16 @@ export function getAllPosts(): PostData[] {
       const slug = fileName.replace(/\.md$/, "");
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, "utf8");
-      const { data } = matter(fileContents);
+      const { data, content } = matter(fileContents);
+
+      // coverImageが指定されていない場合、記事内容から画像を抽出
+      let coverImage = data.coverImage;
+      if (!coverImage) {
+        const imageMatch = content.match(/!\[.*?\]\((.*?)\)/);
+        if (imageMatch && imageMatch[1]) {
+          coverImage = imageMatch[1];
+        }
+      }
 
       return {
         slug,
@@ -41,7 +50,7 @@ export function getAllPosts(): PostData[] {
         date: data.date,
         category: data.category,
         excerpt: data.excerpt,
-        coverImage: data.coverImage,
+        coverImage: coverImage,
         updated: data.updated,
         affiliateBannerId: data.affiliateBannerId,
       } as PostData;
