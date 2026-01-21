@@ -29,7 +29,7 @@ export default function A8Banner({
       )}
 
       {/* PR表記 */}
-      <div className="text-xs text-gray-500 mb-2">
+      <div className="text-xs text-gray-500 mb-2 text-center">
         <span className="px-2 py-1 bg-gray-100 rounded">PR・広告</span>
       </div>
 
@@ -38,7 +38,7 @@ export default function A8Banner({
         href={desktop.href}
         target="_blank"
         rel="noopener noreferrer sponsored"
-        className="hidden md:block w-fit hover:opacity-80 transition-opacity"
+        className="hidden md:block w-fit mx-auto hover:opacity-80 transition-opacity"
       >
         <img
           src={desktop.imgSrc}
@@ -55,7 +55,7 @@ export default function A8Banner({
         href={mobile.href}
         target="_blank"
         rel="noopener noreferrer sponsored"
-        className="block md:hidden w-fit hover:opacity-80 transition-opacity"
+        className="block md:hidden w-fit mx-auto hover:opacity-80 transition-opacity"
       >
         <img
           src={mobile.imgSrc}
