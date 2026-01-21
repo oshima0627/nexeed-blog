@@ -125,10 +125,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     bannerPair = moshimoBannerPair || a8BannerPair;
   }
 
-  // バナーのタイトルを設定（PyQの場合は特別な文言）
+  // バナーのタイトルを設定（すべてのバナーで表示）
   let bannerTitle: string | undefined;
-  if (post.affiliateBannerId && post.affiliateBannerId.startsWith('pyq-')) {
-    bannerTitle = 'PyQ（パイキュー）に興味がある方は\n↓下のリンクをクリック↓';
+  if (bannerPair) {
+    const serviceName = bannerPair.desktop.name;
+    bannerTitle = `${serviceName}に興味がある方は\n↓下のリンクをクリック↓`;
   }
 
   // パンくずリストデータ
