@@ -547,6 +547,7 @@ function isDesktopSize(width: number, height: number): boolean {
     (width === 468 && height === 60) ||
     (width === 336 && height === 280) ||
     (width === 728 && height === 90) ||
+    (width === 720 && height === 90) ||
     (width === 300 && height === 300) ||
     (width === 468 && height === 120) ||
     (width === 234 && height === 60) ||
