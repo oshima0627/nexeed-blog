@@ -877,6 +877,14 @@ export const moshimoLinks: MoshimoLink[] = [
   }
 ];
 
+// A8.net用のヘルパー関数
+export function getA8LinksByCategory(category: string): A8Link[] {
+  return a8Links.filter((link) => link.category.includes(category));
+}
+
+export function getA8LinkById(id: string): A8Link | undefined {
+  return a8Links.find((link) => link.id === id);
+}
 
 // もしもアフィリエイト用のヘルパー関数
 export function getMoshimoLinksByCategory(category: string): MoshimoLink[] {
@@ -1035,4 +1043,119 @@ export function getBannerPairById(bannerId: string): BannerPairWithType | undefi
   }
 
   return undefined;
+}
+
+// デスクトップサイズかどうかを判定する関数
+function isDesktopSize(width: number, height: number): boolean {
+  return (
+    (width === 468 && height === 60) ||
+    (width === 336 && height === 280) ||
+    (width === 728 && height === 90) ||
+    (width === 720 && height === 90) ||
+    (width === 662 && height === 200) ||
+    (width === 548 && height === 150) ||
+    (width === 320 && height === 180) ||
+    (width === 320 && height === 100) ||
+    (width === 234 && height === 60) ||
+    (width === 224 && height === 33) ||
+    (width === 160 && height === 600) ||
+    (width === 120 && height === 600) ||
+    (width === 120 && height === 60) ||
+    (width === 100 && height === 60) ||
+    (width === 88 && height === 31)
+  );
+}
+
+// モバイルサイズかどうかを判定する関数
+function isMobileSize(width: number, height: number): boolean {
+  return (
+    (width === 300 && height === 250) ||
+    (width === 250 && height === 250) ||
+    (width === 300 && height === 300) ||
+    (width === 200 && height === 200) ||
+    (width === 125 && height === 125) ||
+    (width === 120 && height === 120) ||
+    (width === 100 && height === 60) ||
+    (width === 88 && height === 31)
+  );
+}
+
+// 簡易ハッシュ関数（文字列から数値を生成）
+function simpleHash(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  return Math.abs(hash);
+}
+
+// A8.net用のレスポンシブバナーペアを取得
+export interface BannerPair {
+  desktop: A8Link;
+  mobile: A8Link;
+}
+
+export function getResponsiveBanners(category: string, slug?: string): BannerPair | undefined {
+  const links = getA8LinksByCategory(category);
+  if (links.length === 0) return undefined;
+
+  // 同じサービス（同じname）のバナーをグループ化
+  const serviceGroups = new Map<string, A8Link[]>();
+  links.forEach((link) => {
+    if (!serviceGroups.has(link.name)) {
+      serviceGroups.set(link.name, []);
+    }
+    serviceGroups.get(link.name)!.push(link);
+  });
+
+  // PC/モバイル両方のバナーを持つサービスをリストアップ
+  const validServices: Array<{ desktop: A8Link; mobile: A8Link }> = [];
+
+  for (const [_serviceName, banners] of serviceGroups) {
+    // PC用とモバイル用のバナーをフィルタリング
+    const desktopBanners = banners.filter((b) => isDesktopSize(b.width, b.height));
+    const mobileBanners = banners.filter((b) => isMobileSize(b.width, b.height));
+
+    // 面積が最大のバナーを選択（大きいバナーを優先）
+    const desktopBanner = desktopBanners.sort((a, b) => (b.width * b.height) - (a.width * a.height))[0];
+    const mobileBanner = mobileBanners.sort((a, b) => (b.width * b.height) - (a.width * a.height))[0];
+
+    if (desktopBanner && mobileBanner) {
+      validServices.push({
+        desktop: desktopBanner,
+        mobile: mobileBanner,
+      });
+    }
+  }
+
+  if (validServices.length === 0) {
+    // 適切なペアが見つからない場合は、最初の2つを使用
+    if (links.length >= 2) {
+      return {
+        desktop: links[0],
+        mobile: links[1],
+      };
+    }
+
+    // 1つしかない場合は、同じバナーを両方に使用
+    if (links.length === 1) {
+      return {
+        desktop: links[0],
+        mobile: links[0],
+      };
+    }
+
+    return undefined;
+  }
+
+  // slugが提供されている場合は、slugベースでサービスを選択
+  if (slug) {
+    const index = simpleHash(slug) % validServices.length;
+    return validServices[index];
+  }
+
+  // slugがない場合は最初のサービスを返す
+  return validServices[0];
 }
