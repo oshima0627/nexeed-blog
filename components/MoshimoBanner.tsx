@@ -30,7 +30,7 @@ export default function MoshimoBanner({
 
       {/* タイトル（オプション） */}
       {title && (
-        <h4 className="text-sm font-medium text-gray-700 mb-3">{title}</h4>
+        <h4 className="text-sm font-medium text-gray-700 mb-3 whitespace-pre-line text-center">{title}</h4>
       )}
 
       {/* PC用バナー（md:以上で表示） */}
