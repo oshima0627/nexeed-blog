@@ -607,8 +607,13 @@ export function getResponsiveBanners(category: string, slug?: string): BannerPai
   const validServices: Array<{ desktop: A8Link; mobile: A8Link }> = [];
 
   for (const [_serviceName, banners] of serviceGroups) {
-    const desktopBanner = banners.find((b) => isDesktopSize(b.width, b.height));
-    const mobileBanner = banners.find((b) => isMobileSize(b.width, b.height));
+    // PC用とモバイル用のバナーをフィルタリング
+    const desktopBanners = banners.filter((b) => isDesktopSize(b.width, b.height));
+    const mobileBanners = banners.filter((b) => isMobileSize(b.width, b.height));
+
+    // 面積が最大のバナーを選択（大きいバナーを優先）
+    const desktopBanner = desktopBanners.sort((a, b) => (b.width * b.height) - (a.width * a.height))[0];
+    const mobileBanner = mobileBanners.sort((a, b) => (b.width * b.height) - (a.width * a.height))[0];
 
     if (desktopBanner && mobileBanner) {
       validServices.push({
@@ -1865,8 +1870,13 @@ export function getResponsiveMoshimoBanners(category: string, slug?: string): Mo
   const validServices: Array<{ desktop: MoshimoLink; mobile: MoshimoLink }> = [];
 
   for (const [_serviceName, banners] of serviceGroups) {
-    const desktopBanner = banners.find((b) => isDesktopSize(b.width, b.height));
-    const mobileBanner = banners.find((b) => isMobileSize(b.width, b.height));
+    // PC用とモバイル用のバナーをフィルタリング
+    const desktopBanners = banners.filter((b) => isDesktopSize(b.width, b.height));
+    const mobileBanners = banners.filter((b) => isMobileSize(b.width, b.height));
+
+    // 面積が最大のバナーを選択（大きいバナーを優先）
+    const desktopBanner = desktopBanners.sort((a, b) => (b.width * b.height) - (a.width * a.height))[0];
+    const mobileBanner = mobileBanners.sort((a, b) => (b.width * b.height) - (a.width * a.height))[0];
 
     if (desktopBanner && mobileBanner) {
       validServices.push({
@@ -1919,8 +1929,12 @@ export function getBannerPairById(bannerId: string): BannerPairWithType | undefi
   if (a8Link) {
     // 同じnameを持つバナーを探す
     const sameNameBanners = a8Links.filter(link => link.name === a8Link.name);
-    const desktopBanner = sameNameBanners.find(b => isDesktopSize(b.width, b.height));
-    const mobileBanner = sameNameBanners.find(b => isMobileSize(b.width, b.height));
+    const desktopBanners = sameNameBanners.filter(b => isDesktopSize(b.width, b.height));
+    const mobileBanners = sameNameBanners.filter(b => isMobileSize(b.width, b.height));
+
+    // 面積が最大のバナーを選択（大きいバナーを優先）
+    const desktopBanner = desktopBanners.sort((a, b) => (b.width * b.height) - (a.width * a.height))[0];
+    const mobileBanner = mobileBanners.sort((a, b) => (b.width * b.height) - (a.width * a.height))[0];
 
     if (desktopBanner && mobileBanner) {
       return {
@@ -1947,8 +1961,12 @@ export function getBannerPairById(bannerId: string): BannerPairWithType | undefi
   if (moshimoLink) {
     // 同じnameを持つバナーを探す
     const sameNameBanners = moshimoLinks.filter(link => link.name === moshimoLink.name);
-    const desktopBanner = sameNameBanners.find(b => isDesktopSize(b.width, b.height));
-    const mobileBanner = sameNameBanners.find(b => isMobileSize(b.width, b.height));
+    const desktopBanners = sameNameBanners.filter(b => isDesktopSize(b.width, b.height));
+    const mobileBanners = sameNameBanners.filter(b => isMobileSize(b.width, b.height));
+
+    // 面積が最大のバナーを選択（大きいバナーを優先）
+    const desktopBanner = desktopBanners.sort((a, b) => (b.width * b.height) - (a.width * a.height))[0];
+    const mobileBanner = mobileBanners.sort((a, b) => (b.width * b.height) - (a.width * a.height))[0];
 
     if (desktopBanner && mobileBanner) {
       return {
