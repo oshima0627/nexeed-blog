@@ -1830,6 +1830,29 @@ export const moshimoLinks: MoshimoLink[] = [
     height: 60,
     description: "家事代行サービスCaSyのユーザー無料会員登録",
   },
+  // techmeets - プログラミングスクール無料カウンセリング（ITエンジニア・副業）
+  {
+    id: "techmeets-728x90",
+    name: "techmeets（テックミーツ）",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91446",
+    imgSrc: "https://image.moshimo.com/af-img/6961/000000091446.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91446",
+    width: 728,
+    height: 90,
+    description: "即戦力のエンジニアスクール - 無料カウンセリング",
+  },
+  {
+    id: "techmeets-250x250",
+    name: "techmeets（テックミーツ）",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91441",
+    imgSrc: "https://image.moshimo.com/af-img/6961/000000091441.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336439&p_id=7180&pc_id=20561&pl_id=91441",
+    width: 250,
+    height: 250,
+    description: "即戦力のエンジニアスクール - 無料カウンセリング",
+  },
 ];
 
 // もしもアフィリエイト用のヘルパー関数
