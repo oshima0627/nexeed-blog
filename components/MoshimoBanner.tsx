@@ -23,15 +23,15 @@ export default function MoshimoBanner({
 }: MoshimoBannerProps) {
   return (
     <div className="my-6">
-      {/* PR表記 */}
-      <div className="text-xs text-gray-500 mb-2">
-        <span className="px-2 py-1 bg-gray-100 rounded">PR・広告</span>
-      </div>
-
       {/* タイトル（オプション） */}
       {title && (
         <h4 className="text-sm font-medium text-gray-700 mb-3 whitespace-pre-line text-center">{title}</h4>
       )}
+
+      {/* PR表記 */}
+      <div className="text-xs text-gray-500 mb-2">
+        <span className="px-2 py-1 bg-gray-100 rounded">PR・広告</span>
+      </div>
 
       {/* PC用バナー（md:以上で表示） */}
       <a
