@@ -3,7 +3,7 @@ title: "【LITALICOワンダー】子どもの創造力を育てるIT×ものづ
 date: "2026-01-17"
 category: "子育て"
 excerpt: "子どもにプログラミングを学ばせたいけど、どの教室がいいか分からない方へ。LITALICOワンダーは、一人ひとりの個性に合わせたIT×ものづくり教室です。無料体験授業の内容や料金、コースの特徴を詳しく解説します。"
-affiliateBannerId: "litalico-300x250-1"
+affiliateBannerId: "litalico-468x60"
 ---
 
 # 【LITALICOワンダー】子どもの創造力を育てるIT×ものづくり教室｜プログラミング・ロボット制作で未来のスキルを身につける
