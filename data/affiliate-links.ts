@@ -874,6 +874,17 @@ export const moshimoLinks: MoshimoLink[] = [
     width: 250,
     height: 250,
     description: "動画編集・eスポーツが学べる就労支援B型事業所の見学",
+  },
+  {
+    id: "withteam-ai-300x250",
+    name: "WITH TEAM AI文字起こし",
+    category: ["ビジネス"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336420&p_id=4456&pc_id=11583&pl_id=91888",
+    imgSrc: "https://image.moshimo.com/af-img/3293/000000091888.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336420&p_id=4456&pc_id=11583&pl_id=91888",
+    width: 300,
+    height: 250,
+    description: "月額不要・使った分だけ支払いの自動文字起こしツール。1分あたり30円",
   }
 ];
 
