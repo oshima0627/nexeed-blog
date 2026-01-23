@@ -878,7 +878,7 @@ export const moshimoLinks: MoshimoLink[] = [
   {
     id: "withteam-ai-300x250",
     name: "WITH TEAM AI文字起こし",
-    category: ["ビジネス"],
+    category: ["ITエンジニア"],
     href: "https://af.moshimo.com/af/c/click?a_id=5336420&p_id=4456&pc_id=11583&pl_id=91888",
     imgSrc: "https://image.moshimo.com/af-img/3293/000000091888.png",
     trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336420&p_id=4456&pc_id=11583&pl_id=91888",
