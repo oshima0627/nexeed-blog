@@ -3,6 +3,7 @@ title: "【本音レビュー】PyQ（パイキュー）の評判・口コミ徹
 date: "2026-01-21"
 category: "ITエンジニア"
 excerpt: "PyQ（パイキュー）の利用者の口コミ・評判を徹底調査。料金プラン、学習内容、メリット・デメリットまで、Pythonを独学で学びたい方のためのリアルな情報をまとめました。"
+coverImage: "/PyQ（パイキュー）.jpg"
 affiliateBannerId: "pyq-468x60"
 ---
 
