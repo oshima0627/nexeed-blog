@@ -885,6 +885,17 @@ export const moshimoLinks: MoshimoLink[] = [
     width: 300,
     height: 250,
     description: "月額不要・使った分だけ支払いの自動文字起こしツール。1分あたり30円",
+  },
+  {
+    id: "chanpro-600x500",
+    name: "ちゃんプロ",
+    category: ["子育て"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336411&p_id=7279&pc_id=20891&pl_id=91886",
+    imgSrc: "https://image.moshimo.com/af-img/7079/000000091886.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336411&p_id=7279&pc_id=20891&pl_id=91886",
+    width: 600,
+    height: 500,
+    description: "小中学生向け無料Pythonプログラミング講座。2ヶ月全8回が完全無料",
   }
 ];
 
