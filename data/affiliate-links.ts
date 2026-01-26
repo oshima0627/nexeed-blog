@@ -896,6 +896,17 @@ export const moshimoLinks: MoshimoLink[] = [
     width: 600,
     height: 500,
     description: "小中学生向け無料Pythonプログラミング講座。2ヶ月全8回が完全無料",
+  },
+  {
+    id: "video-editing-camp-336x280",
+    name: "動画編集CAMP",
+    category: ["副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336423&p_id=7223&pc_id=20714&pl_id=91536",
+    imgSrc: "https://image.moshimo.com/af-img/7018/000000091536.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336423&p_id=7223&pc_id=20714&pl_id=91536",
+    width: 336,
+    height: 280,
+    description: "土日2日間で動画編集スキルを習得できる通学型スクール",
   }
 ];
 

@@ -4,6 +4,7 @@ date: "2026-01-25"
 category: "副業"
 excerpt: "動画編集CAMP受講者の口コミ・評判を徹底調査。2日間の短期集中カリキュラム、料金体系、アフターサポートの実態、メリット・デメリットをまとめました。"
 coverImage: "/動画編集CAMP.jpg"
+affiliateBannerId: "video-editing-camp-336x280"
 ---
 
 # 【本音レビュー】動画編集CAMPの評判・口コミ徹底調査｜2日間で動画編集スキルを習得できるって本当？
@@ -23,7 +24,7 @@ coverImage: "/動画編集CAMP.jpg"
 - おすすめできる人・向かない人
 - よくある不安や疑問への回答
 
-<a href="//af.moshimo.com/af/c/click?a_id=5336423&p_id=7223&pc_id=20714&pl_id=91536" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/7018/000000091536.jpg" width="336" height="280" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5336423&p_id=7223&pc_id=20714&pl_id=91536" width="1" height="1" style="border:none;" loading="lazy">
+![動画編集CAMP](/動画編集CAMP.jpg)
 
 ## 動画編集CAMPとは
 
