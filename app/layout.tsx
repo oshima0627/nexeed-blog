@@ -57,6 +57,10 @@ export const metadata: Metadata = {
   verification: {
     google: "google-site-verification-code-here", // Google Search Consoleで取得したコードに置き換え
   },
+  icons: {
+    icon: "/NexeedBlog.png",
+    apple: "/NexeedBlog.png",
+  },
 };
 
 export default function RootLayout({
