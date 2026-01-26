@@ -3,6 +3,7 @@ title: "【WITH TEAM AI文字起こし】月額不要で使える自動文字起
 date: "2026-01-23"
 category: "ITエンジニア"
 excerpt: "会議や動画の文字起こしに時間がかかって困っていませんか？WITH TEAM AI文字起こしは、月額不要・使った分だけ支払いの自動文字起こしツールです。料金、機能、使い方、評判を詳しく解説します。"
+coverImage: "/WITH TEAM AI文字起こし.jpg"
 affiliateBannerId: "withteam-ai-300x250"
 ---
 
