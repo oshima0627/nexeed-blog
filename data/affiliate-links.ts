@@ -885,6 +885,28 @@ export const moshimoLinks: MoshimoLink[] = [
     width: 300,
     height: 250,
     description: "月額不要・使った分だけ支払いの自動文字起こしツール。1分あたり30円",
+  },
+  {
+    id: "video-editing-camp-336x280",
+    name: "動画編集CAMP",
+    category: ["副業", "ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336423&p_id=7223&pc_id=20714&pl_id=91536",
+    imgSrc: "https://image.moshimo.com/af-img/7018/000000091536.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336423&p_id=7223&pc_id=20714&pl_id=91536",
+    width: 336,
+    height: 280,
+    description: "土日2日間で動画編集スキルを習得できる通学型スクール",
+  },
+  {
+    id: "video-editing-camp-300x250",
+    name: "動画編集CAMP",
+    category: ["副業", "ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336423&p_id=7223&pc_id=20714&pl_id=91536",
+    imgSrc: "https://image.moshimo.com/af-img/7018/000000091536.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336423&p_id=7223&pc_id=20714&pl_id=91536",
+    width: 300,
+    height: 250,
+    description: "土日2日間で動画編集スキルを習得できる通学型スクール",
   }
 ];
 
