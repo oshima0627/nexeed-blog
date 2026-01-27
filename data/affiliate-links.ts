@@ -907,6 +907,17 @@ export const moshimoLinks: MoshimoLink[] = [
     width: 336,
     height: 280,
     description: "土日2日間で動画編集スキルを習得できる通学型スクール",
+  },
+  {
+    id: "conoha-ai-canvas-600x500",
+    name: "ConoHa AI Canvas",
+    category: ["ITエンジニア"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336210&p_id=6331&pc_id=17865&pl_id=84074",
+    imgSrc: "https://image.moshimo.com/af-img/1762/000000084074.gif",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336210&p_id=6331&pc_id=17865&pl_id=84074",
+    width: 600,
+    height: 500,
+    description: "ブラウザだけで本格AI画像生成。Stable Diffusion対応のクラウドサービス",
   }
 ];
 
@@ -1086,6 +1097,7 @@ function isDesktopSize(width: number, height: number): boolean {
     (width === 728 && height === 90) ||
     (width === 720 && height === 90) ||
     (width === 662 && height === 200) ||
+    (width === 600 && height === 500) ||
     (width === 548 && height === 150) ||
     (width === 320 && height === 180) ||
     (width === 320 && height === 100) ||
@@ -1105,6 +1117,7 @@ function isMobileSize(width: number, height: number): boolean {
     (width === 300 && height === 250) ||
     (width === 250 && height === 250) ||
     (width === 300 && height === 300) ||
+    (width === 600 && height === 500) ||
     (width === 200 && height === 200) ||
     (width === 125 && height === 125) ||
     (width === 120 && height === 120) ||
