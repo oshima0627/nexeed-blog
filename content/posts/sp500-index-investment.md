@@ -3,7 +3,6 @@ title: "S&P500インデックス投資を数値データで徹底解説"
 date: "2026-01-08"
 category: "投資"
 excerpt: "eMAXIS Slim 米国株式（S&P500）の統計データと過去リターンから、米国市場への投資価値を客観的に分析します。"
-coverImage: "/images/posts/investment.jpg"
 ---
 
 # eMAXIS Slim 米国株式（S&P500）の基本データ
