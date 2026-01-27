@@ -299,7 +299,7 @@ PwCの調査による各国の生成AI導入率（推定）：
 
 ### AI Agent時代の到来
 
-McKinseyが発表した「The state of AI in 2025」レポートによると、2026年は**AI Agent（自律的に業務を遂行するAI）の時代**に突入すると予測されています。
+McKinseyが発表した「The state of AI in 2025」レポートによると、2026年は**AI Agent**（自律的に業務を遂行するAI）の時代に突入すると予測されています。
 
 **McKinseyの調査結果**：
 - **62％の企業がAI Agentに関心を示し、実験を開始**

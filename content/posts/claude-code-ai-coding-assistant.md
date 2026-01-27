@@ -139,14 +139,14 @@ Claude 3.5 Sonnetの高い推論能力により、以下のタスクで優れた
 
 **ベンチマーク結果**:
 
-**SWE-bench（実際のGitHub Issue解決）**:
+**SWE-bench**（実際のGitHub Issue解決）:
 - Claude 3.5 Sonnet: 49.0%の問題を解決
 - GPT-4o: 43.8%
 - Claude 3 Opus: 38.0%
 
 ※SWE-benchは、実際のオープンソースプロジェクトのissueを解決できるかを測定
 
-**MMLU-Pro（専門知識）**:
+**MMLU-Pro**（専門知識）:
 - Claude 3.5 Sonnet: 88.7%
 - GPT-4o: 87.2%
 - Gemini 1.5 Pro: 85.9%
@@ -424,19 +424,19 @@ OpenAPI仕様とREADMEも含めてください。"
 
 ### ベンチマーク比較
 
-**SWE-bench（実問題解決率）**:
+**SWE-bench**（実問題解決率）:
 1. Claude 3.5 Sonnet: 49.0%
 2. GPT-4o: 43.8%
 3. Claude 3 Opus: 38.0%
 4. GPT-4 Turbo: 34.4%
 
-**HumanEval（コード生成精度）**:
+**HumanEval**（コード生成精度）:
 1. Claude 3.5 Sonnet: 92.0%
 2. GPT-4o: 90.2%
 3. GPT-4 Turbo: 90.2%
 4. Gemini 1.5 Pro: 84.1%
 
-**コンテキスト理解（長文コード）**:
+**コンテキスト理解**（長文コード）:
 1. Claude 3.5 Sonnet: 95.8%
 2. GPT-4 Turbo: 92.3%
 3. Gemini 1.5 Pro: 94.1%
@@ -452,7 +452,7 @@ Stack Overflow 2025年調査（5,000人の開発者）:
 - Codeium: 12%
 - その他: 13%
 
-**満足度（5点満点）**:
+**満足度**（5点満点）:
 - Claude Code: 4.6
 - Cursor: 4.5
 - GitHub Copilot: 4.3
