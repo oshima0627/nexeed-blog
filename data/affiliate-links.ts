@@ -918,6 +918,17 @@ export const moshimoLinks: MoshimoLink[] = [
     width: 600,
     height: 500,
     description: "ブラウザだけで本格AI画像生成。Stable Diffusion対応のクラウドサービス",
+  },
+  {
+    id: "casa-youikuhi-300x300",
+    name: "Casa養育費保証PLUS",
+    category: ["子育て"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336523&p_id=6798&pc_id=19449&pl_id=87502",
+    imgSrc: "https://image.moshimo.com/af-img/6610/000000087502.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336523&p_id=6798&pc_id=19449&pl_id=87502",
+    width: 300,
+    height: 300,
+    description: "養育費の立替保証サービス。支払い率90%以上、最大36ヶ月保証。上場企業運営で安心",
   }
 ];
 
