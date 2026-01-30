@@ -76,7 +76,7 @@ export function BlogPostJsonLd({
       name: "NEXEED BLOG",
       logo: {
         "@type": "ImageObject",
-        url: "https://blog.nexeed-web.com/logo.png",
+        url: "https://blog.nexeed-web.com/NexeedBlog.png",
       },
     },
     url: url,

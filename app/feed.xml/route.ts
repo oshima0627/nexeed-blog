@@ -9,10 +9,19 @@ export async function GET() {
   <channel>
     <title>NEXEED BLOG</title>
     <link>${baseUrl}</link>
-    <description>投資、子育て、ITエンジニア、副業をテーマにした個人ブログ</description>
+    <description>投資、子育て、ITエンジニア、副業をテーマにした個人ブログ。実体験と統計データに基づいた信頼性の高い情報を提供します。</description>
     <language>ja</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml"/>
+    <managingEditor>nexeed-blog@example.com (大島直孝)</managingEditor>
+    <webMaster>nexeed-blog@example.com (大島直孝)</webMaster>
+    <copyright>Copyright ${new Date().getFullYear()} NEXEED BLOG</copyright>
+    <ttl>60</ttl>
+    <image>
+      <url>${baseUrl}/NexeedBlog.png</url>
+      <title>NEXEED BLOG</title>
+      <link>${baseUrl}</link>
+    </image>
     ${posts
       .map(
         (post) => `
@@ -21,8 +30,9 @@ export async function GET() {
       <link>${baseUrl}/posts/${post.slug}</link>
       <description>${escapeXml(post.excerpt)}</description>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-      <guid>${baseUrl}/posts/${post.slug}</guid>
+      <guid isPermaLink="true">${baseUrl}/posts/${post.slug}</guid>
       <category>${escapeXml(post.category)}</category>
+      <author>nexeed-blog@example.com (大島直孝)</author>
     </item>`
       )
       .join("")}

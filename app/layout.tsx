@@ -54,9 +54,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "google-site-verification-code-here", // Google Search Consoleで取得したコードに置き換え
-  },
+  // Google Search Console認証は.envまたはGoogle Tag Manager経由で設定推奨
+  // verification: {
+  //   google: "YOUR_GOOGLE_SITE_VERIFICATION_CODE",
+  // },
   icons: {
     icon: "/NexeedBlog.png",
     apple: "/NexeedBlog.png",
