@@ -92,6 +92,14 @@ const categoryClasses: Record<string, string> = {
   "副業": "post-category-side-business",
 };
 
+// 日本語カテゴリー名から英語スラッグへのマッピング
+const categoryToSlug: Record<string, string> = {
+  "投資": "investment",
+  "子育て": "parenting",
+  "ITエンジニア": "engineering",
+  "副業": "side-business",
+};
+
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
@@ -133,10 +141,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     bannerTitle = `${serviceName}に興味がある方は\n↓下のリンクをクリック↓`;
   }
 
-  // パンくずリストデータ
+  // パンくずリストデータ（カテゴリーURLは英語スラッグを使用）
+  const categorySlug = categoryToSlug[post.category] || "investment";
   const breadcrumbItems = [
     { name: "ホーム", url: "https://blog.nexeed-web.com" },
-    { name: post.category, url: `https://blog.nexeed-web.com/category/${encodeURIComponent(post.category)}` },
+    { name: post.category, url: `https://blog.nexeed-web.com/category/${categorySlug}` },
     { name: post.title, url: `https://blog.nexeed-web.com/posts/${slug}` },
   ];
 

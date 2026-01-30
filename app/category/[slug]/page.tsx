@@ -61,9 +61,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       locale: "ja_JP",
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: `${categoryName}の記事一覧`,
       description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページです。`,
+      creator: "@nexeed_blog",
     },
     alternates: {
       canonical: `https://blog.nexeed-web.com/category/${slug}`,
