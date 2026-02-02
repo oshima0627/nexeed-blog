@@ -929,6 +929,17 @@ export const moshimoLinks: MoshimoLink[] = [
     width: 300,
     height: 300,
     description: "養育費の立替保証サービス。支払い率90%以上、最大36ヶ月保証。上場企業運営で安心",
+  },
+  {
+    id: "trialy-766x94",
+    name: "TRIALY（トライアリー）",
+    category: ["ITエンジニア", "副業"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336440&p_id=7228&pc_id=20730&pl_id=91149",
+    imgSrc: "https://image.moshimo.com/af-img/7015/000000091149.png",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336440&p_id=7228&pc_id=20730&pl_id=91149",
+    width: 766,
+    height: 94,
+    description: "体験型就業マッチングサービス。入社前に実際の仕事を体験して、ミスマッチを防げる",
   }
 ];
 
@@ -1107,6 +1118,7 @@ function isDesktopSize(width: number, height: number): boolean {
     (width === 336 && height === 280) ||
     (width === 728 && height === 90) ||
     (width === 720 && height === 90) ||
+    (width === 766 && height === 94) ||
     (width === 662 && height === 200) ||
     (width === 600 && height === 500) ||
     (width === 548 && height === 150) ||
