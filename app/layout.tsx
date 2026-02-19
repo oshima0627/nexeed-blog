@@ -62,9 +62,6 @@ export const metadata: Metadata = {
     icon: "/NexeedBlog.png",
     apple: "/NexeedBlog.png",
   },
-  other: {
-    "google-adsense-account": "ca-pub-4718076434751586",
-  },
 };
 
 export default function RootLayout({
@@ -74,6 +71,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4718076434751586"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="antialiased">
         <GoogleAnalytics />
         <WebsiteJsonLd />
