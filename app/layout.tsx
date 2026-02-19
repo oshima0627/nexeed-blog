@@ -62,6 +62,9 @@ export const metadata: Metadata = {
     icon: "/NexeedBlog.png",
     apple: "/NexeedBlog.png",
   },
+  other: {
+    "google-adsense-account": "ca-pub-4718076434751586",
+  },
 };
 
 export default function RootLayout({
