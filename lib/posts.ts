@@ -56,9 +56,11 @@ export function getAllPosts(): PostData[] {
       } as PostData;
     });
 
-  // 日付順にソート（新しい順）
+  // 更新日時（updated）があればそれを優先し、なければ公開日（date）でソート（新しい順）
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+    const aDate = a.updated ?? a.date;
+    const bDate = b.updated ?? b.date;
+    if (aDate < bDate) {
       return 1;
     } else {
       return -1;
