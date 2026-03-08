@@ -21,6 +21,8 @@ const categoryColors: Record<string, string> = {
   "子育て": "bg-pink-500 text-white border-pink-600",
   "ITエンジニア": "bg-green-500 text-white border-green-600",
   "副業": "bg-purple-500 text-white border-purple-600",
+  "スポーツ": "bg-orange-500 text-white border-orange-600",
+  "政治": "bg-red-500 text-white border-red-600",
 };
 
 export default function ArticleCard({ post }: ArticleCardProps) {

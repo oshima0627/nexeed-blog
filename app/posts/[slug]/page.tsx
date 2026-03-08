@@ -28,6 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     "子育て": ["育児", "保育園", "待機児童", "子育て支援", "男性育休", "児童手当", "ワークライフバランス"],
     "ITエンジニア": ["プログラミング", "AI", "機械学習", "開発ツール", "コーディング", "エンジニア", "技術"],
     "副業": ["副収入", "フリーランス", "クラウドソーシング", "確定申告", "在宅ワーク", "複業"],
+    "スポーツ": ["アスリート", "健康", "フィットネス", "サッカー", "野球", "バスケットボール", "オリンピック"],
+    "政治": ["政策", "選挙", "国会", "内閣", "社会問題", "経済政策", "外交"],
   };
 
   const keywords = [
@@ -83,6 +85,8 @@ const categoryColors: Record<string, string> = {
   "子育て": "bg-pink-100 text-pink-800",
   "ITエンジニア": "bg-green-100 text-green-800",
   "副業": "bg-purple-100 text-purple-800",
+  "スポーツ": "bg-orange-100 text-orange-800",
+  "政治": "bg-red-100 text-red-800",
 };
 
 const categoryClasses: Record<string, string> = {
@@ -90,6 +94,8 @@ const categoryClasses: Record<string, string> = {
   "子育て": "post-category-parenting",
   "ITエンジニア": "post-category-engineering",
   "副業": "post-category-side-business",
+  "スポーツ": "post-category-sports",
+  "政治": "post-category-politics",
 };
 
 // 日本語カテゴリー名から英語スラッグへのマッピング
@@ -98,6 +104,8 @@ const categoryToSlug: Record<string, string> = {
   "子育て": "parenting",
   "ITエンジニア": "engineering",
   "副業": "side-business",
+  "スポーツ": "sports",
+  "政治": "politics",
 };
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {

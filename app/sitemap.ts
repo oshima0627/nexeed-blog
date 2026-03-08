@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // カテゴリーページのURL
-  const categories = ["investment", "parenting", "engineering", "side-business"];
+  const categories = ["investment", "parenting", "engineering", "side-business", "sports", "politics"];
   const categoryUrls = categories.map((slug) => ({
     url: `${baseUrl}/category/${slug}`,
     lastModified: new Date(),
