@@ -57,6 +57,9 @@ export default function Header() {
             <Link href="/about" className="text-gray-700 hover:text-primary font-medium">
               About
             </Link>
+            <Link href="/contact" className="text-gray-700 hover:text-primary font-medium">
+              お問い合わせ
+            </Link>
             <SearchBox />
           </nav>
 
@@ -110,6 +113,13 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
+              </Link>
+              <Link
+                href="/contact"
+                className="text-gray-700 hover:text-primary font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                お問い合わせ
               </Link>
               <div className="pt-2">
                 <SearchBox />

@@ -62,7 +62,62 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 mt-8">4. アフィリエイトプログラム</h2>
+            <h2 className="text-2xl font-bold mb-4 mt-8">4. 広告の配信について（Google AdSense）</h2>
+            <p className="mb-4">
+              当サイトは、Google AdSenseを利用して広告を掲載しています。
+              Google AdSenseでは、Webサイトへのトラフィックデータや興味・関心に基づいてパーソナライズされた広告を表示するために、Cookieを使用することがあります。
+            </p>
+            <p className="mb-4">
+              Googleによる広告Cookieの使用により、当サイトやその他のサイトへのアクセス情報に基づいてユーザーに広告が配信されます。
+            </p>
+            <p className="mb-4">
+              パーソナライズ広告を無効にする方法については、
+              <a
+                href="https://www.google.com/settings/ads"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                Google 広告設定ページ
+              </a>
+              から設定できます。また、
+              <a
+                href="https://www.aboutads.info/choices/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                aboutads.info
+              </a>
+              にアクセスすることで、パーソナライズ広告に使用される第三者配信事業者のCookieを無効にできます。
+            </p>
+            <p className="mb-4">
+              詳細については、
+              <a
+                href="https://policies.google.com/technologies/ads"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                Googleの広告ポリシー
+              </a>
+              をご確認ください。
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 mt-8">5. Cookieについて</h2>
+            <p className="mb-4">
+              当サイトでは、利便性の向上やアクセス解析、広告配信のためにCookie（クッキー）を使用しています。
+              Cookieとは、ウェブサイトがお使いのブラウザに保存する小さなテキストファイルです。
+            </p>
+            <p className="mb-4">
+              ブラウザの設定によりCookieを無効にすることも可能ですが、一部の機能がご利用いただけなくなる場合があります。
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 mt-8">6. アフィリエイトプログラム</h2>
             <p className="mb-4">
               当サイトは、アフィリエイトプログラムを利用して商品やサービスを紹介しています。
               アフィリエイトリンクを経由してサービスに申し込みや購入が行われた場合、提携企業から成果報酬を受け取ることがあります。
@@ -73,7 +128,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 mt-8">5. 個人情報の第三者への提供</h2>
+            <h2 className="text-2xl font-bold mb-4 mt-8">7. 個人情報の第三者への提供</h2>
             <p className="mb-4">
               当サイトは、以下の場合を除き、ユーザーの同意なく個人情報を第三者に提供することはありません。
             </p>
@@ -85,7 +140,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 mt-8">6. 免責事項</h2>
+            <h2 className="text-2xl font-bold mb-4 mt-8">8. 免責事項</h2>
             <p className="mb-4">
               当サイトに掲載されている情報の正確性には万全を期していますが、利用者が当サイトの情報を用いて行う一切の行為について、
               当サイトは一切の責任を負わないものとします。
@@ -97,7 +152,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 mt-8">7. プライバシーポリシーの変更</h2>
+            <h2 className="text-2xl font-bold mb-4 mt-8">9. プライバシーポリシーの変更</h2>
             <p className="mb-4">
               当サイトは、本ポリシーの内容を適宜見直し、その改善に努めます。
               本ポリシーの内容は、法令その他本ポリシーに別段の定めのある事項を除いて、ユーザーに通知することなく変更することができるものとします。
@@ -108,21 +163,20 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 mt-8">8. お問い合わせ</h2>
+            <h2 className="text-2xl font-bold mb-4 mt-8">10. お問い合わせ</h2>
             <p className="mb-4">
               本ポリシーに関するお問い合わせは、以下のページよりお願いいたします。
             </p>
             <p className="mb-4">
-              <a href="/about" className="text-primary hover:underline">
+              <a href="/contact" className="text-primary hover:underline">
                 お問い合わせページ
               </a>
             </p>
           </section>
 
           <div className="mt-12 pt-8 border-t border-gray-200">
-            <p className="text-sm text-gray-600">
-              制定日：2026年1月15日
-            </p>
+            <p className="text-sm text-gray-600">制定日：2026年1月15日</p>
+            <p className="text-sm text-gray-600 mt-1">最終更新日：2026年3月9日</p>
           </div>
         </div>
       </article>
