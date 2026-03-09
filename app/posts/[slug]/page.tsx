@@ -243,7 +243,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
         {/* 目次上部の広告 */}
         <div className="mb-8">
-          <AdSense adSlot="auto" adFormat="auto" />
+          {/* adSlot: 審査承認後にAdSenseダッシュボードのスロットIDを設定してください */}
+          <AdSense adFormat="auto" />
         </div>
 
         {/* 目次 */}
@@ -379,7 +380,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
         {/* 記事末尾の広告 */}
         <div className="my-8">
-          <AdSense adSlot="auto" adFormat="auto" />
+          {/* adSlot: 審査承認後にAdSenseダッシュボードのスロットIDを設定してください */}
+          <AdSense adFormat="auto" />
         </div>
 
         {/* SNSシェアボタン */}

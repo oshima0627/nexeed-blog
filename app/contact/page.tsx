@@ -17,105 +17,39 @@ export default function ContactPage() {
             通常2〜3営業日以内にご返信いたします。
           </p>
 
-          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
-            <h2 className="text-xl font-bold mb-6">お問い合わせフォーム</h2>
-            <form
-              action="https://formspree.io/f/contact"
-              method="POST"
-              className="space-y-6"
-            >
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  お名前 <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="山田 太郎"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  メールアドレス <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="example@email.com"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  件名 <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="お問い合わせ件名"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  お問い合わせ内容 <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={6}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-                  placeholder="お問い合わせ内容をご記入ください"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-primary/90 transition-colors font-medium"
-              >
-                送信する
-              </button>
-            </form>
-          </div>
-
-          <div className="bg-gray-50 rounded-lg p-6">
-            <h2 className="text-xl font-bold mb-4">その他のお問い合わせ方法</h2>
-            <p className="text-gray-700 mb-4">
-              X（Twitter）のDMからもお気軽にご連絡いただけます。
+          {/* X DM - 主要連絡先 */}
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
+            <h2 className="text-xl font-bold mb-4">X（Twitter）DMでのお問い合わせ</h2>
+            <p className="text-gray-700 mb-6">
+              最も早くご返信できる方法です。X（Twitter）のDMよりお気軽にお送りください。
             </p>
             <a
               href="https://twitter.com/nexeed_blog"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-colors font-medium"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
-              X（Twitter）でDMを送る
+              @nexeed_blog にDMを送る
+            </a>
+          </div>
+
+          {/* メール */}
+          <div className="bg-gray-50 rounded-lg p-6 mb-6">
+            <h2 className="text-xl font-bold mb-4">メールでのお問い合わせ</h2>
+            <p className="text-gray-700 mb-4">
+              メールでのお問い合わせは下記リンクからお送りください。
+            </p>
+            <a
+              href="mailto:nexeed.blog.contact@gmail.com?subject=NEXEED%20BLOG%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-medium"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              メールを送る
             </a>
           </div>
 

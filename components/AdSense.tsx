@@ -9,7 +9,9 @@ declare global {
 }
 
 interface AdSenseProps {
-  adSlot: string;
+  // 審査承認後にAdSenseダッシュボードで発行したスロットIDを設定してください
+  // 例: adSlot="1234567890"
+  adSlot?: string;
   adFormat?: "auto" | "rectangle" | "horizontal" | "vertical";
   fullWidthResponsive?: boolean;
   className?: string;
@@ -22,12 +24,20 @@ export default function AdSense({
   className = "",
 }: AdSenseProps) {
   useEffect(() => {
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch {
-      // adsbygoogle が読み込まれていない場合は無視
+    // adSlotが設定されている場合のみ手動広告ユニットをpush
+    if (adSlot) {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch {
+        // adsbygoogle が読み込まれていない場合は無視
+      }
     }
-  }, []);
+  }, [adSlot]);
+
+  // adSlotが未設定の場合はAuto Ads（layout.tsxのスクリプトで自動配置）に任せる
+  if (!adSlot) {
+    return null;
+  }
 
   return (
     <div className={`adsense-container ${className}`}>
