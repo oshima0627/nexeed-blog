@@ -9,6 +9,7 @@ import Link from "next/link";
 import A8Banner from "@/components/A8Banner";
 import MoshimoBanner from "@/components/MoshimoBanner";
 import ShareButtons from "@/components/ShareButtons";
+import AdSense from "@/components/AdSense";
 import { getResponsiveBanners, getResponsiveMoshimoBanners, getBannerPairById } from "@/data/affiliate-links";
 
 export async function generateStaticParams() {
@@ -240,6 +241,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           })()}
         </header>
 
+        {/* 目次上部の広告 */}
+        <div className="mb-8">
+          <AdSense adSlot="auto" adFormat="auto" />
+        </div>
+
         {/* 目次 */}
         {tocItems.length > 0 && (
           <div className="post-toc mb-8 p-4">
@@ -370,6 +376,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
           return <>{segments}</>;
         })()}
+
+        {/* 記事末尾の広告 */}
+        <div className="my-8">
+          <AdSense adSlot="auto" adFormat="auto" />
+        </div>
 
         {/* SNSシェアボタン */}
         <ShareButtons
