@@ -9,6 +9,8 @@ const categories = [
   { slug: "engineering", name: "ITエンジニア", icon: "💻", description: "技術・プログラミング", className: "category-btn-engineering" },
   { slug: "side-business", name: "副業", icon: "💼", description: "副収入・フリーランス", className: "category-btn-side-business" },
   { slug: "parenting", name: "子育て", icon: "👶", description: "育児・ワークライフバランス", className: "category-btn-parenting" },
+  { slug: "sports", name: "スポーツ", icon: "⚽", description: "スポーツ・アスリート・健康", className: "category-btn-sports" },
+  { slug: "politics", name: "政治", icon: "🏛️", description: "政治・社会・政策", className: "category-btn-politics" },
 ];
 
 export default function Home() {

@@ -12,6 +12,8 @@ export default function Header() {
     { name: "子育て", slug: "parenting" },
     { name: "ITエンジニア", slug: "engineering" },
     { name: "副業", slug: "side-business" },
+    { name: "スポーツ", slug: "sports" },
+    { name: "政治", slug: "politics" },
   ];
 
   return (

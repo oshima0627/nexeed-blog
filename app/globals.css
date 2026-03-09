@@ -50,6 +50,14 @@
     @apply border-purple-300 hover:border-purple-500 hover:bg-purple-50;
   }
 
+  .category-btn-sports {
+    @apply border-orange-300 hover:border-orange-500 hover:bg-orange-50;
+  }
+
+  .category-btn-politics {
+    @apply border-red-300 hover:border-red-500 hover:bg-red-50;
+  }
+
   /* カテゴリごとの見出しスタイル - 投資 */
   .post-category-investment .post-title {
     @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-4 shadow-md;
@@ -164,5 +172,63 @@
   /* 小項目（H4）- 控えめなデザイン */
   .post-category-side-business :is(.prose, .prose-lg) h4 {
     @apply border-l-2 border-purple-400 pl-4 py-2 mb-4 mt-5 text-base font-semibold text-purple-700 !important;
+  }
+
+  /* カテゴリごとの見出しスタイル - スポーツ */
+  .post-category-sports .post-title {
+    @apply bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-4 shadow-md;
+  }
+
+  .post-category-sports .post-toc {
+    @apply bg-orange-50 border border-orange-200 shadow-sm;
+  }
+
+  /* 大項目（H2）- 最も目立つデザイン */
+  .post-category-sports :is(.prose, .prose-lg) h2 {
+    @apply bg-orange-100 border-l-8 border-orange-600 pl-6 py-4 shadow-md mb-8 mt-10 text-xl font-bold text-orange-900 relative rounded-r !important;
+  }
+
+  .post-category-sports :is(.prose, .prose-lg) h2::before {
+    content: "";
+    @apply absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-orange-400 to-orange-600;
+  }
+
+  /* 中項目（H3）- 中程度の強調 */
+  .post-category-sports :is(.prose, .prose-lg) h3 {
+    @apply bg-orange-50 border-l-4 border-orange-500 pl-5 py-3 shadow-sm mb-5 mt-7 text-lg font-bold text-orange-800 rounded-r-sm !important;
+  }
+
+  /* 小項目（H4）- 控えめなデザイン */
+  .post-category-sports :is(.prose, .prose-lg) h4 {
+    @apply border-l-2 border-orange-400 pl-4 py-2 mb-4 mt-5 text-base font-semibold text-orange-700 !important;
+  }
+
+  /* カテゴリごとの見出しスタイル - 政治 */
+  .post-category-politics .post-title {
+    @apply bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-4 shadow-md;
+  }
+
+  .post-category-politics .post-toc {
+    @apply bg-red-50 border border-red-200 shadow-sm;
+  }
+
+  /* 大項目（H2）- 最も目立つデザイン */
+  .post-category-politics :is(.prose, .prose-lg) h2 {
+    @apply bg-red-100 border-l-8 border-red-600 pl-6 py-4 shadow-md mb-8 mt-10 text-xl font-bold text-red-900 relative rounded-r !important;
+  }
+
+  .post-category-politics :is(.prose, .prose-lg) h2::before {
+    content: "";
+    @apply absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-red-400 to-red-600;
+  }
+
+  /* 中項目（H3）- 中程度の強調 */
+  .post-category-politics :is(.prose, .prose-lg) h3 {
+    @apply bg-red-50 border-l-4 border-red-500 pl-5 py-3 shadow-sm mb-5 mt-7 text-lg font-bold text-red-800 rounded-r-sm !important;
+  }
+
+  /* 小項目（H4）- 控えめなデザイン */
+  .post-category-politics :is(.prose, .prose-lg) h4 {
+    @apply border-l-2 border-red-400 pl-4 py-2 mb-4 mt-5 text-base font-semibold text-red-700 !important;
   }
 }

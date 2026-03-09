@@ -10,6 +10,8 @@ const categories: Record<string, string> = {
   "parenting": "子育て",
   "engineering": "ITエンジニア",
   "side-business": "副業",
+  "sports": "スポーツ",
+  "politics": "政治",
 };
 
 const categoryColors: Record<string, string> = {
@@ -17,6 +19,8 @@ const categoryColors: Record<string, string> = {
   "parenting": "bg-pink-500 text-white border-pink-600",
   "engineering": "bg-green-500 text-white border-green-600",
   "side-business": "bg-purple-500 text-white border-purple-600",
+  "sports": "bg-orange-500 text-white border-orange-600",
+  "politics": "bg-red-500 text-white border-red-600",
 };
 
 const categoryHeaderColors: Record<string, string> = {
@@ -24,6 +28,8 @@ const categoryHeaderColors: Record<string, string> = {
   "parenting": "bg-gradient-to-r from-pink-500 to-pink-600 text-white",
   "engineering": "bg-gradient-to-r from-green-500 to-green-600 text-white",
   "side-business": "bg-gradient-to-r from-purple-500 to-purple-600 text-white",
+  "sports": "bg-gradient-to-r from-orange-500 to-orange-600 text-white",
+  "politics": "bg-gradient-to-r from-red-500 to-red-600 text-white",
 };
 
 export async function generateStaticParams() {
@@ -41,6 +47,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     "parenting": "保育園、待機児童、男性育休、児童手当など、子育てに関する統計データと実体験に基づいた情報をお届けします。",
     "engineering": "AI、プログラミング、最新の開発ツールなど、ITエンジニア向けの技術情報とトレンドを詳しく解説します。Vibe Coding、Dify、Claude Codeなど最新ツールも紹介。",
     "side-business": "副収入、フリーランス、クラウドソーシング、確定申告など、副業に関する実践的なガイドと統計データを提供します。",
+    "sports": "スポーツニュース、アスリート情報、健康・フィットネスなど、スポーツに関する最新情報と深掘り解説をお届けします。",
+    "politics": "国内外の政治動向、政策解説、社会問題など、政治・社会に関するわかりやすい情報を提供します。",
   };
 
   const categoryKeywords: Record<string, string[]> = {
@@ -48,6 +56,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     "parenting": ["子育て", "育児", "保育園", "待機児童", "子育て支援", "男性育休", "児童手当", "ワークライフバランス", "育休"],
     "engineering": ["ITエンジニア", "プログラミング", "AI", "機械学習", "開発ツール", "コーディング", "技術", "Vibe Coding", "Dify", "Claude Code", "ソフトウェア開発"],
     "side-business": ["副業", "副収入", "フリーランス", "クラウドソーシング", "確定申告", "在宅ワーク", "複業", "個人事業主"],
+    "sports": ["スポーツ", "アスリート", "健康", "フィットネス", "サッカー", "野球", "バスケットボール", "オリンピック", "スポーツニュース"],
+    "politics": ["政治", "政策", "選挙", "国会", "内閣", "社会問題", "経済政策", "外交", "法律"],
   };
 
   return {
