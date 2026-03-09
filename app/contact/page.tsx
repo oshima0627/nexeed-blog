@@ -43,7 +43,7 @@ export default function ContactPage() {
               メールでのお問い合わせは下記リンクからお送りください。
             </p>
             <a
-              href="mailto:nexeed.blog.contact@gmail.com?subject=NEXEED%20BLOG%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
+              href="mailto:oshima6.27@gmail.com?subject=NEXEED%20BLOG%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-medium"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
