@@ -486,6 +486,17 @@ export const a8Links: A8Link[] = [
     width: 468,
     height: 60,
     description: "不動産担保ローンの無料審査申込。事業資金やリフォーム資金に",
+  },
+  {
+    id: "wish-international-300x250",
+    name: "ウィッシュインターナショナル",
+    category: ["副業", "ITエンジニア"],
+    href: "https://px.a8.net/svt/ejp?a8mat=4AXJK9+6G72PE+5IJI+601S1",
+    imgSrc: "https://www21.a8.net/svt/bgt?aid=260225865390&wid=001&eno=01&mid=s00000025731001008000&mc=1",
+    trackingSrc: "https://www19.a8.net/0.gif?a8mat=4AXJK9+6G72PE+5IJI+601S1",
+    width: 300,
+    height: 250,
+    description: "はじめての留学ならウィッシュインターナショナル。夢に向かう大きな一歩を応援",
   }
 ];
 
@@ -1103,6 +1114,7 @@ export function getBannerPairById(bannerId: string): BannerPairWithType | undefi
 // デスクトップサイズかどうかを判定する関数
 function isDesktopSize(width: number, height: number): boolean {
   return (
+    (width === 300 && height === 250) ||
     (width === 468 && height === 60) ||
     (width === 336 && height === 280) ||
     (width === 728 && height === 90) ||
