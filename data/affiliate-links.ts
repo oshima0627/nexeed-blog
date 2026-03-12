@@ -951,6 +951,17 @@ export const moshimoLinks: MoshimoLink[] = [
     width: 600,
     height: 600,
     description: "世界6ヵ国・国内約300教室・50年の実績。少人数制オンラインそろばん教室の無料体験申込み",
+  },
+  {
+    id: "vantan-game-academy-300x300",
+    name: "バンタンゲームアカデミー",
+    category: ["ITエンジニア", "子育て"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336209&p_id=6346&pc_id=17917&pl_id=82434",
+    imgSrc: "https://image.moshimo.com/af-img/4797/000000082434.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336209&p_id=6346&pc_id=17917&pl_id=82434",
+    width: 300,
+    height: 300,
+    description: "ゲーム・イラスト・CG・eスポーツ分野のプロを育成する専門校。資料請求無料",
   }
 ];
 
