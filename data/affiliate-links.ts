@@ -940,6 +940,17 @@ export const moshimoLinks: MoshimoLink[] = [
     width: 300,
     height: 300,
     description: "養育費の立替保証サービス。支払い率90%以上、最大36ヶ月保証。上場企業運営で安心",
+  },
+  {
+    id: "ishido-online-600x600",
+    name: "いしど式オンラインそろばん教室",
+    category: ["子育て"],
+    href: "https://af.moshimo.com/af/c/click?a_id=5336269&p_id=4924&pc_id=13129&pl_id=83899",
+    imgSrc: "https://image.moshimo.com/af-img/2948/000000083899.jpg",
+    trackingSrc: "https://i.moshimo.com/af/i/impression?a_id=5336269&p_id=4924&pc_id=13129&pl_id=83899",
+    width: 600,
+    height: 600,
+    description: "世界6ヵ国・国内約300教室・50年の実績。少人数制オンラインそろばん教室の無料体験申込み",
   }
 ];
 
