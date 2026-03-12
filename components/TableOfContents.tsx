@@ -13,6 +13,8 @@ const categoryActiveColors: Record<string, string> = {
   "子育て": "text-pink-600 font-bold border-l-4 border-pink-600 pl-2 -ml-2",
   "ITエンジニア": "text-green-600 font-bold border-l-4 border-green-600 pl-2 -ml-2",
   "副業": "text-purple-600 font-bold border-l-4 border-purple-600 pl-2 -ml-2",
+  "スポーツ": "text-orange-600 font-bold border-l-4 border-orange-600 pl-2 -ml-2",
+  "政治": "text-red-600 font-bold border-l-4 border-red-600 pl-2 -ml-2",
 };
 
 const categoryHoverColors: Record<string, string> = {
@@ -20,6 +22,8 @@ const categoryHoverColors: Record<string, string> = {
   "子育て": "hover:text-pink-600",
   "ITエンジニア": "hover:text-green-600",
   "副業": "hover:text-purple-600",
+  "スポーツ": "hover:text-orange-600",
+  "政治": "hover:text-red-600",
 };
 
 export default function TableOfContents({ items, category }: TableOfContentsProps) {
@@ -67,19 +71,23 @@ export default function TableOfContents({ items, category }: TableOfContentsProp
   return (
     <nav className="bg-gray-50 rounded-lg p-6 sticky top-20">
       <h2 className="text-lg font-bold mb-4 text-gray-900">目次</h2>
-      <ul className="space-y-2">
+      <ul className="space-y-1">
         {items.map((item) => (
           <li
             key={item.id}
-            className={`${item.level === 3 ? "ml-4" : ""}`}
+            className={item.level === 3 ? "ml-4 pl-2 border-l border-gray-200" : ""}
           >
             <a
               href={`#${item.id}`}
               onClick={(e) => handleClick(e, item.id)}
-              className={`text-sm block py-1 transition-colors ${
+              className={`block py-1 transition-colors ${
+                item.level === 3 ? "text-xs" : "text-sm font-medium"
+              } ${
                 activeId === item.id
                   ? activeColor
-                  : `text-gray-600 ${hoverColor}`
+                  : item.level === 3
+                  ? `text-gray-400 ${hoverColor}`
+                  : `text-gray-700 ${hoverColor}`
               }`}
             >
               {item.text}
