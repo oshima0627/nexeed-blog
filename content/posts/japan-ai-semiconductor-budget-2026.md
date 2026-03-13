@@ -3,6 +3,7 @@ title: "日本政府、AI・半導体に1.2兆円超を投資——2026年度経
 date: "2026-03-13"
 category: "投資"
 excerpt: "日本の経済産業省は2026年度予算案でAI・半導体分野に1兆2,390億円を計上し、前年度比3.7倍の大幅増となりました。GDPも2025年10〜12月期の改定値で前期比年率+1.3%に上方修正。国産AI基盤モデルやRapidusへの集中投資から、個人投資家が注目すべき動向を解説します。"
+affiliateBannerId: "financial-academy-stocks-300x300"
 verified: true
 sources:
   - "https://www.nippon.com/ja/news/yjj2025122200862/ (時事通信 2025年12月22日)"
@@ -69,6 +70,8 @@ sources:
 ## 個人投資家・ITエンジニアへの示唆
 
 ### 投資視点
+
+<a href="//af.moshimo.com/af/c/click?a_id=5336861&p_id=4628&pc_id=12131&pl_id=61793" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/4189/000000061793.jpg" width="300" height="300" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5336861&p_id=4628&pc_id=12131&pl_id=61793" width="1" height="1" style="border:none;" loading="lazy">
 
 今回の予算規模と政策の方向性から、以下のセクターへの注目度が高まっています。
 

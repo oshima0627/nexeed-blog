@@ -964,6 +964,17 @@ export const moshimoLinks: MoshimoLink[] = [
     description: "ゲーム・イラスト・CG・eスポーツ分野のプロを育成する専門校。資料請求無料",
   },
   {
+    id: "financial-academy-stocks-300x300",
+    name: "ファイナンシャルアカデミー｜株式投資スクール 無料体験セミナー",
+    category: ["投資"],
+    href: "//af.moshimo.com/af/c/click?a_id=5336861&p_id=4628&pc_id=12131&pl_id=61793",
+    imgSrc: "//image.moshimo.com/af-img/4189/000000061793.jpg",
+    trackingSrc: "//i.moshimo.com/af/i/impression?a_id=5336861&p_id=4628&pc_id=12131&pl_id=61793",
+    width: 300,
+    height: 300,
+    description: "株式投資スクールの無料体験セミナー申込。WEB・教室どちらでも参加可能",
+  },
+  {
     id: "digimatch-300x250",
     name: "デジマッチ｜AIマッチングサービスの資料請求",
     category: ["ITエンジニア", "副業"],
