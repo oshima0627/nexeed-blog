@@ -18,6 +18,7 @@ export interface PostData {
   updated?: string;
   content?: string;
   affiliateBannerId?: string; // 特定のアフィリエイトバナーを指定
+  popular?: boolean;
 }
 
 export function getAllPosts(): PostData[] {
@@ -53,6 +54,7 @@ export function getAllPosts(): PostData[] {
         coverImage: coverImage,
         updated: data.updated,
         affiliateBannerId: data.affiliateBannerId,
+        popular: data.popular ?? false,
       } as PostData;
     });
 
@@ -138,6 +140,11 @@ function insertBannerMarker(html: string): string {
   });
 
   return html;
+}
+
+export function getPopularPosts(limit = 4): PostData[] {
+  const allPosts = getAllPosts();
+  return allPosts.filter((post) => post.popular).slice(0, limit);
 }
 
 export function getPostsByCategory(category: string): PostData[] {
