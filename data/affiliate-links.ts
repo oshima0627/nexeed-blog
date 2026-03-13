@@ -962,6 +962,17 @@ export const moshimoLinks: MoshimoLink[] = [
     width: 300,
     height: 300,
     description: "ゲーム・イラスト・CG・eスポーツ分野のプロを育成する専門校。資料請求無料",
+  },
+  {
+    id: "digimatch-300x250",
+    name: "デジマッチ｜AIマッチングサービスの資料請求",
+    category: ["ITエンジニア", "副業"],
+    href: "//af.moshimo.com/af/c/click?a_id=5336442&p_id=7192&pc_id=20596&pl_id=91079",
+    imgSrc: "//image.moshimo.com/af-img/6989/000000091079.png",
+    trackingSrc: "//i.moshimo.com/af/i/impression?a_id=5336442&p_id=7192&pc_id=20596&pl_id=91079",
+    width: 300,
+    height: 250,
+    description: "AIマッチングサービスの資料請求。AI活用・DX推進を検討する企業向け",
   }
 ];
 
