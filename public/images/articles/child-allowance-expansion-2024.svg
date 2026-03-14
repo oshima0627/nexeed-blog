@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a1942"/>
+    <stop offset="50%" stop-color="#7c3aed"/>
+    <stop offset="100%" stop-color="#2d1a4f"/>
+    </linearGradient>
+    
+        <pattern id="pat" x="0" y="0" width="88" height="88" patternUnits="userSpaceOnUse" patternTransform="rotate(228 600 315)">
+          <circle cx="44" cy="44" r="26.4" fill="#f472b6" opacity="0.16"/>
+        </pattern>
+  </defs>
+
+  <!-- 背景グラデーション -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- パターンオーバーレイ -->
+  <rect width="1200" height="630" fill="url(#pat)"/>
+
+  <!-- アクセントシェイプ -->
+  <circle cx="1008" cy="208" r="148" fill="#f472b6" opacity="0.08"/>
+  <circle cx="208" cy="508" r="68" fill="#fb923c" opacity="0.10"/>
+  <line x1="0" y1="308" x2="300" y2="408" stroke="#f472b6" stroke-width="2" opacity="0.15"/>
+  <rect x="908" y="458" width="80" height="80" fill="#fb923c" opacity="0.07" rx="8"/>
+
+  <!-- 左側のアクセントバー -->
+  <rect x="0" y="0" width="6" height="630" fill="#f472b6" opacity="0.8"/>
+
+  <!-- ボトムライン -->
+  <rect x="0" y="610" width="1200" height="2" fill="#f472b6" opacity="0.3"/>
+
+  <!-- カテゴリーバッジ -->
+  <rect x="60" y="60" width="106" height="40" rx="20" fill="#f472b6" opacity="0.2"/>
+  <rect x="60" y="60" width="106" height="40" rx="20" fill="none" stroke="#f472b6" stroke-width="1" opacity="0.6"/>
+  <text x="80" y="87" font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', Arial, sans-serif" font-size="18" fill="#f472b6" font-weight="600">子育て</text>
+</svg>

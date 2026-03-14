@@ -3,7 +3,7 @@ title: "企業の生成AI導入率と活用実態【2025年最新統計】導入
 date: "2026-01-13"
 category: "ITエンジニア"
 excerpt: "2025年の最新調査によると、日本企業の生成AI導入率は57.7%に達しましたが、積極的に推進している企業はわずか25.2%にとどまります。野村総合研究所、総務省、PwC、東京商工リサーチなど複数の調査機関のデータから、企業における生成AI活用の実態と課題を徹底解説します。"
-coverImage: "/images/ai-robot-technology.jpg"
+coverImage: "/images/articles/enterprise-generative-ai-adoption-statistics.svg"
 ---
 
 # 企業の生成AI導入率と活用実態【2025年最新統計】導入57.7%も推進は25.2%の現実

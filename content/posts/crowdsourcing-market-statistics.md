@@ -3,7 +3,7 @@ title: "クラウドソーシング市場の統計データ：登録者数と市
 date: "2026-01-09"
 category: "副業"
 excerpt: "クラウドワークス670万人、ランサーズ260万人の登録者数など、クラウドソーシング市場の最新統計と2012年から2025年までの市場成長データを詳細分析します。"
-coverImage: "/images/freelance-remote-work.jpg"
+coverImage: "/images/articles/crowdsourcing-market-statistics.svg"
 ---
 
 # クラウドソーシング市場の概要

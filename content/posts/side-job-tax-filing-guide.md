@@ -4,7 +4,7 @@ date: "2026-01-09"
 updated: "2026-02-19"
 category: "副業"
 excerpt: "国税庁の規定に基づく副業の確定申告ルールを詳細解説。20万円ルール、住民税申告の義務、2026年の申告期限など、統計データと公式情報で説明します。"
-coverImage: "/images/freelance-remote-work.jpg"
+coverImage: "/images/articles/side-job-tax-filing-guide.svg"
 ---
 
 # 副業の確定申告における20万円ルール

@@ -3,7 +3,7 @@ title: "インデックス投資入門：統計データで見る資産形成の
 date: "2026-01-05"
 category: "投資"
 excerpt: "金融庁データとつみたてNISA統計から、インデックス投資による資産形成の実態を数値で解説します。初心者が知るべき客観的な事実とデータを紹介。"
-coverImage: "/images/investment-stocks.jpg"
+coverImage: "/images/articles/index-fund-investment.svg"
 ---
 
 # インデックス投資とは

@@ -3,7 +3,7 @@ title: "【本音レビュー】スキルハックスの評判・口コミ徹底
 date: "2026-01-15"
 category: "ITエンジニア"
 excerpt: "スキルハックス受講者の口コミ・評判を徹底調査。未経験からエンジニア転職に成功した事例、他スクールとの比較、料金、質問サポートの実態をまとめました。"
-coverImage: "/images/career-change.jpg"
+coverImage: "/images/articles/skillhacks-programming-review.svg"
 affiliateBannerId: "skillhacks-a8-300x250"
 ---
 
