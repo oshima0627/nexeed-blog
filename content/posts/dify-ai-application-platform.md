@@ -3,7 +3,7 @@ title: "Dify：ノーコードでAIアプリケーションを構築するオー
 date: "2026-01-13"
 category: "ITエンジニア"
 excerpt: "Difyは、LLMを活用したAIアプリケーションを迅速に開発できるオープンソースプラットフォームです。技術仕様、主要機能、導入事例、そして実際の開発効率データを詳しく解説します。"
-coverImage: "/images/ai-robot-technology.jpg"
+coverImage: "/steve-johnson-_0iV9LmPDn0-unsplash.jpg"
 ---
 
 # Difyとは何か
