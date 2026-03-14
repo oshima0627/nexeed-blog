@@ -2,6 +2,7 @@ import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { format } from "date-fns";
 import { ja } from "date-fns/locale";
 import Image from "next/image";
+import { getArticleImage } from "@/lib/article-image";
 import ArticleCard from "@/components/ArticleCard";
 import TableOfContents from "@/components/TableOfContents";
 import { extractTocFromHtml } from "@/lib/toc";
@@ -115,6 +116,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const post = await getPostBySlug(slug);
   const relatedPosts = getRelatedPosts(slug, post.category, 3);
 
+  // Wikipedia から記事関連画像を取得（取得失敗時は既存 coverImage にフォールバック）
+  const heroImage = (await getArticleImage(slug)) ?? post.coverImage;
+
   const formattedDate = format(new Date(post.date), "yyyy年M月d日", { locale: ja });
   const categoryClass = categoryClasses[post.category] || "";
 
@@ -196,11 +200,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             )}
           </div>
 
-          {/* カバー画像 */}
-          {post.coverImage && (
+          {/* カバー画像（Wikipedia または既存画像） */}
+          {heroImage && (
             <div className="relative w-full aspect-[16/9] mb-8 rounded-lg overflow-hidden">
               <Image
-                src={post.coverImage}
+                src={heroImage}
                 alt={post.title}
                 fill
                 className="object-cover"
