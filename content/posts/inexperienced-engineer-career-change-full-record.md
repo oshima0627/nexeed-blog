@@ -3,7 +3,7 @@ title: "【未経験エンジニア転職の全記録】ポリテクセンター
 date: "2026-03-02"
 category: "ITエンジニア"
 excerpt: "接客業から未経験でJavaエンジニアに転職した全プロセスを公開。ポリテクセンター関西ICTエンジニア科の実態、Oracle Java Silver取得の戦略、転職活動で意識したことを詳しく解説。"
-coverImage: "/images/articles/inexperienced-engineer-career-change-full-record.svg"
+coverImage: "/images/career-change.jpg"
 popular: true
 ---
 

@@ -4,7 +4,7 @@ date: "2026-03-02"
 category: "ITエンジニア"
 excerpt: "小学1年から中学3年まで9年間サッカーのゴールキーパーを経験したエンジニアが、スポーツで培った「状況把握力」「ポジショニング思考」「逆境への強さ」がIT開発現場でそのまま活きる理由を解説。"
 popular: true
-coverImage: "/images/articles/goalkeeper-experience-engineer-mindset.svg"
+coverImage: "/soccer-goalkeeper.jpg"
 ---
 
 # 【異色の経歴】ゴールキーパー9年間の経験がエンジニアの仕事に活きている理由

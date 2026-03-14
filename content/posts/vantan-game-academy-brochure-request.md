@@ -3,7 +3,7 @@ title: "【バンタンゲームアカデミー】資料請求ガイド｜ゲー
 date: "2026-03-12"
 category: "ITエンジニア"
 excerpt: "バンタンゲームアカデミーへの資料請求を検討している方へ。コース内容・学費・キャンパス情報・就職実績など、無料パンフレットで確認できる最新情報を徹底解説します。"
-coverImage: "/images/articles/vantan-game-academy-brochure-request.svg"
+coverImage: "/images/career-change.jpg"
 affiliateBannerId: "vantan-game-academy-300x300"
 ---
 

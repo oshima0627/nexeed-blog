@@ -3,7 +3,7 @@ title: "【女性のための無料マネーセミナー】アットセミナー
 date: "2026-01-17"
 category: "投資"
 excerpt: "お金の不安を抱える女性に向けた無料マネーセミナー「アットセミナー」。老後資金、資産運用、家計管理など、女性ならではのお金の悩みを専門家から学べます。参加者の満足度や学べる内容を詳しく解説します。"
-coverImage: "/images/articles/at-seminar-money-seminar-for-women.svg"
+coverImage: "/images/money-seminar-women.jpg"
 affiliateBannerId: "at-seminar-300x250"
 ---
 
