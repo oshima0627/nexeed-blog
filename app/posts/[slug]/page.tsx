@@ -1,6 +1,7 @@
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { format } from "date-fns";
 import { ja } from "date-fns/locale";
+import Image from "next/image";
 import ArticleCard from "@/components/ArticleCard";
 import TableOfContents from "@/components/TableOfContents";
 import { extractTocFromHtml } from "@/lib/toc";
@@ -194,6 +195,19 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               </>
             )}
           </div>
+
+          {/* カバー画像 */}
+          {post.coverImage && (
+            <div className="relative w-full aspect-[16/9] mb-8 rounded-lg overflow-hidden">
+              <Image
+                src={post.coverImage}
+                alt={post.title}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          )}
 
           {/* 記事画像とリード文 */}
           {(() => {
