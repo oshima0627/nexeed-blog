@@ -3,6 +3,7 @@ title: "【いしど式オンライン】自宅で学べるそろばんオンラ
 date: "2026-03-12"
 category: "子育て"
 excerpt: "いしど式オンラインそろばん教室の特徴・料金・口コミを徹底解説。世界6ヵ国・国内約300教室・50年の実績をもつ老舗そろばん教室が提供するZoom少人数制レッスンで、計算力・集中力・自己肯定感を育む方法をお伝えします。"
+coverImage: "/images/parent-children-education.jpg"
 affiliateBannerId: "ishido-online-600x600"
 ---
 
