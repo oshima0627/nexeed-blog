@@ -3,7 +3,7 @@ title: "【本音レビュー】techmeets（テックミーツ）の評判・口
 date: "2026-01-21"
 category: "ITエンジニア"
 excerpt: "techmeets（テックミーツ）の利用者の口コミ・評判を徹底調査。無料カウンセリングの内容、料金プラン、カリキュラム、フリーランス支援まで、実際の受講者のリアルな声をまとめました。"
-coverImage: "/images/articles/techmeets-free-counseling-review.svg"
+coverImage: "/techmeets（テックミーツ）.jpg"
 affiliateBannerId: "techmeets-728x90"
 ---
 

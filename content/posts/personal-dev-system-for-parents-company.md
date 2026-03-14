@@ -3,7 +3,7 @@ title: "【個人開発】親の会社で実際に使われるシステムを作
 date: "2026-03-02"
 category: "ITエンジニア"
 excerpt: "エンジニア2年目が個人開発で親の会社向け日報管理システムと給付金計算アプリを開発。要件定義・設計・実装・リリースまでの全プロセスと、実際に使ってもらって気づいたことを公開。"
-coverImage: "/images/articles/personal-dev-system-for-parents-company.svg"
+coverImage: "/images/engineer-coding-laptop.jpg"
 ---
 
 # 【個人開発】親の会社で実際に使われるシステムを作った話｜要件定義からリリースまでの全記録

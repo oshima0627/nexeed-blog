@@ -3,7 +3,7 @@ title: "2027年開始「こどもNISA」完全ガイド：ジュニアNISAとの
 date: "2026-03-01"
 category: "投資"
 excerpt: "2025年12月の税制改正大綱で正式決定した「こどもNISA」。2027年1月から0歳〜17歳を対象に開始される新制度の詳細と、廃止されたジュニアNISAとの違い、贈与・児童手当との組み合わせ活用法を解説します。"
-coverImage: "/images/articles/kodomo-nisa-2027-guide.svg"
+coverImage: "/images/investment-stocks.jpg"
 ---
 
 # 2027年開始「こどもNISA」完全ガイド：ジュニアNISAとの違い・活用戦略を徹底解説

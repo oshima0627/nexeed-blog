@@ -3,7 +3,7 @@ title: "RAGシステムと企業チャットボット導入統計【2024-2025年
 date: "2026-01-14"
 category: "ITエンジニア"
 excerpt: "RAG（検索拡張生成）システムの技術解説と企業導入統計を徹底分析。市場規模58億ドル、企業導入率42%、精度向上35%など、最新データで企業チャットボットの実態を解説します。"
-coverImage: "/images/articles/rag-system-enterprise-chatbot-statistics.svg"
+coverImage: "/images/chatgpt-llm-chat.jpg"
 ---
 
 # RAGシステムと企業チャットボット導入統計【2024-2025年版】市場規模58億ドル・導入率42%の実態

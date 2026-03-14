@@ -3,7 +3,7 @@ title: "【キッズロボ】子どもの創造力を育むプログラミング
 date: "2026-01-19"
 category: "子育て"
 excerpt: "子どもにプログラミング教育を受けさせたいけど、費用が心配な保護者へ。キッズロボは教育訓練給付金対象のプログラミング・ロボット教室です。無料体験学習の内容や教育訓練給付金制度の活用方法を詳しく解説します。"
-coverImage: "/images/articles/kidsrobo-programming-school.svg"
+coverImage: "/キッズロボ.jpg"
 affiliateBannerId: "kidsrobo-250x250"
 ---
 
