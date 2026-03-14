@@ -3,7 +3,7 @@ title: "ChatGPT vs Gemini vs Claude【2025年利用率比較】日本の生成AI
 date: "2026-01-13"
 category: "ITエンジニア"
 excerpt: "2025年の最新調査により、日本の生成AI利用率は1年で2倍の30.3%に急増しました。ChatGPTは20.9%でトップを維持するも、Geminiが3.2%から14.0%へと10.8ポイント上昇し猛追。Copilot、Claudeを含む4大生成AIツールの利用実態を、日本リサーチセンター、MM総研などの統計データから徹底分析します。"
-coverImage: "/images/chatgpt-llm-chat.jpg"
+coverImage: "/images/articles/generative-ai-tools-usage-comparison.svg"
 ---
 
 # ChatGPT vs Gemini vs Claude【2025年利用率比較】日本の生成AI市場シェアと成長トレンド

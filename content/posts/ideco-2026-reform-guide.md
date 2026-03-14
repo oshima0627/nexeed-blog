@@ -3,7 +3,7 @@ title: "【2026年大改正】iDeCo掛金上限が月6.2万円に引き上げ｜
 date: "2026-02-24"
 category: "投資"
 excerpt: "2026〜2027年のiDeCo大改正を完全解説。掛金上限が月2.3万円→6.2万円に拡大、加入年齢は70歳未満へ。10年ルールの注意点や節税効果シミュレーションも詳しく紹介します。"
-coverImage: "/images/investment-stocks.jpg"
+coverImage: "/images/articles/ideco-2026-reform-guide.svg"
 affiliateBannerId: "matsui-ideco-468x60"
 ---
 

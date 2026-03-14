@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+    <stop offset="50%" stop-color="#16213e"/>
+    <stop offset="100%" stop-color="#0f3460"/>
+    </linearGradient>
+    
+        <pattern id="pat" x="0" y="0" width="76" height="76" patternUnits="userSpaceOnUse" patternTransform="rotate(216 600 315)">
+          <circle cx="38" cy="38" r="22.8" fill="#e94560" opacity="0.12"/>
+        </pattern>
+  </defs>
+
+  <!-- 背景グラデーション -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- パターンオーバーレイ -->
+  <rect width="1200" height="630" fill="url(#pat)"/>
+
+  <!-- アクセントシェイプ -->
+  <circle cx="996" cy="196" r="136" fill="#e94560" opacity="0.08"/>
+  <circle cx="196" cy="496" r="106" fill="#f59e0b" opacity="0.10"/>
+  <line x1="0" y1="296" x2="300" y2="396" stroke="#e94560" stroke-width="2" opacity="0.15"/>
+  <rect x="896" y="546" width="80" height="80" fill="#f59e0b" opacity="0.07" rx="8"/>
+
+  <!-- 左側のアクセントバー -->
+  <rect x="0" y="0" width="6" height="630" fill="#e94560" opacity="0.8"/>
+
+  <!-- ボトムライン -->
+  <rect x="0" y="610" width="1200" height="2" fill="#e94560" opacity="0.3"/>
+
+  <!-- カテゴリーバッジ -->
+  <rect x="60" y="60" width="84" height="40" rx="20" fill="#e94560" opacity="0.2"/>
+  <rect x="60" y="60" width="84" height="40" rx="20" fill="none" stroke="#e94560" stroke-width="1" opacity="0.6"/>
+  <text x="80" y="87" font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', Arial, sans-serif" font-size="18" fill="#e94560" font-weight="600">副業</text>
+</svg>

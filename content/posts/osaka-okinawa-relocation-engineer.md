@@ -4,7 +4,7 @@ date: "2026-03-02"
 category: "ITエンジニア"
 excerpt: "2児の父エンジニアが2026年6月に大阪から沖縄へ移住することを決断。移住の理由、リモートワーク求人の探し方、生活コストの変化、移住準備の全プロセスをリアルに公開します。"
 popular: true
-coverImage: "/okinawa-shisa.jpeg"
+coverImage: "/images/articles/osaka-okinawa-relocation-engineer.svg"
 ---
 
 # 【大阪→沖縄移住】エンジニアが家族のために移住を決めた理由と全準備プロセス

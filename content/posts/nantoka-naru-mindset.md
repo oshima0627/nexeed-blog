@@ -3,7 +3,7 @@ title: "【マインド】「なんとかなる」は楽観論じゃない｜逆
 date: "2026-03-02"
 category: "ITエンジニア"
 excerpt: "いじめ・怪我・失恋・就職の壁……数々の逆境を乗り越えてきた経験から生まれた「なんとかなる」思考法を解説。冷静に最悪を想定し次の一手を打つ3ステップで、困難を成長の糧にする方法とは。"
-coverImage: "/images/engineer-family-balance.jpg"
+coverImage: "/images/articles/nantoka-naru-mindset.svg"
 ---
 
 # 【マインド】「なんとかなる」は楽観論じゃない｜逆境を乗り越えてきた私の思考法3ステップ

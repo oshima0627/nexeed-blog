@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+    <stop offset="50%" stop-color="#1e3a5f"/>
+    <stop offset="100%" stop-color="#0d2137"/>
+    </linearGradient>
+    
+        <pattern id="pat" x="0" y="0" width="67" height="67" patternUnits="userSpaceOnUse" patternTransform="rotate(267 600 315)">
+          <polygon points="33.5,0 67,33.5 33.5,67 0,33.5" fill="#38bdf8" opacity="0.15"/>
+        </pattern>
+  </defs>
+
+  <!-- 背景グラデーション -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- パターンオーバーレイ -->
+  <rect width="1200" height="630" fill="url(#pat)"/>
+
+  <!-- アクセントシェイプ -->
+  <circle cx="967" cy="217" r="187" fill="#38bdf8" opacity="0.08"/>
+  <circle cx="367" cy="517" r="77" fill="#818cf8" opacity="0.10"/>
+  <line x1="0" y1="267" x2="300" y2="367" stroke="#38bdf8" stroke-width="2" opacity="0.15"/>
+  <rect x="867" y="517" width="80" height="80" fill="#818cf8" opacity="0.07" rx="8"/>
+
+  <!-- 左側のアクセントバー -->
+  <rect x="0" y="0" width="6" height="630" fill="#38bdf8" opacity="0.8"/>
+
+  <!-- ボトムライン -->
+  <rect x="0" y="610" width="1200" height="2" fill="#38bdf8" opacity="0.3"/>
+
+  <!-- カテゴリーバッジ -->
+  <rect x="60" y="60" width="194" height="40" rx="20" fill="#38bdf8" opacity="0.2"/>
+  <rect x="60" y="60" width="194" height="40" rx="20" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.6"/>
+  <text x="80" y="87" font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', Arial, sans-serif" font-size="18" fill="#38bdf8" font-weight="600">ITエンジニア</text>
+</svg>
