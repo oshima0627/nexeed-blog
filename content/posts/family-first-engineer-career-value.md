@@ -3,7 +3,7 @@ title: "【家族ファーストでも市場価値は上がる】エンジニア
 date: "2026-03-02"
 category: "ITエンジニア"
 excerpt: "「家族優先で仕事をセーブしたら市場価値が下がった」は過去の話。家族ファーストを守りながらエンジニアとして市場価値を高める方法を、2児の父エンジニアが実体験をもとに解説。"
-coverImage: "/images/engineer-family-balance.jpg"
+coverImage: "/ta-focando-LOuffSFpWQI-unsplash.jpg"
 ---
 
 # 【家族ファーストでも市場価値は上がる】エンジニアが昇給・キャリアアップする戦略

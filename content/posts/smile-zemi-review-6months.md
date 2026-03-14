@@ -3,7 +3,7 @@ title: "【本音レビュー】スマイルゼミの評判・口コミ徹底調
 date: "2026-01-14"
 category: "子育て"
 excerpt: "スマイルゼミ利用者の口コミ・評判を徹底調査。学習習慣が身についた事例、他教材との比較、料金、タブレットの使い勝手まで保護者のリアルな声をまとめました。"
-coverImage: "/images/parent-children-education.jpg"
+coverImage: "/heshan-perera-Z-6CM10ecV0-unsplash.jpg"
 ---
 
 # 【本音レビュー】スマイルゼミの評判・口コミ徹底調査｜利用者の体験談から見るメリット・デメリット
