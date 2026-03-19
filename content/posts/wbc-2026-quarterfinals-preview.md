@@ -3,7 +3,7 @@ title: "WBC 2026 準々決勝完全ガイド｜グループステージ突破国
 date: "2026-03-12"
 category: "スポーツ"
 excerpt: "WBC 2026（ワールド・ベースボール・クラシック）グループステージが終了し、準々決勝の舞台が整いました。各グループの最終順位、確定した全対戦カード、グループステージのハイライトを一気におさらいします。"
-coverImage: "/tim-gouw-VvQSzMJ_h0U-unsplash.jpg"
+coverImage: "/malia-moore--Y4wyzF1yNk-unsplash.jpg"
 ---
 
 # WBC 2026 準々決勝完全ガイド
