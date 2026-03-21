@@ -1,6 +1,6 @@
 ---
 title: "【2026年最新】Claude Code vs GitHub Copilot vs Cursor vs Windsurf｜AIコーディングエージェント徹底比較"
-date: "2026-03-20"
+date: "2026-03-20T22:29:00"
 category: "ITエンジニア"
 excerpt: "2026年に急増したAIコーディングツール。Claude Code・GitHub Copilot・Cursor・Windsurfの料金・機能・ユースケースを複数の調査データをもとに徹底比較します。自分に合ったツール選びの参考にしてください。"
 coverImage: "/fotis-fotopoulos-DuHKoV44prg-unsplash.jpg"

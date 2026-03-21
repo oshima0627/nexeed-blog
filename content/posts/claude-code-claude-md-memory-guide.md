@@ -1,6 +1,6 @@
 ---
 title: "Claude Code 機能解説 #2：CLAUDE.md と Memory ―― AIに「覚えておいてほしいこと」を永続させる"
-date: "2026-03-21"
+date: "2026-03-21T03:19:59"
 category: "ITエンジニア"
 excerpt: "Claude Codeは毎回セッションを初期化します。しかし「CLAUDE.md」と「Auto Memory」を使えば、コーディング規約・ビルドコマンド・アーキテクチャ方針などをAIに永続的に記憶させられます。2つのメモリシステムの仕組み、書き方のコツ、チームでの運用方法を公式ドキュメントをもとに徹底解説します。"
 coverImage: "/altumcode-XMFZqrGyV-Q-unsplash.jpg"

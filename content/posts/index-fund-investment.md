@@ -1,6 +1,6 @@
 ---
 title: "インデックス投資入門：統計データで見る資産形成の実態"
-date: "2026-01-05"
+date: "2026-03-02T01:25:19"
 category: "投資"
 excerpt: "金融庁データとつみたてNISA統計から、インデックス投資による資産形成の実態を数値で解説します。初心者が知るべき客観的な事実とデータを紹介。"
 coverImage: "/markus-winkler-IrRbSND5EUc-unsplash.jpg"

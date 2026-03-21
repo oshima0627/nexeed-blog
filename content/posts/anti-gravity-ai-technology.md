@@ -1,6 +1,6 @@
 ---
 title: "Anti-Gravity（アンチグラビティ）：AI搭載のインテリジェントコード検索とナビゲーション"
-date: "2026-01-13"
+date: "2026-03-02T01:25:19"
 category: "ITエンジニア"
 excerpt: "Anti-Gravityは、AIを活用した革新的なコード検索・ナビゲーションツールです。従来のgrep検索を超える意味的検索、コードベース理解、そして開発者の作業効率を劇的に向上させる機能を詳しく解説します。"
 coverImage: "/zhenyu-luo-kE0JmtbvXxM-unsplash.jpg"

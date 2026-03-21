@@ -1,6 +1,6 @@
 ---
 title: "ITエンジニア副業の実態：統計データで見る市場規模と収入"
-date: "2026-01-01"
+date: "2026-03-02T01:25:19"
 category: "副業"
 excerpt: "ランサーズ調査とITフリーランス市場白書から、エンジニア副業の実態を数値で解説。市場規模1.6倍成長、平均単価75.5万円など客観的データを紹介。"
 coverImage: "/ionela-mat-JVrSjB3fXrk-unsplash.jpg"

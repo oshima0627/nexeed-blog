@@ -1,6 +1,6 @@
 ---
 title: "男性の育児休業取得率の統計データ：2024年度40.5%達成と推移分析"
-date: "2025-01-12"
+date: "2026-03-02T01:25:19"
 category: "子育て"
 excerpt: "厚生労働省の統計データに基づき、男性の育児休業取得率の推移、企業規模別・業種別の状況、2025年の法改正について詳しく解説します。"
 coverImage: "/kelli-mcclintock-wBgAVAGjzFg-unsplash.jpg"

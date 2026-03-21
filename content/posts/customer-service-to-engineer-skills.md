@@ -1,6 +1,6 @@
 ---
 title: "【異業種転職】接客業8年からエンジニアへ｜転職して気づいた「最強のスキル」とは"
-date: "2026-03-02"
+date: "2026-03-02T03:42:03"
 category: "ITエンジニア"
 excerpt: "接客業8年からJavaエンジニアに転職した27歳が、転職後に気づいた「接客経験がエンジニアの最強武器になる理由」を実体験で解説。傾聴力・問題解決力・コミュニケーション力の活かし方とは。"
 coverImage: "/christina-wocintechchat-com-m-PzAd5XCyFJo-unsplash.jpg"

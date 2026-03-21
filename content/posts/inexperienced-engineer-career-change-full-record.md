@@ -1,6 +1,6 @@
 ---
 title: "【未経験エンジニア転職の全記録】ポリテクセンター活用から内定まで｜転職エージェント不使用で成功した方法"
-date: "2026-03-02"
+date: "2026-03-02T03:42:03"
 category: "ITエンジニア"
 excerpt: "接客業から未経験でJavaエンジニアに転職した全プロセスを公開。ポリテクセンター関西ICTエンジニア科の実態、Oracle Java Silver取得の戦略、転職活動で意識したことを詳しく解説。"
 coverImage: "/andrew-neel-ute2XAFQU2I-unsplash.jpg"

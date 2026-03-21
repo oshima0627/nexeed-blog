@@ -1,6 +1,6 @@
 ---
 title: "Claude Code 機能解説 #3：MCP（Model Context Protocol）―― Jira・Slack・GitHubを自然言語で操作する"
-date: "2026-03-21"
+date: "2026-03-21T03:30:12"
 category: "ITエンジニア"
 excerpt: "MCPはClaude Codeを外部ツールに接続するオープン規格です。Jira・Slack・GitHub・Notion・PostgreSQLなど数百のサービスと連携でき、「JIRAのチケットを読んで実装してPRを作成して」という複合タスクを1コマンドで実現します。設定方法・スコープ管理・主要サーバー一覧を公式ドキュメントをもとに解説します。"
 coverImage: "/jj-ying-9Qwbfa_RM94-unsplash.jpg"

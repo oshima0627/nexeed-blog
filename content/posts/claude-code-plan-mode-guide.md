@@ -1,6 +1,6 @@
 ---
 title: "Claude Code 機能解説 #1：Plan Mode（プランモード）―― 実行前に「設計図」を確認する"
-date: "2026-03-21"
+date: "2026-03-21T03:04:32"
 category: "ITエンジニア"
 excerpt: "Claude CodeのPlan Modeは、AIがコードを書き始める前に「読み取り専用」で設計図を作成し、開発者がレビューしてから実行に移せる機能です。複数ファイルにまたがる変更や大規模リファクタリングで特に威力を発揮します。有効化方法・実践的なワークフロー・ベストプラクティスをすべて解説します。"
 coverImage: "/blake-connally-IKUYGCFmfw4-unsplash.jpg"

@@ -1,6 +1,6 @@
 ---
 title: "AIコーディングアシスタント市場統計【2024-2025年版】GitHub Copilot利用率38%・市場規模28億ドルの実態"
-date: "2026-01-14"
+date: "2026-03-02T01:25:19"
 category: "ITエンジニア"
 excerpt: "GitHub Copilot、Claude Code、Cursor等のAIコーディングアシスタント市場を徹底分析。開発者利用率、生産性向上効果、ツール別比較を統計データで解説します。"
 coverImage: "/solen-feyissa-5Ib2B9MBJhQ-unsplash.jpg"
