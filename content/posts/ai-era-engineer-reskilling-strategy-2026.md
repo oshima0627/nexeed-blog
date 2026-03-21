@@ -1,6 +1,6 @@
 ---
 title: "AI時代のITエンジニアが今すぐ取り組むべきリスキリング戦略【2026年版】"
-date: "2026-03-13"
+date: "2026-03-13T09:36:54"
 category: "ITエンジニア"
 excerpt: "Gartnerは2027年までにエンジニアの80%がスキルアップを強いられると予測。AIがコードを書く時代に求められる新スキルセット、リスキリングの具体的な方法、キャリア戦略を2026年最新データで解説します。"
 coverImage: "/thisisengineering-uyfohHiTxho-unsplash.jpg"

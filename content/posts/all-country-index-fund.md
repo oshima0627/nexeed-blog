@@ -1,6 +1,6 @@
 ---
 title: "インデックス投資は「オルカン」1本で十分な理由を数値で解説"
-date: "2026-01-08"
+date: "2026-03-02T01:25:19"
 category: "投資"
 excerpt: "eMAXIS Slim 全世界株式（オルカン）が投資信託として選ばれる理由を、客観的なデータと統計に基づいて解説します。"
 coverImage: "/micheile-henderson-SoT4-mZhyhE-unsplash.jpg"

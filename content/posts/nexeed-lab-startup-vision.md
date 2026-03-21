@@ -1,6 +1,6 @@
 ---
 title: "【起業ビジョン】Nexeed Labを立ち上げる理由｜エンジニアが技術で社会課題を解決するまでの道筋"
-date: "2026-03-02"
+date: "2026-03-02T05:44:07"
 category: "副業"
 excerpt: "2児の父Javaエンジニアが将来的な起業を目指す理由と、Nexeed Labのビジョンを公開。小規模事業者向けWeb制作から社会課題解決まで、エンジニアが独立するための3〜7年の戦略を語ります。"
 coverImage: "/samson-ZGjbiukp_-A-unsplash.jpg"

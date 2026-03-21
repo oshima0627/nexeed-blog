@@ -1,6 +1,6 @@
 ---
 title: "Salesforce導入統計とCRM市場シェア【2024-2025年版】世界シェア23.8%・売上4.4兆円の実態"
-date: "2026-01-14"
+date: "2026-03-02T01:25:19"
 category: "ITエンジニア"
 excerpt: "Gartner、IDCの市場調査から、Salesforce導入統計、CRM市場シェア、企業規模別導入率、ROI効果、競合比較を統計データで徹底解説します。"
 coverImage: "/stephen-dawson-qwtCeJ5cLYs-unsplash.jpg"

@@ -1,6 +1,6 @@
 ---
 title: "【AI駆動開発を1ヶ月試した】現場Javaエンジニアのリアルな感想｜効率化できたこととできなかったこと"
-date: "2026-03-02"
+date: "2026-03-02T03:02:32"
 category: "ITエンジニア"
 excerpt: "JavaエンジニアがAI駆動開発（Claude・GitHub Copilot活用）を1ヶ月実践したリアルレポート。業務効率化できた場面・できなかった場面・AIに依存しすぎる危険性まで、現場目線で解説します。"
 coverImage: "/thisisengineering-sCgQPQZAeO4-unsplash.jpg"

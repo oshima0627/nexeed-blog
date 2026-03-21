@@ -1,6 +1,6 @@
 ---
 title: "Google Gemini利用統計と企業活用実態【2024-2025年版】ユーザー数2億人・企業導入率32%の現状"
-date: "2026-01-14"
+date: "2026-03-02T01:25:19"
 category: "ITエンジニア"
 excerpt: "Google Geminiの利用統計、ChatGPTとの比較、企業導入率、活用事例を統計データで徹底解説。2024年のユーザー数2億人、企業導入32%の実態を明らかにします。"
 coverImage: "/aerps-com-P5sGqNT_Aj8-unsplash.jpg"

@@ -1,6 +1,6 @@
 ---
 title: "【Java→Next.js挑戦記】バックエンドエンジニアが個人開発でフロントエンドを学んで気づいたこと"
-date: "2026-03-02"
+date: "2026-03-02T03:02:32"
 category: "ITエンジニア"
 excerpt: "Java/SpringBoot専門のバックエンドエンジニアがNext.js+TypeScriptで個人開発に挑戦。フロントエンド未経験からWebアプリをリリースするまでの学習プロセスと、バックエンド経験者だからこそ感じたギャップを解説。"
 coverImage: "/christina-wocintechchat-com-m-NNQlZDbLTm8-unsplash.jpg"

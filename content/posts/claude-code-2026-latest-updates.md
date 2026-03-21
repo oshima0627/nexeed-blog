@@ -1,6 +1,6 @@
 ---
 title: "Claude Code 2026年最新アップデートまとめ｜音声モード・リモートコントロール・ultrathink復活"
-date: "2026-03-20"
+date: "2026-03-20T10:32:11"
 category: "ITエンジニア"
 excerpt: "2026年に入りClaude Codeは急速な進化を遂げています。音声モード（Voice Mode）の追加、スマートフォンからの遠隔操作を可能にするRemote Control、ultrathinkキーワードの復活など、開発者の働き方を変える主要アップデートを検証情報とともに解説します。"
 coverImage: "/ales-nesetril-Im7lZjxeLhg-unsplash.jpg"

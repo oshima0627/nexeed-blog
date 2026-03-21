@@ -1,6 +1,6 @@
 ---
 title: "Next.js 15で構築するブログサイト：パフォーマンスデータと技術仕様"
-date: "2026-01-07"
+date: "2026-03-02T01:25:19"
 category: "ITエンジニア"
 excerpt: "Next.js 15の最新パフォーマンスデータとReact Server Componentsの技術仕様を解説。Turbopackの57.6%高速化など、客観的な数値に基づいてブログ構築の利点を分析します。"
 coverImage: "/christina-wocintechchat-com-m-VdQcDnad7OQ-unsplash.jpg"
