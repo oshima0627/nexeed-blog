@@ -307,7 +307,7 @@ monorepo/
 | **/memory** | メモリファイルを確認・編集するコマンド |
 | **200行ルール** | CLAUDE.mdは200行以内に抑えると遵守率が上がる |
 
-次回（#3）は **MCP（Model Context Protocol）―― Jira・Slack・Google Driveとの外部ツール連携** を解説します。
+次回（#3）は **MCP（Model Context Protocol）―― Jira・Slack・GitHubを自然言語で操作する** を解説します。
 
 ---
 
