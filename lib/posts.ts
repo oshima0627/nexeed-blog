@@ -59,14 +59,11 @@ export function getAllPosts(): PostData[] {
     });
 
   // 更新日時（updated）があればそれを優先し、なければ公開日（date）でソート（新しい順）
+  // Date オブジェクトで比較することで、日付のみ（YYYY-MM-DD）と日時（YYYY-MM-DDTHH:MM:SS）の両方に対応
   return allPostsData.sort((a, b) => {
-    const aDate = a.updated ?? a.date;
-    const bDate = b.updated ?? b.date;
-    if (aDate < bDate) {
-      return 1;
-    } else {
-      return -1;
-    }
+    const aDate = new Date(a.updated ?? a.date).getTime();
+    const bDate = new Date(b.updated ?? b.date).getTime();
+    return bDate - aDate;
   });
 }
 
