@@ -232,7 +232,7 @@ Linux ユーザーは Desktop Scheduled Tasks が使えないため、`/loop`（
 
 ## 次回予告
 
-次回（#10）は **Desktop Scheduled Tasks ―― アプリ再起動後も続く永続スケジューラー** を解説します。
+次回（#10）は **GitHub Actions 連携 ―― @claude メンションで PR 作成・バグ修正・コードレビューを自動化する** を解説します。
 
 ---
 
