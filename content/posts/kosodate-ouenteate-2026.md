@@ -3,7 +3,7 @@ title: "物価高対応 子育て応援手当2万円【2026年春】申請不要
 date: "2026-03-02T01:25:19"
 category: "子育て"
 excerpt: "2026年春に支給される「物価高対応子育て応援手当」を徹底解説。子ども1人あたり2万円、所得制限なし、原則申請不要のプッシュ型給付の対象者・支給時期・手続きをわかりやすくまとめます。"
-coverImage: "/yanhao-fang-M8dn-J6aJ1o-unsplash.jpg"
+coverImage: "/daniil-komov-WItUgoQSJp0-unsplash.jpg"
 ---
 
 # 物価高対応 子育て応援手当とは

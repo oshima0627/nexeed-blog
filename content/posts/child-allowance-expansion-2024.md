@@ -3,7 +3,7 @@ title: "児童手当の拡充：2024年10月からの変更点と統計データ
 date: "2026-03-02T01:25:19"
 category: "子育て"
 excerpt: "2024年10月から大幅に拡充された児童手当制度について、政府統計データに基づき、変更点、支給額、対象者、予算規模を詳しく解説します。"
-coverImage: "/kelli-mcclintock-wBgAVAGjzFg-unsplash.jpg"
+coverImage: "/su-san-lee-E_eWwM29wfU-unsplash.jpg"
 ---
 
 # 児童手当の拡充：2024年10月からの変更点と統計データの詳細解説
