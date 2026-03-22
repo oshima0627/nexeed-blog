@@ -5,6 +5,7 @@ import { getPaginatedPosts, getTotalPages, POSTS_PER_PAGE } from "@/lib/paginati
 import { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
+import { redirect, notFound } from "next/navigation";
 
 const categories: Record<string, string> = {
   "investment": "投資",
@@ -96,9 +97,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function CategoryPagedPage({ params }: { params: Promise<{ slug: string; page: string }> }) {
   const { slug, page } = await params;
   const pageNumber = parseInt(page);
+
+  // /category/[slug]/page/1 はカテゴリートップにリダイレクト（重複コンテンツ防止）
+  if (pageNumber === 1) {
+    redirect(`/category/${slug}`);
+  }
+
   const categoryName = categories[slug];
+
+  // 存在しないカテゴリーは404
+  if (!categoryName) {
+    notFound();
+  }
+
   const allPosts = getPostsByCategory(categoryName);
   const totalPages = getTotalPages(allPosts.length, POSTS_PER_PAGE);
+
+  // 範囲外のページ番号は404
+  if (pageNumber < 1 || pageNumber > totalPages || isNaN(pageNumber)) {
+    notFound();
+  }
   const posts = getPaginatedPosts(allPosts, pageNumber, POSTS_PER_PAGE);
 
   const headerColor = categoryHeaderColors[slug] || "bg-gray-700 text-white";
