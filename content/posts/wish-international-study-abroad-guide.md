@@ -3,7 +3,7 @@ title: "夢に向かう大きな一歩を応援！はじめての留学ならウ
 date: "2026-03-12T01:29:37"
 category: "副業"
 excerpt: "「留学したいけど、何から始めればいいかわからない」そんなあなたに。ウィッシュインターナショナルは、はじめての留学でも安心して夢の第一歩を踏み出せるよう、個別サポートで丁寧にサポートしてくれる留学エージェントです。"
-coverImage: "/sean-pollock-PhYq704ffdA-unsplash.jpg"
+coverImage: "/jezael-melgoza-7H77FWkK_x4-unsplash.jpg"
 affiliateBannerId: "wish-international-300x250"
 ---
 

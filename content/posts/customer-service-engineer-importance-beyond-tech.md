@@ -3,7 +3,7 @@ title: "【接客業出身エンジニアが語る】技術より大事だった
 date: "2026-03-02T03:42:03"
 category: "ITエンジニア"
 excerpt: "接客業8年からJavaエンジニアに転職した視点から、「技術力だけでは足りない理由」を解説。ユーザー視点・傾聴力・コミュニケーション力がシステム開発の質に直結する理由を実体験で語ります。"
-coverImage: "/hunters-race-MYbhN8KaaEc-unsplash.jpg"
+coverImage: "/tim-gouw-VvQSzMJ_h0U-unsplash.jpg"
 ---
 
 # 【接客業出身エンジニアが語る】技術より大事だったこと｜ユーザー視点が生む開発の質
