@@ -4,7 +4,7 @@ import Pagination from "@/components/Pagination";
 import { getPaginatedPosts, getTotalPages, POSTS_PER_PAGE } from "@/lib/pagination";
 import { Metadata } from "next";
 import Link from "next/link";
-import { redirect, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 
 const categories = [
   { slug: "investment", name: "投資", icon: "💰", description: "資産形成・インデックス投資", className: "category-btn-investment" },
@@ -18,7 +18,7 @@ export async function generateStaticParams() {
   const totalPages = getTotalPages(allPosts.length, POSTS_PER_PAGE);
 
   const pages = [];
-  for (let i = 2; i <= totalPages; i++) {
+  for (let i = 1; i <= totalPages; i++) {
     pages.push({ page: i.toString() });
   }
 
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ page: str
     title: `記事一覧 - ${page}ページ目 | NEXEED BLOG`,
     description: `NEXEED BLOGの記事一覧${page}ページ目です。`,
     alternates: {
-      canonical: `https://blog.nexeed-web.com/page/${page}`,
+      canonical: page === "1" ? "https://blog.nexeed-web.com/" : `https://blog.nexeed-web.com/page/${page}`,
     },
   };
 }
@@ -40,11 +40,6 @@ export async function generateMetadata({ params }: { params: Promise<{ page: str
 export default async function PagedHome({ params }: { params: Promise<{ page: string }> }) {
   const { page } = await params;
   const pageNumber = parseInt(page);
-
-  // /page/1 はホームページにリダイレクト（重複コンテンツ防止）
-  if (pageNumber === 1) {
-    redirect("/");
-  }
 
   const allPosts = getAllPosts();
   const totalPages = getTotalPages(allPosts.length, POSTS_PER_PAGE);

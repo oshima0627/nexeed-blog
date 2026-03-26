@@ -5,7 +5,7 @@ import { getPaginatedPosts, getTotalPages, POSTS_PER_PAGE } from "@/lib/paginati
 import { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
-import { redirect, notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 
 const categories: Record<string, string> = {
   "investment": "投資",
@@ -42,8 +42,8 @@ export async function generateStaticParams() {
     const allPosts = getPostsByCategory(categoryName);
     const totalPages = getTotalPages(allPosts.length, POSTS_PER_PAGE);
 
-    // 2ページ目以降を生成
-    for (let i = 2; i <= totalPages; i++) {
+    // 1ページ目以降を生成
+    for (let i = 1; i <= totalPages; i++) {
       params.push({ slug, page: i.toString() });
     }
   }
@@ -89,7 +89,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページです。`,
     },
     alternates: {
-      canonical: `https://blog.nexeed-web.com/category/${slug}/page/${page}`,
+      canonical: page === "1" ? `https://blog.nexeed-web.com/category/${slug}` : `https://blog.nexeed-web.com/category/${slug}/page/${page}`,
     },
   };
 }
@@ -97,11 +97,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function CategoryPagedPage({ params }: { params: Promise<{ slug: string; page: string }> }) {
   const { slug, page } = await params;
   const pageNumber = parseInt(page);
-
-  // /category/[slug]/page/1 はカテゴリートップにリダイレクト（重複コンテンツ防止）
-  if (pageNumber === 1) {
-    redirect(`/category/${slug}`);
-  }
 
   const categoryName = categories[slug];
 
