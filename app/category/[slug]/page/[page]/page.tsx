@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${categoryName}の記事一覧 - ${page}ページ目`,
     description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページ${page}ページ目です。`,
     alternates: {
-      canonical: page === "1" ? `https://blog.nexeed-web.com/category/${slug}` : `https://blog.nexeed-web.com/category/${slug}/page/${page}`,
+      canonical: page === "1" ? `https://www.nexeed-blog.com/category/${slug}` : `https://www.nexeed-blog.com/category/${slug}/page/${page}`,
     },
   };
 }
@@ -64,8 +64,8 @@ export default async function CategoryPagedPage({ params }: { params: Promise<{ 
   const posts = getPaginatedPosts(allPosts, pageNumber, POSTS_PER_PAGE);
 
   const breadcrumbItems = [
-    { name: "ホーム", url: "https://blog.nexeed-web.com" },
-    { name: categoryName, url: `https://blog.nexeed-web.com/category/${slug}` },
+    { name: "ホーム", url: "https://www.nexeed-blog.com" },
+    { name: categoryName, url: `https://www.nexeed-blog.com/category/${slug}` },
   ];
 
   return (

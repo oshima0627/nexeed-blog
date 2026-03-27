@@ -16,7 +16,7 @@ export function WebsiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Claude Code Blog",
-    url: "https://blog.nexeed-web.com",
+    url: "https://www.nexeed-blog.com",
     description: "Claude Codeの使い方、Tips、MCP連携、開発事例、最新アップデート情報を日本語で発信するブログ。",
     publisher: {
       "@type": "Organization",
@@ -27,7 +27,7 @@ export function WebsiteJsonLd() {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://blog.nexeed-web.com/search?q={search_term_string}",
+        urlTemplate: "https://www.nexeed-blog.com/search?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
     },
@@ -64,14 +64,14 @@ export function BlogPostJsonLd({
     author: {
       "@type": "Organization",
       name: "Claude Code Blog",
-      url: "https://blog.nexeed-web.com/about",
+      url: "https://www.nexeed-blog.com/about",
     },
     publisher: {
       "@type": "Organization",
       name: "Claude Code Blog",
       logo: {
         "@type": "ImageObject",
-        url: "https://blog.nexeed-web.com/NexeedBlog.png",
+        url: "https://www.nexeed-blog.com/NexeedBlog.png",
       },
     },
     url: url,
@@ -85,7 +85,7 @@ export function BlogPostJsonLd({
     isPartOf: {
       "@type": "Blog",
       name: "Claude Code Blog",
-      url: "https://blog.nexeed-web.com",
+      url: "https://www.nexeed-blog.com",
     },
   };
 

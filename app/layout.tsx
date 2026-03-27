@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://blog.nexeed-web.com"),
+  metadataBase: new URL("https://www.nexeed-blog.com"),
   title: {
     default: "Claude Code Blog - Claude Codeの使い方・Tips・最新情報",
     template: "%s | Claude Code Blog",
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     "開発ツール", "AI活用", "コード生成", "ペアプログラミング",
     "Claude Code 使い方", "Claude Code Tips",
   ],
-  authors: [{ name: "Claude Code Blog", url: "https://blog.nexeed-web.com/about" }],
+  authors: [{ name: "Claude Code Blog", url: "https://www.nexeed-blog.com/about" }],
   creator: "Claude Code Blog",
   publisher: "Claude Code Blog",
   openGraph: {
     title: "Claude Code Blog - Claude Codeの使い方・Tips・最新情報",
     description: "Claude Codeの使い方、Tips、MCP連携、開発事例、最新アップデート情報を日本語で発信するブログ。",
-    url: "https://blog.nexeed-web.com",
+    url: "https://www.nexeed-blog.com",
     siteName: "Claude Code Blog",
     locale: "ja_JP",
     type: "website",
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     description: "Claude Codeの実践的な活用情報を日本語で発信",
   },
   alternates: {
-    canonical: "https://blog.nexeed-web.com",
+    canonical: "https://www.nexeed-blog.com",
     types: {
-      "application/rss+xml": "https://blog.nexeed-web.com/feed.xml",
+      "application/rss+xml": "https://www.nexeed-blog.com/feed.xml",
     },
   },
   robots: {

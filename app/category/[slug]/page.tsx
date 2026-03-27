@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       locale: "ja_JP",
     },
     alternates: {
-      canonical: `https://blog.nexeed-web.com/category/${slug}`,
+      canonical: `https://www.nexeed-blog.com/category/${slug}`,
     },
   };
 }
@@ -63,8 +63,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   const posts = getPaginatedPosts(allPosts, 1, POSTS_PER_PAGE);
 
   const breadcrumbItems = [
-    { name: "ホーム", url: "https://blog.nexeed-web.com" },
-    { name: categoryName, url: `https://blog.nexeed-web.com/category/${slug}` },
+    { name: "ホーム", url: "https://www.nexeed-blog.com" },
+    { name: categoryName, url: `https://www.nexeed-blog.com/category/${slug}` },
   ];
 
   return (

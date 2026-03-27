@@ -3,7 +3,7 @@ import { getAllPosts, getPostsByCategory } from "@/lib/posts";
 import { getTotalPages, POSTS_PER_PAGE } from "@/lib/pagination";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://blog.nexeed-web.com";
+  const baseUrl = "https://www.nexeed-blog.com";
   const posts = getAllPosts();
 
   const postUrls = posts.map((post) => ({

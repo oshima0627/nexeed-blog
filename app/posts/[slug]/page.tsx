@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     ...(categoryKeywords[post.category] || []),
   ];
 
-  const ogImageUrl = `https://blog.nexeed-web.com/posts/${slug}/opengraph-image`;
+  const ogImageUrl = `https://www.nexeed-blog.com/posts/${slug}/opengraph-image`;
 
   return {
     title: post.title,
@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       images: [ogImageUrl],
     },
     alternates: {
-      canonical: `https://blog.nexeed-web.com/posts/${slug}`,
+      canonical: `https://www.nexeed-blog.com/posts/${slug}`,
     },
   };
 }
@@ -107,9 +107,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   const categorySlug = categoryToSlug[post.category] || "getting-started";
   const breadcrumbItems = [
-    { name: "ホーム", url: "https://blog.nexeed-web.com" },
-    { name: post.category, url: `https://blog.nexeed-web.com/category/${categorySlug}` },
-    { name: post.title, url: `https://blog.nexeed-web.com/posts/${slug}` },
+    { name: "ホーム", url: "https://www.nexeed-blog.com" },
+    { name: post.category, url: `https://www.nexeed-blog.com/category/${categorySlug}` },
+    { name: post.title, url: `https://www.nexeed-blog.com/posts/${slug}` },
   ];
 
   return (
@@ -119,9 +119,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         description={post.excerpt}
         datePublished={post.date}
         dateModified={post.updated}
-        url={`https://blog.nexeed-web.com/posts/${slug}`}
+        url={`https://www.nexeed-blog.com/posts/${slug}`}
         category={post.category}
-        imageUrl={`https://blog.nexeed-web.com/posts/${slug}/opengraph-image`}
+        imageUrl={`https://www.nexeed-blog.com/posts/${slug}/opengraph-image`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <div className="container-custom py-12">
@@ -210,7 +210,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         {/* SNSシェアボタン */}
         <ShareButtons
           title={post.title}
-          url={`https://blog.nexeed-web.com/posts/${slug}`}
+          url={`https://www.nexeed-blog.com/posts/${slug}`}
         />
       </article>
 

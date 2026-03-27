@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ page: str
     title: `記事一覧 - ${page}ページ目`,
     description: `Claude Code Blogの記事一覧${page}ページ目です。`,
     alternates: {
-      canonical: page === "1" ? "https://blog.nexeed-web.com/" : `https://blog.nexeed-web.com/page/${page}`,
+      canonical: page === "1" ? "https://www.nexeed-blog.com/" : `https://www.nexeed-blog.com/page/${page}`,
     },
   };
 }
