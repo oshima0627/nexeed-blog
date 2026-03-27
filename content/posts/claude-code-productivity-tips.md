@@ -3,7 +3,7 @@ title: "Claude Code生産性向上Tips 10選 - プロンプトの書き方から
 date: "2026-03-27T11:00:00"
 category: "Tips・活用術"
 excerpt: "Claude Codeを最大限活用するための実践的なTipsを10個厳選して紹介。効果的なプロンプトの書き方、CLAUDE.mdの活用法、コンテキスト管理のコツなど、すぐに使えるテクニックをお届けします。"
-coverImage: "/ilya-pavlov-OqtafYT5kTw-unsplash.jpg"
+coverImage: "/florian-olivo-4hbJ-eymZ1o-unsplash.jpg"
 popular: true
 ---
 

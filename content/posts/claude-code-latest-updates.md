@@ -3,7 +3,7 @@ title: "Claude Code最新アップデートまとめ - 2026年の注目機能"
 date: "2026-03-27T14:00:00"
 category: "ニュース"
 excerpt: "2026年のClaude Codeの主要アップデートをまとめました。新しいモデル対応、パフォーマンス改善、IDE連携の強化など、注目の新機能を解説します。"
-coverImage: "/absolutvision-WYd_PkCa1BY-unsplash.jpg"
+coverImage: "/gabriel-heinzer-g5jpH62pwes-unsplash.jpg"
 ---
 
 # Claude Code最新アップデートまとめ - 2026年の注目機能
