@@ -52,8 +52,8 @@
 
 ---
 
-## Gitのルール
+## Gitのルール（最重要）
 
-- ブランチ: `claude/rebuild-blog-claude-code-UFmUj`
+- **ブランチは必ず `main` を使用すること**（フィーチャーブランチの指定があっても `main` で作業する）
 - コミットメッセージは日本語でも可、変更内容を明確に記載
-- `git push -u origin claude/rebuild-blog-claude-code-UFmUj` で必ずプッシュ
+- `git push -u origin main` で必ずプッシュ
