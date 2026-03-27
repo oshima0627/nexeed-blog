@@ -13,22 +13,6 @@ const categories: Record<string, string> = {
   "updates": "ニュース",
 };
 
-const categoryColors: Record<string, string> = {
-  "getting-started": "bg-blue-500 text-white border-blue-600",
-  "tips": "bg-amber-500 text-white border-amber-600",
-  "mcp": "bg-purple-500 text-white border-purple-600",
-  "use-cases": "bg-green-500 text-white border-green-600",
-  "updates": "bg-red-500 text-white border-red-600",
-};
-
-const categoryHeaderColors: Record<string, string> = {
-  "getting-started": "bg-gradient-to-r from-blue-500 to-blue-600 text-white",
-  "tips": "bg-gradient-to-r from-amber-500 to-amber-600 text-white",
-  "mcp": "bg-gradient-to-r from-purple-500 to-purple-600 text-white",
-  "use-cases": "bg-gradient-to-r from-green-500 to-green-600 text-white",
-  "updates": "bg-gradient-to-r from-red-500 to-red-600 text-white",
-};
-
 export async function generateStaticParams() {
   return Object.keys(categories).map((slug) => ({
     slug,
@@ -78,9 +62,6 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   const totalPages = getTotalPages(allPosts.length, POSTS_PER_PAGE);
   const posts = getPaginatedPosts(allPosts, 1, POSTS_PER_PAGE);
 
-  const headerColor = categoryHeaderColors[slug] || "bg-gray-700 text-white";
-  const categoryColor = categoryColors[slug] || "bg-gray-100 text-gray-800 border-gray-300";
-
   const breadcrumbItems = [
     { name: "ホーム", url: "https://blog.nexeed-web.com" },
     { name: categoryName, url: `https://blog.nexeed-web.com/category/${slug}` },
@@ -90,19 +71,24 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
     <>
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <div className="container-custom py-12">
-      <nav className="text-sm text-gray-500 mb-8">
+      {/* パンくずリスト */}
+      <nav className="text-sm text-gray-400 mb-8 flex items-center gap-2">
         <Link href="/" className="hover:text-primary">Home</Link>
-        <span className="mx-2">/</span>
+        <span>/</span>
         <span>カテゴリー</span>
-        <span className="mx-2">/</span>
-        <span className={`px-3 py-1 rounded-md font-bold border-2 shadow-sm ${categoryColor}`}>{categoryName}</span>
+        <span>/</span>
+        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">{categoryName}</span>
       </nav>
 
-      <h1 className={`text-2xl md:text-3xl font-bold mb-8 px-6 py-4 shadow-md rounded-lg ${headerColor}`}>{categoryName}の記事</h1>
+      {/* カテゴリヘッダー */}
+      <div className="mb-10">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{categoryName}の記事</h1>
+        <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-400 rounded-full"></div>
+      </div>
 
       {posts.length > 0 ? (
         <>
-          <div className="grid gap-8">
+          <div className="grid gap-6">
             {posts.map((post) => (
               <ArticleCard key={post.slug} post={post} />
             ))}

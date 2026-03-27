@@ -15,36 +15,34 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-amber-100">
+    <header className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14">
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <span className="text-lg font-bold text-gray-900">Claude Code <span className="text-primary">Blog</span></span>
+            <div className="w-7 h-7 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg flex items-center justify-center">
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
             </div>
+            <span className="text-base font-bold text-gray-900 tracking-tight">Claude Code <span className="text-amber-600">Blog</span></span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-gray-700 hover:text-primary font-medium">
+          <nav className="hidden md:flex items-center space-x-1">
+            <Link href="/" className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors">
               Home
             </Link>
             <div className="relative group">
-              <button className="text-gray-700 hover:text-primary font-medium">
+              <button className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors">
                 カテゴリー
               </button>
-              <div className="absolute hidden group-hover:block pt-2">
-                <div className="bg-white shadow-lg rounded-lg py-2 w-48">
+              <div className="absolute hidden group-hover:block pt-2 right-0">
+                <div className="bg-white shadow-lg rounded-xl py-2 w-48 border border-gray-100">
                   {categories.map((category) => (
                     <Link
                       key={category.slug}
                       href={`/category/${category.slug}`}
-                      className="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-primary"
+                      className="block px-4 py-2 text-sm text-gray-600 hover:bg-amber-50 hover:text-amber-700 transition-colors"
                     >
                       {category.name}
                     </Link>
@@ -52,24 +50,26 @@ export default function Header() {
                 </div>
               </div>
             </div>
-            <Link href="/about" className="text-gray-700 hover:text-primary font-medium">
+            <Link href="/about" className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors">
               About
             </Link>
-            <SearchBox />
+            <div className="pl-2">
+              <SearchBox />
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden text-gray-600 p-2 rounded-lg hover:bg-gray-50"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="メニュー"
           >
             {mobileMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
@@ -78,23 +78,19 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
-            <nav className="flex flex-col space-y-4">
-              <Link
-                href="/"
-                className="text-gray-700 hover:text-primary font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+          <div className="md:hidden py-4 border-t border-gray-100">
+            <nav className="flex flex-col space-y-1">
+              <Link href="/" className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>
                 Home
               </Link>
-              <div className="space-y-2">
-                <div className="text-gray-900 font-medium">カテゴリー</div>
-                <div className="pl-4 space-y-2">
+              <div className="px-3 py-2">
+                <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">カテゴリー</div>
+                <div className="space-y-1">
                   {categories.map((category) => (
                     <Link
                       key={category.slug}
                       href={`/category/${category.slug}`}
-                      className="block text-gray-700 hover:text-primary"
+                      className="block text-sm text-gray-600 hover:text-amber-700 px-3 py-1.5 rounded-lg hover:bg-amber-50"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {category.name}
@@ -102,14 +98,10 @@ export default function Header() {
                   ))}
                 </div>
               </div>
-              <Link
-                href="/about"
-                className="text-gray-700 hover:text-primary font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <Link href="/about" className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>
                 About
               </Link>
-              <div className="pt-2">
+              <div className="px-3 pt-2">
                 <SearchBox />
               </div>
             </nav>

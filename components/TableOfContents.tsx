@@ -8,26 +8,8 @@ interface TableOfContentsProps {
   category?: string;
 }
 
-const categoryActiveColors: Record<string, string> = {
-  "入門ガイド": "text-blue-600 font-bold border-l-4 border-blue-600 pl-2 -ml-2",
-  "Tips・活用術": "text-amber-600 font-bold border-l-4 border-amber-600 pl-2 -ml-2",
-  "MCP・拡張機能": "text-purple-600 font-bold border-l-4 border-purple-600 pl-2 -ml-2",
-  "開発事例": "text-green-600 font-bold border-l-4 border-green-600 pl-2 -ml-2",
-  "ニュース": "text-red-600 font-bold border-l-4 border-red-600 pl-2 -ml-2",
-};
-
-const categoryHoverColors: Record<string, string> = {
-  "入門ガイド": "hover:text-blue-600",
-  "Tips・活用術": "hover:text-amber-600",
-  "MCP・拡張機能": "hover:text-purple-600",
-  "開発事例": "hover:text-green-600",
-  "ニュース": "hover:text-red-600",
-};
-
 export default function TableOfContents({ items, category }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
-  const activeColor = category ? categoryActiveColors[category] : "text-primary font-medium";
-  const hoverColor = category ? categoryHoverColors[category] : "hover:text-primary";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,13 +49,13 @@ export default function TableOfContents({ items, category }: TableOfContentsProp
   }
 
   return (
-    <nav className="bg-gray-50 rounded-lg p-6 sticky top-20">
-      <h2 className="text-lg font-bold mb-4 text-gray-900">目次</h2>
+    <nav className="bg-white rounded-xl p-6 sticky top-20 border border-gray-100">
+      <h2 className="text-sm font-bold mb-4 text-gray-900 uppercase tracking-wider">目次</h2>
       <ul className="space-y-1">
         {items.map((item) => (
           <li
             key={item.id}
-            className={item.level === 3 ? "ml-4 pl-2 border-l border-gray-200" : ""}
+            className={item.level === 3 ? "ml-4 pl-2 border-l border-gray-100" : ""}
           >
             <a
               href={`#${item.id}`}
@@ -82,10 +64,10 @@ export default function TableOfContents({ items, category }: TableOfContentsProp
                 item.level === 3 ? "text-xs" : "text-sm font-medium"
               } ${
                 activeId === item.id
-                  ? activeColor
+                  ? "text-amber-600 font-bold border-l-4 border-amber-500 pl-2 -ml-2"
                   : item.level === 3
-                  ? `text-gray-400 ${hoverColor}`
-                  : `text-gray-700 ${hoverColor}`
+                  ? "text-gray-400 hover:text-amber-600"
+                  : "text-gray-600 hover:text-amber-600"
               }`}
             >
               {item.text}

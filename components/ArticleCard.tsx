@@ -16,28 +16,20 @@ interface ArticleCardProps {
   post: Post;
 }
 
-const categoryColors: Record<string, string> = {
-  "入門ガイド": "bg-blue-500 text-white border-blue-600",
-  "Tips・活用術": "bg-amber-500 text-white border-amber-600",
-  "MCP・拡張機能": "bg-purple-500 text-white border-purple-600",
-  "開発事例": "bg-green-500 text-white border-green-600",
-  "ニュース": "bg-red-500 text-white border-red-600",
-};
-
 export default function ArticleCard({ post }: ArticleCardProps) {
   const formattedDate = format(new Date(post.date), "yyyy年M月d日", { locale: ja });
 
   return (
     <Link href={`/posts/${post.slug}`}>
-      <article className="card h-full flex flex-col md:flex-row overflow-hidden">
+      <article className="card h-full flex flex-col md:flex-row overflow-hidden group">
         {/* 記事画像 */}
         {post.coverImage && (
-          <div className="relative w-full md:w-64 h-48 md:h-auto flex-shrink-0 bg-gray-100">
+          <div className="relative w-full md:w-64 h-48 md:h-auto flex-shrink-0 bg-gray-100 overflow-hidden">
             <Image
               src={post.coverImage}
               alt={post.title}
               fill
-              className="object-cover"
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
               sizes="(max-width: 768px) 100vw, 256px"
             />
           </div>
@@ -45,22 +37,25 @@ export default function ArticleCard({ post }: ArticleCardProps) {
 
         <div className="p-6 flex flex-col flex-grow">
           <div className="flex items-center gap-3 mb-3">
-            <span className={`px-4 py-1.5 rounded-md text-sm font-bold border-2 shadow-sm ${categoryColors[post.category] || "bg-gray-100 text-gray-800 border-gray-300"}`}>
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
               {post.category}
             </span>
-            <time className="text-sm text-gray-500">{formattedDate}</time>
+            <time className="text-xs text-gray-400">{formattedDate}</time>
           </div>
 
-          <h2 className="text-xl font-bold mb-3 text-gray-900 hover:text-primary transition-colors line-clamp-2">
+          <h2 className="text-lg font-bold mb-2 text-gray-900 group-hover:text-primary transition-colors line-clamp-2">
             {post.title}
           </h2>
 
-          <p className="text-gray-600 mb-4 flex-grow line-clamp-3">
+          <p className="text-sm text-gray-500 mb-4 flex-grow line-clamp-2">
             {post.excerpt}
           </p>
 
-          <div className="text-primary font-medium text-sm">
-            続きを読む →
+          <div className="text-primary font-medium text-sm flex items-center gap-1">
+            続きを読む
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
           </div>
         </div>
       </article>

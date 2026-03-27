@@ -72,11 +72,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 const categoryColors: Record<string, string> = {
-  "入門ガイド": "bg-blue-100 text-blue-800",
-  "Tips・活用術": "bg-amber-100 text-amber-800",
-  "MCP・拡張機能": "bg-purple-100 text-purple-800",
-  "開発事例": "bg-green-100 text-green-800",
-  "ニュース": "bg-red-100 text-red-800",
+  "入門ガイド": "bg-amber-50 text-amber-700",
+  "Tips・活用術": "bg-amber-50 text-amber-700",
+  "MCP・拡張機能": "bg-amber-50 text-amber-700",
+  "開発事例": "bg-amber-50 text-amber-700",
+  "ニュース": "bg-amber-50 text-amber-700",
 };
 
 const categoryClasses: Record<string, string> = {

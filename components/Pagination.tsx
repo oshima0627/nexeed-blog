@@ -4,25 +4,21 @@ interface PaginationProps {
   currentPage: number;
   totalPages: number;
   basePath: string;
-  firstPagePath?: string; // 1ページ目の専用パス（オプション）
+  firstPagePath?: string;
 }
 
 export default function Pagination({ currentPage, totalPages, basePath, firstPagePath }: PaginationProps) {
   if (totalPages <= 1) return null;
 
-  // 1ページ目のパスを取得（指定がない場合はbasePathを使用）
   const getFirstPagePath = () => firstPagePath || basePath;
 
   const pages: (number | string)[] = [];
 
-  // ページ番号を生成
   if (totalPages <= 7) {
-    // 7ページ以下の場合は全て表示
     for (let i = 1; i <= totalPages; i++) {
       pages.push(i);
     }
   } else {
-    // 8ページ以上の場合は省略形で表示
     if (currentPage <= 4) {
       for (let i = 1; i <= 5; i++) pages.push(i);
       pages.push("...");
@@ -41,52 +37,49 @@ export default function Pagination({ currentPage, totalPages, basePath, firstPag
   }
 
   return (
-    <nav className="flex justify-center items-center gap-2 mt-12">
-      {/* 前へボタン */}
+    <nav className="flex justify-center items-center gap-1.5 mt-12">
       {currentPage > 1 ? (
         <Link
           href={currentPage - 1 === 1 ? getFirstPagePath() : `${basePath}/${currentPage - 1}`}
-          className="px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+          className="px-3 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 transition-colors"
         >
           前へ
         </Link>
       ) : (
-        <span className="px-4 py-2 rounded-md bg-gray-100 text-gray-400 cursor-not-allowed">
+        <span className="px-3 py-2 rounded-lg text-sm text-gray-300 cursor-not-allowed">
           前へ
         </span>
       )}
 
-      {/* ページ番号 */}
       {pages.map((page, index) =>
         typeof page === "number" ? (
           <Link
             key={index}
             href={page === 1 ? getFirstPagePath() : `${basePath}/${page}`}
-            className={`px-4 py-2 rounded-md transition-colors ${
+            className={`w-9 h-9 flex items-center justify-center rounded-lg text-sm transition-colors ${
               currentPage === page
-                ? "bg-primary text-white"
-                : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-50"
+                ? "bg-gray-900 text-white"
+                : "text-gray-600 hover:bg-gray-100"
             }`}
           >
             {page}
           </Link>
         ) : (
-          <span key={index} className="px-2 text-gray-400">
+          <span key={index} className="px-1 text-gray-300 text-sm">
             {page}
           </span>
         )
       )}
 
-      {/* 次へボタン */}
       {currentPage < totalPages ? (
         <Link
           href={`${basePath}/${currentPage + 1}`}
-          className="px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+          className="px-3 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 transition-colors"
         >
           次へ
         </Link>
       ) : (
-        <span className="px-4 py-2 rounded-md bg-gray-100 text-gray-400 cursor-not-allowed">
+        <span className="px-3 py-2 rounded-lg text-sm text-gray-300 cursor-not-allowed">
           次へ
         </span>
       )}
