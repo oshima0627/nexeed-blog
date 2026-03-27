@@ -6,30 +6,27 @@ import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 const categories: Record<string, string> = {
-  "investment": "投資",
-  "parenting": "子育て",
-  "engineering": "ITエンジニア",
-  "side-business": "副業",
-  "sports": "スポーツ",
-  "politics": "政治",
+  "getting-started": "入門ガイド",
+  "tips": "Tips・活用術",
+  "mcp": "MCP・拡張機能",
+  "use-cases": "開発事例",
+  "updates": "ニュース",
 };
 
 const categoryColors: Record<string, string> = {
-  "investment": "bg-blue-500 text-white border-blue-600",
-  "parenting": "bg-pink-500 text-white border-pink-600",
-  "engineering": "bg-green-500 text-white border-green-600",
-  "side-business": "bg-purple-500 text-white border-purple-600",
-  "sports": "bg-orange-500 text-white border-orange-600",
-  "politics": "bg-red-500 text-white border-red-600",
+  "getting-started": "bg-blue-500 text-white border-blue-600",
+  "tips": "bg-amber-500 text-white border-amber-600",
+  "mcp": "bg-purple-500 text-white border-purple-600",
+  "use-cases": "bg-green-500 text-white border-green-600",
+  "updates": "bg-red-500 text-white border-red-600",
 };
 
 const categoryHeaderColors: Record<string, string> = {
-  "investment": "bg-gradient-to-r from-blue-500 to-blue-600 text-white",
-  "parenting": "bg-gradient-to-r from-pink-500 to-pink-600 text-white",
-  "engineering": "bg-gradient-to-r from-green-500 to-green-600 text-white",
-  "side-business": "bg-gradient-to-r from-purple-500 to-purple-600 text-white",
-  "sports": "bg-gradient-to-r from-orange-500 to-orange-600 text-white",
-  "politics": "bg-gradient-to-r from-red-500 to-red-600 text-white",
+  "getting-started": "bg-gradient-to-r from-blue-500 to-blue-600 text-white",
+  "tips": "bg-gradient-to-r from-amber-500 to-amber-600 text-white",
+  "mcp": "bg-gradient-to-r from-purple-500 to-purple-600 text-white",
+  "use-cases": "bg-gradient-to-r from-green-500 to-green-600 text-white",
+  "updates": "bg-gradient-to-r from-red-500 to-red-600 text-white",
 };
 
 export async function generateStaticParams() {
@@ -43,25 +40,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const categoryName = categories[slug];
 
   const categoryDescriptions: Record<string, string> = {
-    "investment": "インデックス投資、NISA、資産運用など、長期的な資産形成に関する実践的な情報を提供します。オルカン（全世界株式）やS&P500への投資戦略を解説。",
-    "parenting": "保育園、待機児童、男性育休、児童手当など、子育てに関する統計データと実体験に基づいた情報をお届けします。",
-    "engineering": "AI、プログラミング、最新の開発ツールなど、ITエンジニア向けの技術情報とトレンドを詳しく解説します。Vibe Coding、Dify、Claude Codeなど最新ツールも紹介。",
-    "side-business": "副収入、フリーランス、クラウドソーシング、確定申告など、副業に関する実践的なガイドと統計データを提供します。",
-    "sports": "スポーツニュース、アスリート情報、健康・フィットネスなど、スポーツに関する最新情報と深掘り解説をお届けします。",
-    "politics": "国内外の政治動向、政策解説、社会問題など、政治・社会に関するわかりやすい情報を提供します。",
+    "getting-started": "Claude Codeのインストール方法、初期設定、基本的な使い方を丁寧に解説。初めてClaude Codeを使う方向けの入門ガイド。",
+    "tips": "Claude Codeを効率的に使うためのTips、プロンプトの書き方、便利なショートカットなど、生産性を高めるテクニックを紹介。",
+    "mcp": "Model Context Protocol（MCP）サーバーの設定方法、おすすめのMCPツール、IDE連携など、Claude Codeの拡張機能を解説。",
+    "use-cases": "Claude Codeを使った実際の開発事例、プロジェクト構築、バグ修正、リファクタリングなど、実践的な活用方法を紹介。",
+    "updates": "Claude Codeの最新アップデート情報、新機能紹介、Anthropicからの公式発表など、最新ニュースをお届け。",
   };
 
   const categoryKeywords: Record<string, string[]> = {
-    "investment": ["投資", "インデックス投資", "NISA", "資産運用", "投資信託", "長期投資", "オルカン", "S&P500", "つみたてNISA"],
-    "parenting": ["子育て", "育児", "保育園", "待機児童", "子育て支援", "男性育休", "児童手当", "ワークライフバランス", "育休"],
-    "engineering": ["ITエンジニア", "プログラミング", "AI", "機械学習", "開発ツール", "コーディング", "技術", "Vibe Coding", "Dify", "Claude Code", "ソフトウェア開発"],
-    "side-business": ["副業", "副収入", "フリーランス", "クラウドソーシング", "確定申告", "在宅ワーク", "複業", "個人事業主"],
-    "sports": ["スポーツ", "アスリート", "健康", "フィットネス", "サッカー", "野球", "バスケットボール", "オリンピック", "スポーツニュース"],
-    "politics": ["政治", "政策", "選挙", "国会", "内閣", "社会問題", "経済政策", "外交", "法律"],
+    "getting-started": ["Claude Code", "インストール", "セットアップ", "入門", "始め方", "初心者", "チュートリアル"],
+    "tips": ["Claude Code Tips", "活用術", "プロンプト", "効率化", "テクニック", "生産性"],
+    "mcp": ["MCP", "Model Context Protocol", "MCPサーバー", "拡張機能", "IDE連携", "VS Code"],
+    "use-cases": ["開発事例", "活用事例", "プロジェクト", "実践", "ユースケース", "Claude Code 開発"],
+    "updates": ["アップデート", "新機能", "リリースノート", "Anthropic", "Claude Code 最新"],
   };
 
   return {
-    title: `${categoryName}の記事一覧 | NEXEED BLOG`,
+    title: `${categoryName}の記事一覧`,
     description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページです。`,
     keywords: categoryKeywords[slug] || [categoryName],
     openGraph: {
@@ -69,12 +64,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページです。`,
       type: "website",
       locale: "ja_JP",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${categoryName}の記事一覧`,
-      description: categoryDescriptions[slug] || `${categoryName}に関する記事の一覧ページです。`,
-      creator: "@nexeed_blog",
     },
     alternates: {
       canonical: `https://blog.nexeed-web.com/category/${slug}`,
@@ -92,7 +81,6 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   const headerColor = categoryHeaderColors[slug] || "bg-gray-700 text-white";
   const categoryColor = categoryColors[slug] || "bg-gray-100 text-gray-800 border-gray-300";
 
-  // パンくずリストデータ
   const breadcrumbItems = [
     { name: "ホーム", url: "https://blog.nexeed-web.com" },
     { name: categoryName, url: `https://blog.nexeed-web.com/category/${slug}` },
@@ -102,7 +90,6 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
     <>
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <div className="container-custom py-12">
-      {/* パンくずリスト */}
       <nav className="text-sm text-gray-500 mb-8">
         <Link href="/" className="hover:text-primary">Home</Link>
         <span className="mx-2">/</span>
@@ -111,7 +98,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
         <span className={`px-3 py-1 rounded-md font-bold border-2 shadow-sm ${categoryColor}`}>{categoryName}</span>
       </nav>
 
-      <h1 className={`text-2xl md:text-3xl font-bold mb-8 px-6 py-4 shadow-md ${headerColor}`}>{categoryName}の記事</h1>
+      <h1 className={`text-2xl md:text-3xl font-bold mb-8 px-6 py-4 shadow-md rounded-lg ${headerColor}`}>{categoryName}の記事</h1>
 
       {posts.length > 0 ? (
         <>

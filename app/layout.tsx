@@ -9,33 +9,31 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 export const metadata: Metadata = {
   metadataBase: new URL("https://blog.nexeed-web.com"),
   title: {
-    default: "NEXEED BLOG - 投資・子育て・ITエンジニア・副業の情報ブログ",
-    template: "%s | NEXEED BLOG",
+    default: "Claude Code Blog - Claude Codeの使い方・Tips・最新情報",
+    template: "%s | Claude Code Blog",
   },
-  description: "投資（インデックス投資・NISA・オルカン・S&P500）、子育て（保育園・待機児童・男性育休・児童手当）、ITエンジニア（AI・プログラミング・Vibe Coding・Dify・Claude Code）、副業（フリーランス・クラウドソーシング・確定申告）をテーマにした実践的な情報ブログ。統計データと実体験に基づいた信頼性の高い情報を提供します。",
+  description: "Claude Code（Anthropic公式CLIツール）の使い方、Tips、MCP連携、開発事例、最新アップデート情報を日本語で発信するブログ。初心者から上級者まで、Claude Codeを最大限活用するための実践的な情報を提供します。",
   keywords: [
-    "投資", "インデックス投資", "NISA", "つみたてNISA", "資産運用", "オルカン", "S&P500",
-    "子育て", "育児", "保育園", "待機児童", "男性育休", "児童手当", "ワークライフバランス",
-    "ITエンジニア", "プログラミング", "AI", "機械学習", "Vibe Coding", "Dify", "Claude Code", "開発ツール",
-    "副業", "副収入", "フリーランス", "クラウドソーシング", "確定申告", "在宅ワーク", "複業",
-    "ブログ", "個人ブログ", "実体験", "統計データ"
+    "Claude Code", "Anthropic", "CLI", "AI開発", "AIコーディング",
+    "MCP", "Model Context Protocol", "Claude", "プログラミング",
+    "開発ツール", "AI活用", "コード生成", "ペアプログラミング",
+    "Claude Code 使い方", "Claude Code Tips",
   ],
-  authors: [{ name: "大島直孝", url: "https://blog.nexeed-web.com/about" }],
-  creator: "大島直孝",
-  publisher: "NEXEED BLOG",
+  authors: [{ name: "Claude Code Blog", url: "https://blog.nexeed-web.com/about" }],
+  creator: "Claude Code Blog",
+  publisher: "Claude Code Blog",
   openGraph: {
-    title: "NEXEED BLOG - 投資・子育て・ITエンジニア・副業の情報ブログ",
-    description: "投資、子育て、ITエンジニア、副業をテーマにした実践的な情報ブログ。統計データと実体験に基づいた信頼性の高い情報を提供します。",
+    title: "Claude Code Blog - Claude Codeの使い方・Tips・最新情報",
+    description: "Claude Codeの使い方、Tips、MCP連携、開発事例、最新アップデート情報を日本語で発信するブログ。",
     url: "https://blog.nexeed-web.com",
-    siteName: "NEXEED BLOG",
+    siteName: "Claude Code Blog",
     locale: "ja_JP",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NEXEED BLOG - 投資・子育て・ITエンジニア・副業の情報ブログ",
-    description: "投資、子育て、ITエンジニア、副業をテーマにした実践的な情報ブログ",
-    creator: "@nexeed_blog",
+    title: "Claude Code Blog - Claude Codeの使い方・Tips・最新情報",
+    description: "Claude Codeの実践的な活用情報を日本語で発信",
   },
   alternates: {
     canonical: "https://blog.nexeed-web.com",
@@ -54,10 +52,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  // Google Search Console認証は.envまたはGoogle Tag Manager経由で設定推奨
-  // verification: {
-  //   google: "YOUR_GOOGLE_SITE_VERIFICATION_CODE",
-  // },
   icons: {
     icon: "/NexeedBlog.png",
     apple: "/NexeedBlog.png",
@@ -71,13 +65,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4718076434751586"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body className="antialiased">
         <GoogleAnalytics />
         <WebsiteJsonLd />

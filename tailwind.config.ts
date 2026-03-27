@@ -10,8 +10,15 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#1E40AF",
-          dark: "#1E3A8A",
+          DEFAULT: "#D97706",
+          dark: "#B45309",
+          light: "#F59E0B",
+        },
+        claude: {
+          orange: "#D97706",
+          dark: "#92400E",
+          light: "#FDE68A",
+          bg: "#FFFBEB",
         },
       },
       fontFamily: {
@@ -22,6 +29,13 @@ const config: Config = {
           "Hiragino Kaku Gothic ProN",
           "Yu Gothic",
           "sans-serif",
+        ],
+        mono: [
+          "JetBrains Mono",
+          "Fira Code",
+          "Consolas",
+          "Monaco",
+          "monospace",
         ],
       },
       typography: {
@@ -38,17 +52,18 @@ const config: Config = {
               lineHeight: '1.75rem',
             },
             a: {
-              color: '#1E40AF',
+              color: '#D97706',
               '&:hover': {
-                color: '#1E3A8A',
+                color: '#B45309',
               },
             },
             code: {
-              color: '#1E40AF',
-              backgroundColor: '#F3F4F6',
+              color: '#D97706',
+              backgroundColor: '#FEF3C7',
               padding: '0.25rem 0.375rem',
               borderRadius: '0.25rem',
               fontWeight: '500',
+              fontFamily: 'JetBrains Mono, Fira Code, Consolas, monospace',
             },
             'code::before': {
               content: '""',

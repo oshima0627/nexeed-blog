@@ -17,12 +17,11 @@ interface ArticleCardProps {
 }
 
 const categoryColors: Record<string, string> = {
-  "投資": "bg-blue-500 text-white border-blue-600",
-  "子育て": "bg-pink-500 text-white border-pink-600",
-  "ITエンジニア": "bg-green-500 text-white border-green-600",
-  "副業": "bg-purple-500 text-white border-purple-600",
-  "スポーツ": "bg-orange-500 text-white border-orange-600",
-  "政治": "bg-red-500 text-white border-red-600",
+  "入門ガイド": "bg-blue-500 text-white border-blue-600",
+  "Tips・活用術": "bg-amber-500 text-white border-amber-600",
+  "MCP・拡張機能": "bg-purple-500 text-white border-purple-600",
+  "開発事例": "bg-green-500 text-white border-green-600",
+  "ニュース": "bg-red-500 text-white border-red-600",
 };
 
 export default function ArticleCard({ post }: ArticleCardProps) {

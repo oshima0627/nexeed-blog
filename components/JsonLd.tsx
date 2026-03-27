@@ -15,17 +15,12 @@ export function WebsiteJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "NEXEED BLOG",
+    name: "Claude Code Blog",
     url: "https://blog.nexeed-web.com",
-    description: "投資、子育て、ITエンジニア、副業をテーマにした個人ブログ。実体験と統計データに基づいた信頼性の高い情報を提供します。",
-    author: {
-      "@type": "Person",
-      name: "大島直孝",
-      url: "https://blog.nexeed-web.com/about",
-    },
+    description: "Claude Codeの使い方、Tips、MCP連携、開発事例、最新アップデート情報を日本語で発信するブログ。",
     publisher: {
       "@type": "Organization",
-      name: "NEXEED BLOG",
+      name: "Claude Code Blog",
     },
     inLanguage: "ja",
     potentialAction: {
@@ -67,13 +62,13 @@ export function BlogPostJsonLd({
     datePublished: datePublished,
     dateModified: dateModified || datePublished,
     author: {
-      "@type": "Person",
-      name: "大島直孝",
+      "@type": "Organization",
+      name: "Claude Code Blog",
       url: "https://blog.nexeed-web.com/about",
     },
     publisher: {
       "@type": "Organization",
-      name: "NEXEED BLOG",
+      name: "Claude Code Blog",
       logo: {
         "@type": "ImageObject",
         url: "https://blog.nexeed-web.com/NexeedBlog.png",
@@ -89,7 +84,7 @@ export function BlogPostJsonLd({
     isAccessibleForFree: true,
     isPartOf: {
       "@type": "Blog",
-      name: "NEXEED BLOG",
+      name: "Claude Code Blog",
       url: "https://blog.nexeed-web.com",
     },
   };

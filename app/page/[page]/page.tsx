@@ -7,10 +7,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 const categories = [
-  { slug: "investment", name: "投資", icon: "💰", description: "資産形成・インデックス投資", className: "category-btn-investment" },
-  { slug: "engineering", name: "ITエンジニア", icon: "💻", description: "技術・プログラミング", className: "category-btn-engineering" },
-  { slug: "side-business", name: "副業", icon: "💼", description: "副収入・フリーランス", className: "category-btn-side-business" },
-  { slug: "parenting", name: "子育て", icon: "👶", description: "育児・ワークライフバランス", className: "category-btn-parenting" },
+  { slug: "getting-started", name: "入門ガイド", icon: "🚀", description: "インストール・基本操作", className: "category-btn-getting-started" },
+  { slug: "tips", name: "Tips・活用術", icon: "💡", description: "便利な使い方・テクニック", className: "category-btn-tips" },
+  { slug: "mcp", name: "MCP・拡張機能", icon: "🔌", description: "MCPサーバー・連携", className: "category-btn-mcp" },
+  { slug: "use-cases", name: "開発事例", icon: "🛠️", description: "実際の開発での活用", className: "category-btn-use-cases" },
+  { slug: "updates", name: "ニュース", icon: "📢", description: "アップデート・最新情報", className: "category-btn-updates" },
 ];
 
 export async function generateStaticParams() {
@@ -29,8 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{ page: str
   const { page } = await params;
 
   return {
-    title: `記事一覧 - ${page}ページ目 | NEXEED BLOG`,
-    description: `NEXEED BLOGの記事一覧${page}ページ目です。`,
+    title: `記事一覧 - ${page}ページ目`,
+    description: `Claude Code Blogの記事一覧${page}ページ目です。`,
     alternates: {
       canonical: page === "1" ? "https://blog.nexeed-web.com/" : `https://blog.nexeed-web.com/page/${page}`,
     },
@@ -44,7 +45,6 @@ export default async function PagedHome({ params }: { params: Promise<{ page: st
   const allPosts = getAllPosts();
   const totalPages = getTotalPages(allPosts.length, POSTS_PER_PAGE);
 
-  // 範囲外のページ番号は404
   if (pageNumber < 1 || pageNumber > totalPages || isNaN(pageNumber)) {
     notFound();
   }
@@ -52,7 +52,6 @@ export default async function PagedHome({ params }: { params: Promise<{ page: st
 
   return (
     <div className="container-custom py-12">
-      {/* カテゴリーボタン */}
       <div className="mb-10">
         <h2 className="text-base font-semibold mb-4 text-center text-gray-500 uppercase tracking-widest">カテゴリーから探す</h2>
         <div className="flex flex-wrap justify-center gap-2 md:gap-3">
@@ -69,7 +68,7 @@ export default async function PagedHome({ params }: { params: Promise<{ page: st
         </div>
       </div>
 
-      <h1 className="text-4xl font-bold mb-8 text-center">最新記事</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center">最新記事</h1>
       <div className="grid gap-8">
         {posts.map((post) => (
           <ArticleCard key={post.slug} post={post} />

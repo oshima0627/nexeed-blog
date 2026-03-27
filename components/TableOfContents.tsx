@@ -9,21 +9,19 @@ interface TableOfContentsProps {
 }
 
 const categoryActiveColors: Record<string, string> = {
-  "投資": "text-blue-600 font-bold border-l-4 border-blue-600 pl-2 -ml-2",
-  "子育て": "text-pink-600 font-bold border-l-4 border-pink-600 pl-2 -ml-2",
-  "ITエンジニア": "text-green-600 font-bold border-l-4 border-green-600 pl-2 -ml-2",
-  "副業": "text-purple-600 font-bold border-l-4 border-purple-600 pl-2 -ml-2",
-  "スポーツ": "text-orange-600 font-bold border-l-4 border-orange-600 pl-2 -ml-2",
-  "政治": "text-red-600 font-bold border-l-4 border-red-600 pl-2 -ml-2",
+  "入門ガイド": "text-blue-600 font-bold border-l-4 border-blue-600 pl-2 -ml-2",
+  "Tips・活用術": "text-amber-600 font-bold border-l-4 border-amber-600 pl-2 -ml-2",
+  "MCP・拡張機能": "text-purple-600 font-bold border-l-4 border-purple-600 pl-2 -ml-2",
+  "開発事例": "text-green-600 font-bold border-l-4 border-green-600 pl-2 -ml-2",
+  "ニュース": "text-red-600 font-bold border-l-4 border-red-600 pl-2 -ml-2",
 };
 
 const categoryHoverColors: Record<string, string> = {
-  "投資": "hover:text-blue-600",
-  "子育て": "hover:text-pink-600",
-  "ITエンジニア": "hover:text-green-600",
-  "副業": "hover:text-purple-600",
-  "スポーツ": "hover:text-orange-600",
-  "政治": "hover:text-red-600",
+  "入門ガイド": "hover:text-blue-600",
+  "Tips・活用術": "hover:text-amber-600",
+  "MCP・拡張機能": "hover:text-purple-600",
+  "開発事例": "hover:text-green-600",
+  "ニュース": "hover:text-red-600",
 };
 
 export default function TableOfContents({ items, category }: TableOfContentsProps) {

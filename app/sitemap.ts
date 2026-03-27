@@ -6,7 +6,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://blog.nexeed-web.com";
   const posts = getAllPosts();
 
-  // 記事ページのURL
   const postUrls = posts.map((post) => ({
     url: `${baseUrl}/posts/${post.slug}`,
     lastModified: post.updated || post.date,
@@ -14,15 +13,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // カテゴリーページのURL（1ページ目）
-  const categories = ["investment", "parenting", "engineering", "side-business", "sports", "politics"];
+  const categories = ["getting-started", "tips", "mcp", "use-cases", "updates"];
   const categoryNames: Record<string, string> = {
-    "investment": "投資",
-    "parenting": "子育て",
-    "engineering": "ITエンジニア",
-    "side-business": "副業",
-    "sports": "スポーツ",
-    "politics": "政治",
+    "getting-started": "入門ガイド",
+    "tips": "Tips・活用術",
+    "mcp": "MCP・拡張機能",
+    "use-cases": "開発事例",
+    "updates": "ニュース",
   };
   const categoryUrls = categories.map((slug) => ({
     url: `${baseUrl}/category/${slug}`,
@@ -31,7 +28,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // カテゴリーページネーション（2ページ目以降）
   const categoryPaginationUrls: MetadataRoute.Sitemap = [];
   for (const slug of categories) {
     const categoryName = categoryNames[slug];
@@ -47,7 +43,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // トップページネーション（2ページ目以降）
   const totalPages = getTotalPages(posts.length, POSTS_PER_PAGE);
   const paginationUrls: MetadataRoute.Sitemap = [];
   for (let i = 2; i <= totalPages; i++) {
@@ -59,7 +54,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // 静的ページのURL
   const staticPages = [
     {
       url: baseUrl,

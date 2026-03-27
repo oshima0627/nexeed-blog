@@ -7,21 +7,14 @@ export async function GET() {
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NEXEED BLOG</title>
+    <title>Claude Code Blog</title>
     <link>${baseUrl}</link>
-    <description>投資、子育て、ITエンジニア、副業をテーマにした個人ブログ。実体験と統計データに基づいた信頼性の高い情報を提供します。</description>
+    <description>Claude Codeの使い方、Tips、MCP連携、開発事例、最新アップデート情報を日本語で発信するブログ。</description>
     <language>ja</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml"/>
-    <managingEditor>nexeed-blog@example.com (大島直孝)</managingEditor>
-    <webMaster>nexeed-blog@example.com (大島直孝)</webMaster>
-    <copyright>Copyright ${new Date().getFullYear()} NEXEED BLOG</copyright>
+    <copyright>Copyright ${new Date().getFullYear()} Claude Code Blog</copyright>
     <ttl>60</ttl>
-    <image>
-      <url>${baseUrl}/NexeedBlog.png</url>
-      <title>NEXEED BLOG</title>
-      <link>${baseUrl}</link>
-    </image>
     ${posts
       .map(
         (post) => `
@@ -32,7 +25,6 @@ export async function GET() {
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <guid isPermaLink="true">${baseUrl}/posts/${post.slug}</guid>
       <category>${escapeXml(post.category)}</category>
-      <author>nexeed-blog@example.com (大島直孝)</author>
     </item>`
       )
       .join("")}

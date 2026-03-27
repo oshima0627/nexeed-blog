@@ -1,21 +1,20 @@
 import { ImageResponse } from 'next/og';
 import { getPostBySlug } from '@/lib/posts';
 
-// Node.js Runtimeを使用（ファイルシステムアクセスのため）
 export const runtime = 'nodejs';
-export const alt = 'NEXEED BLOG 記事';
+export const alt = 'Claude Code Blog 記事';
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = 'image/png';
 
-// カテゴリーごとの色設定
 const categoryColors: Record<string, { bg: string; text: string }> = {
-  '投資': { bg: '#10B981', text: '#FFFFFF' },
-  '子育て': { bg: '#F59E0B', text: '#FFFFFF' },
-  'ITエンジニア': { bg: '#3B82F6', text: '#FFFFFF' },
-  '副業': { bg: '#8B5CF6', text: '#FFFFFF' },
+  '入門ガイド': { bg: '#3B82F6', text: '#FFFFFF' },
+  'Tips・活用術': { bg: '#D97706', text: '#FFFFFF' },
+  'MCP・拡張機能': { bg: '#7C3AED', text: '#FFFFFF' },
+  '開発事例': { bg: '#10B981', text: '#FFFFFF' },
+  'ニュース': { bg: '#EF4444', text: '#FFFFFF' },
 };
 
 export default async function Image({ params }: { params: { slug: string } }) {
@@ -39,7 +38,6 @@ export default async function Image({ params }: { params: { slug: string } }) {
             padding: '80px',
           }}
         >
-          {/* メインコンテンツエリア */}
           <div
             style={{
               display: 'flex',
@@ -52,7 +50,6 @@ export default async function Image({ params }: { params: { slug: string } }) {
               boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
             }}
           >
-            {/* カテゴリーバッジ */}
             <div
               style={{
                 display: 'flex',
@@ -75,7 +72,6 @@ export default async function Image({ params }: { params: { slug: string } }) {
               </div>
             </div>
 
-            {/* タイトル */}
             <div
               style={{
                 fontSize: post.title.length > 40 ? '48px' : '56px',
@@ -90,7 +86,6 @@ export default async function Image({ params }: { params: { slug: string } }) {
               {post.title}
             </div>
 
-            {/* フッター情報 */}
             <div
               style={{
                 display: 'flex',
@@ -101,7 +96,6 @@ export default async function Image({ params }: { params: { slug: string } }) {
                 marginTop: '24px',
               }}
             >
-              {/* サイト名 */}
               <div
                 style={{
                   display: 'flex',
@@ -113,15 +107,14 @@ export default async function Image({ params }: { params: { slug: string } }) {
                   style={{
                     fontSize: '36px',
                     fontWeight: 'bold',
-                    color: '#3B82F6',
+                    color: '#D97706',
                     display: 'flex',
                   }}
                 >
-                  NEXEED BLOG
+                  Claude Code Blog
                 </div>
               </div>
 
-              {/* 日付 */}
               <div
                 style={{
                   fontSize: '24px',
@@ -143,8 +136,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
         ...size,
       }
     );
-  } catch (error) {
-    // エラー時はデフォルト画像を返す
+  } catch {
     return new ImageResponse(
       (
         <div
@@ -155,12 +147,12 @@ export default async function Image({ params }: { params: { slug: string } }) {
             alignItems: 'center',
             justifyContent: 'center',
             backgroundColor: '#1F2937',
-            color: 'white',
+            color: '#D97706',
             fontSize: '64px',
             fontWeight: 'bold',
           }}
         >
-          NEXEED BLOG
+          Claude Code Blog
         </div>
       ),
       {
